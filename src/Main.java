@@ -4,5 +4,4 @@ public class Main {
         System.out.println("test");
         System.out.println("Hello world!");
     }
-    kojiopojpjopkopo
 }
