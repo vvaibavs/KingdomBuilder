@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0abf3940-7167-42ba-8525-f402d2848701" name="Changes" comment="asd;kfljadsf">
-      <change afterPath="$PROJECT_DIR$/src/Node.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="0abf3940-7167-42ba-8525-f402d2848701" name="Changes" comment="empty inside" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -82,7 +79,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679401915832</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="empty inside">
+      <created>1679403926621</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1679403926621</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -99,6 +103,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="haha" />
     <MESSAGE value="asd;kfljadsf" />
-    <option name="LAST_COMMIT_MESSAGE" value="asd;kfljadsf" />
+    <MESSAGE value="empty inside" />
+    <option name="LAST_COMMIT_MESSAGE" value="empty inside" />
   </component>
 </project>
