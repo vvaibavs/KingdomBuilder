@@ -9,6 +9,35 @@ public class Node {
     }
     public void addNeighbor(String direction, Node neighbor) {
         neighbors.put(direction, neighbor);
+        if (direction.equals("West")) {
+            neighbor.addNeighbor("East", this, false);
+        }
+        else if (direction.equals("North")) {
+            neighbor.addNeighbor("South", this, false);
+        }
+        else if (direction.equals("East")) {
+            neighbor.addNeighbor("West", this, false);
+        }
+        else if (direction.equals("South")) {
+            neighbor.addNeighbor("North", this, false);
+        }
+    }
+    public void addNeighbor(String direction, Node neighbor, boolean cont){
+        neighbors.put(direction, neighbor);
+        if (cont) {
+            if (direction.equals("West")) {
+                neighbor.addNeighbor("East", this, false);
+            }
+            else if (direction.equals("North")) {
+                neighbor.addNeighbor("South", this, false);
+            }
+            else if (direction.equals("East")) {
+                neighbor.addNeighbor("West", this, false);
+            }
+            else if (direction.equals("South")) {
+                neighbor.addNeighbor("North", this, false);
+            }
+        }
     }
     public String getTerrain() {
         return terrain;
