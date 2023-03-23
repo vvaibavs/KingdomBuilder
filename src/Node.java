@@ -3,9 +3,11 @@ public class Node {
     private String terrain;
     private Boolean hasSettlement = false;
     private String settlementColor = null;
+    private int board;
     private HashMap<String, Node> neighbors = new HashMap<String, Node>();
-    public Node(String terrain) {
+    public Node(String terrain, int board) {
         this.terrain = terrain;
+        this.board = board;
     }
     public void addNeighbor(String direction, Node neighbor) {
         neighbors.put(direction, neighbor);
@@ -55,4 +57,36 @@ public class Node {
     public String getSettlementColor() {
         return settlementColor;
     }
+    public int getSettlementsInBoard(String color, int boardNum) {
+        int temp = 0;
+        if (color.equals(settlementColor) && board == boardNum) {
+            temp += 1;
+        }
+        if (neighbors.get("South") != null) {
+            temp += neighbors.get("South").getSettlementsInBoard(color, boardNum);
+        }
+        return temp + this.getSettlementsInLine(color, boardNum);
+
+    }
+    public int getSettlementsInLine(String color) {
+        int temp = 0;
+        if (settlementColor.equals(color)) {
+            temp += 1;
+        }
+        if (neighbors.get("East") != null) {
+            return temp + neighbors.get("East").getSettlementsInLine(color);
+        }
+        return temp;
+    }
+    public int getSettlementsInLine(String color, int boardNum) {
+        int temp = 0;
+        if (settlementColor.equals(color) && board == boardNum) {
+            temp += 1;
+        }
+        if (neighbors.get("East") != null) {
+            return temp + neighbors.get("East").getSettlementsInLine(color, boardNum);
+        }
+        return temp;
+    }
+
 }
