@@ -6,7 +6,7 @@ public class Frame extends JFrame{
         super("Kingdom Builder");
         setSize(width, height);
         setVisible(true);
-        setResizable(false);
+        setResizable(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         MainPanel thePanel = new MainPanel();
         add(thePanel);
