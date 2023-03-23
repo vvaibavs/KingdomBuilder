@@ -8,7 +8,7 @@ public class MainPanel extends JPanel {
         setSize(getWidth(),getHeight());
     }
     public void paint(Graphics g){
-        graphics = g;
+        graphic = g;
         g.drawRect(100, 100, 100, 100);
     }
 }
