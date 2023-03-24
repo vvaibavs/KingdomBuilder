@@ -68,13 +68,13 @@ public class Node {
         return temp + this.getSettlementsInLine(color, boardNum);
 
     }
-    public int getSettlementsInLine(String color) {
+    public int getSettlementsInLine(String color, String direction) {
         int temp = 0;
         if (settlementColor.equals(color)) {
             temp += 1;
         }
         if (neighbors.get("East") != null) {
-            return temp + neighbors.get("East").getSettlementsInLine(color);
+            return temp + neighbors.get(direction).getSettlementsInLine(color, direction);
         }
         return temp;
     }
