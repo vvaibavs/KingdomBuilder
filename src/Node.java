@@ -14,14 +14,20 @@ public class Node {
         if (direction.equals("West")) {
             neighbor.addNeighbor("East", this, false);
         }
-        else if (direction.equals("North")) {
-            neighbor.addNeighbor("South", this, false);
+        else if (direction.equals("NorthWest")) {
+            neighbor.addNeighbor("SouthEast", this, false);
+        }
+        else if (direction.equals("NorthEast")) {
+            neighbor.addNeighbor("SouthWest", this, false);
         }
         else if (direction.equals("East")) {
             neighbor.addNeighbor("West", this, false);
         }
-        else if (direction.equals("South")) {
-            neighbor.addNeighbor("North", this, false);
+        else if (direction.equals("SouthWest")) {
+            neighbor.addNeighbor("NorthEast", this, false);
+        }
+        else if (direction.equals("SouthEast")) {
+            neighbor.addNeighbor("NorthWest", this, false);
         }
     }
     public void addNeighbor(String direction, Node neighbor, boolean cont){
