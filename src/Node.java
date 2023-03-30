@@ -4,10 +4,14 @@ public class Node {
     private Boolean hasSettlement = false;
     private String settlementColor = null;
     private int board;
+    private int x;
+    private int y;
     private HashMap<String, Node> neighbors = new HashMap<String, Node>();
-    public Node(String terrain, int board) {
+    public Node(String terrain, int board, int xloc, int yloc) {
         this.terrain = terrain;
         this.board = board;
+        x = xloc;
+        y = yloc;
     }
     public void addNeighbor(String direction, Node neighbor) {
         neighbors.put(direction, neighbor);
@@ -99,6 +103,9 @@ public class Node {
             return temp + neighbors.get("East").getSettlementsInLine(color, boardNum);
         }
         return temp;
+    }
+    public boolean containsClick(int xloc, int yLoc, int radius) {
+        if
     }
 
 }
