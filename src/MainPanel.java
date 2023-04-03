@@ -9,6 +9,9 @@ public class MainPanel extends JPanel {
     }
     public void paint(Graphics g){
         graphic = g;
-        g.drawRect(100, 100, 100, 100);
+
+    }
+    public void drawStartScreen() {
+
     }
 }
