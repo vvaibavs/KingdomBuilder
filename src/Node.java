@@ -104,8 +104,11 @@ public class Node {
         }
         return temp;
     }
-    public boolean containsClick(int xloc, int yLoc, int radius) {
-        if ()
+    public boolean containsClick(int xloc, int yloc, int radius) {
+        if (Math.pow(xloc - x, 2) + Math.pow(yloc - y, 2) == radius) {
+            return true;
+        }
+        return false;
     }
 
 }
