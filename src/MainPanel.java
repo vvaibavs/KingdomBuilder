@@ -7,6 +7,7 @@ public class MainPanel extends JPanel {
     private BufferedImage startScreen, endScreen;
     private BufferedImage canyon, desert, flower, forest, meadow;
     static Graphics graphic;
+    private String state;
     public MainPanel() {
         super();
         try {
@@ -23,12 +24,20 @@ public class MainPanel extends JPanel {
             return;
         }
         setSize(getWidth(), getHeight());
-    }
-    public void paint(Graphics g){
-        graphic = g;
 
     }
-    public void drawStartScreen() {
-        graphic.drawImage(startScreen, 0, 0, getWidth(), getHeight(), null);
+    public void setMode(String type) {
+        state = type;
     }
+    public void paint(Graphics g){
+        g.drawRect(10, 10, 10, 10);
+        if (state.equals("Start Screen")) {
+            g.drawImage(startScreen, 0, 0, getWidth(), getHeight(), null);
+        }
+
+    }
+    public void startPaint() {
+        repaint();
+    }
+
 }
