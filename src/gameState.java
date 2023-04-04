@@ -1,12 +1,17 @@
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 public class gameState implements MouseListener {
+    private String state = "Start Screen";
     public static int mouseX;
     public static int mouseY;
+    private MainPanel Panel;
 
-    public gameState() {
+    public gameState(MainPanel Panely) {
+        Panel = Panely;
         mouseX = 0;
         mouseY = 0;
+        Panel.setMode(state);
+        Panel.startPaint();
     }
 
     @Override
