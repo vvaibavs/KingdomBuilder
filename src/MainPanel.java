@@ -11,8 +11,8 @@ public class MainPanel extends JPanel {
         try {
             startImage = ImageIO.read(MainPanel.class.getResource("/images/Start Screen.png"));
         }
-        catch (Exception E) {
-            System.out.println("Exception Error");
+        catch (Exception e) {
+            System.out.println(e.getMessage());
             return;
         }
         setSize(getWidth(), getHeight());
