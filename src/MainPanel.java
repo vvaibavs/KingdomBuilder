@@ -22,6 +22,6 @@ public class MainPanel extends JPanel {
 
     }
     public void drawStartScreen() {
-
+        graphic.drawImage(startImage, 0, 0, getWidth(), getHeight(), null);
     }
 }
