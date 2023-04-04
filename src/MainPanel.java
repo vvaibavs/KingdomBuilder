@@ -5,6 +5,7 @@ import java.util.*;
 import java.awt.*;
 public class MainPanel extends JPanel {
     private BufferedImage startImage;
+    public drawTerrainCards terrain;
     static Graphics graphic;
     public MainPanel() {
         super();
@@ -16,6 +17,7 @@ public class MainPanel extends JPanel {
             return;
         }
         setSize(getWidth(), getHeight());
+        terrain = new drawTerrainCards();
     }
     public void paint(Graphics g){
         graphic = g;
