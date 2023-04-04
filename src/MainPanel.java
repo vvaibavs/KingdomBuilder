@@ -10,25 +10,27 @@ public class MainPanel extends JPanel {
     public MainPanel() {
         super();
         try {
-            startScreen = ImageIO.read(MainPanel.class.getResource("/images/Start Screen.png"));
-            endScreen = ImageIO.read(MainPanel.class.getResource("/images/End Screen 2.png"));
-            canyon = ImageIO.read(MainPanel.class.getResource("/images/KB-Card-Canyon.png"));
-            desert = ImageIO.read(MainPanel.class.getResource("/images/KB-Card-Desert.png"));
-            flower = ImageIO.read(MainPanel.class.getResource("/images/KB-Card-Flower.png"));
-            forest = ImageIO.read(MainPanel.class.getResource("/images/KB-Card-Forest.png"));
-            meadow = ImageIO.read(MainPanel.class.getResource("/images/KB-Card-Meadow.png"));
+            startImage = ImageIO.read(MainPanel.class.getResource("/images/Start Screen.png"));
         }
         catch (Exception e) {
             System.out.println(e.getMessage());
             return;
         }
         setSize(getWidth(), getHeight());
-    }
-    public void paint(Graphics g){
-        graphic = g;
 
     }
-    public void drawStartScreen() {
-        graphic.drawImage(startScreen, 0, 0, getWidth(), getHeight(), null);
+    public void setMode(String type) {
+        state = type;
     }
+    public void paint(Graphics g){
+        g.drawRect(10, 10, 10, 10);
+        if (state.equals("Start Screen")) {
+            g.drawImage(startImage, 0, 0, getWidth(), getHeight(), null);
+        }
+
+    }
+    public void startPaint() {
+        repaint();
+    }
+
 }
