@@ -10,7 +10,7 @@ public class Frame extends JFrame{
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         MainPanel thePanel = new MainPanel();
         add(thePanel);
-        gameState theGame = new gameState(thePanel);
+        gameState theGame = new gameState();
 
     }
 }
