@@ -1,11 +1,21 @@
+import javax.imageio.ImageIO;
 import javax.swing.*;
+import java.awt.image.BufferedImage;
 import java.util.*;
 import java.awt.*;
 public class MainPanel extends JPanel {
+    private BufferedImage startImage;
     static Graphics graphic;
     public MainPanel() {
         super();
-        setSize(getWidth(),getHeight());
+        try {
+            startImage = ImageIO.read(MainPanel.class.getResource("/images/Start Screen.png"));
+        }
+        catch (Exception E) {
+            System.out.println("Exception Error");
+            return;
+        }
+        setSize(getWidth(), getHeight());
     }
     public void paint(Graphics g){
         graphic = g;
