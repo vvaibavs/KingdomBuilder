@@ -13,11 +13,6 @@ public class MainPanel extends JPanel {
         try {
             startScreen = ImageIO.read(MainPanel.class.getResource("/images/Start-Screen.png"));
             endScreen = ImageIO.read(MainPanel.class.getResource("/images/End Screen 2.png"));
-            canyon = ImageIO.read(MainPanel.class.getResource("/images/KB-Card-Canyon.png"));
-            desert = ImageIO.read(MainPanel.class.getResource("/images/KB-Card-Desert.png"));
-            flower = ImageIO.read(MainPanel.class.getResource("/images/KB-Card-Flower.png"));
-            forest = ImageIO.read(MainPanel.class.getResource("/images/KB-Card-Forest.png"));
-            meadow = ImageIO.read(MainPanel.class.getResource("/images/KB-Card-Meadow.png"));
         }
         catch (Exception e) {
             System.out.println(e.getMessage());
