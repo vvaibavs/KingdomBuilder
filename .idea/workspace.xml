@@ -4,8 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0abf3940-7167-42ba-8525-f402d2848701" name="Changes" comment="end screen">
-      <change beforePath="$PROJECT_DIR$/src/MainPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainPanel.java" afterDir="false" />
+    <list default="true" id="0abf3940-7167-42ba-8525-f402d2848701" name="Changes" comment="empty inside">
+      <change afterPath="$PROJECT_DIR$/images/farmers.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/fishermen.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/hermits.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/knights.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/lords.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/merchants.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/miners.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/workers.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_23_2023_8_04_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_23_2023_8_04_AM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_3_2023_7_19_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_3_2023_7_19_AM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_3_2023_8_01_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_3_2023_8_01_AM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_4_2023_7_21_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_4_2023_7_21_AM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_4_2023_7_57_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_4_2023_7_57_AM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +58,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\anita\IdeaProjects\KingdomBuilder\images" />
+      <recent name="C:\Users\k1215075\IdeaProjects\KingdomBuilder\images" />
       <recent name="C:\Users\slhscs230\IdeaProjects\Kingdom Builder\" />
       <recent name="C:\Users\slhscs230\IdeaProjects\Kingdom Builder\out\production\Kingdom Builder" />
     </key>
@@ -241,14 +254,7 @@
       <option name="project" value="LOCAL" />
       <updated>1680611146684</updated>
     </task>
-    <task id="LOCAL-00027" summary="end screen">
-      <created>1680612365269</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1680612365269</updated>
-    </task>
-    <option name="localTasksCounter" value="28" />
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -267,7 +273,6 @@
     <MESSAGE value="asd;kfljadsf" />
     <MESSAGE value="empty inside" />
     <MESSAGE value="exception message" />
-    <MESSAGE value="end screen" />
-    <option name="LAST_COMMIT_MESSAGE" value="end screen" />
+    <option name="LAST_COMMIT_MESSAGE" value="exception message" />
   </component>
 </project>
