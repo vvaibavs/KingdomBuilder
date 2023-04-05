@@ -1,5 +1,8 @@
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+
+import static com.sun.java.accessibility.util.AWTEventMonitor.addMouseListener;
+
 public class gameState implements MouseListener {
     private String state = "Start Screen";
     public static int mouseX;
@@ -12,6 +15,8 @@ public class gameState implements MouseListener {
         mouseY = 0;
         Panel.setMode(state);
         Panel.startPaint();
+
+        addMouseListener(this);
     }
 
     @Override
@@ -38,5 +43,10 @@ public class gameState implements MouseListener {
     @Override
     public void mouseExited(MouseEvent e) {
 
+    }
+
+    public void addNotify() {
+        super.notify();
+        requestFocus();
     }
 }

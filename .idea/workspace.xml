@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0abf3940-7167-42ba-8525-f402d2848701" name="Changes" comment="empty inside">
+    <list default="true" id="0abf3940-7167-42ba-8525-f402d2848701" name="Changes" comment="end screen">
+      <change afterPath="$PROJECT_DIR$/src/ScoringCard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MainPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameState.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +49,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\SLHSCS228\IdeaProjects\KingdomBuilder\src" />
       <recent name="C:\Users\anita\IdeaProjects\KingdomBuilder\images" />
       <recent name="C:\Users\slhscs230\IdeaProjects\Kingdom Builder\" />
       <recent name="C:\Users\slhscs230\IdeaProjects\Kingdom Builder\out\production\Kingdom Builder" />
@@ -286,7 +288,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680613502487</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="end screen">
+      <created>1680697718480</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1680697718480</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -304,8 +313,8 @@
     <MESSAGE value="haha" />
     <MESSAGE value="asd;kfljadsf" />
     <MESSAGE value="exception message" />
-    <MESSAGE value="end screen" />
     <MESSAGE value="empty inside" />
-    <option name="LAST_COMMIT_MESSAGE" value="empty inside" />
+    <MESSAGE value="end screen" />
+    <option name="LAST_COMMIT_MESSAGE" value="end screen" />
   </component>
 </project>
