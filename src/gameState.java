@@ -28,6 +28,8 @@ public class gameState implements MouseListener {
     public void mousePressed(MouseEvent e) {
         mouseX = e.getX();
         mouseY = e.getY();
+        System.out.println(mouseX);
+        System.out.println(mouseY);
     }
 
     @Override
