@@ -26,6 +26,26 @@
     </list>
     <list default="true" id="0abf3940-7167-42ba-8525-f402d2848701" name="Changes" comment="empty inside" />
     <list default="true" id="0abf3940-7167-42ba-8525-f402d2848701" name="Changes" comment="end screen" />
+    <list default="true" id="0abf3940-7167-42ba-8525-f402d2848701" name="Changes" comment="empty inside">
+      <change afterPath="$PROJECT_DIR$/images/farmers.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/fishermen.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/hermits.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/knights.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/lords.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/merchants.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/miners.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/workers.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_23_2023_8_04_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_23_2023_8_04_AM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_3_2023_7_19_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_3_2023_7_19_AM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_3_2023_8_01_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_3_2023_8_01_AM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_4_2023_7_21_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_4_2023_7_21_AM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_4_2023_7_57_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_4_2023_7_57_AM__Changes_.xml" afterDir="false" />
+    </list>
+    <list default="true" id="0abf3940-7167-42ba-8525-f402d2848701" name="Changes" comment="end screen">
+      <change afterPath="$PROJECT_DIR$/src/ScoringCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameState.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

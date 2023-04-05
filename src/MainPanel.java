@@ -9,8 +9,7 @@ import java.awt.*;
 import static com.sun.java.accessibility.util.AWTEventMonitor.addMouseListener;
 
 public class MainPanel extends JPanel implements MouseListener {
-    private BufferedImage startScreen, endScreen;
-    private BufferedImage canyon, desert, flower, forest, meadow;
+    private BufferedImage startScreen, endScreen, transSquare;
     static Graphics graphic;
     private String state;
     public MainPanel() {
@@ -18,6 +17,7 @@ public class MainPanel extends JPanel implements MouseListener {
         try {
             startScreen = ImageIO.read(MainPanel.class.getResource("/images/Start-Screen.png"));
             endScreen = ImageIO.read(MainPanel.class.getResource("/images/End Screen.png"));
+            //transSquare = ImageIO.read(MainPanel.class.getResource("/images/transPlayerSquare.png"));
         }
         catch (Exception e) {
             System.out.println(e.getMessage());
