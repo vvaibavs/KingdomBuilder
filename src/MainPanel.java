@@ -1,12 +1,14 @@
 import javax.imageio.ImageIO;
 import javax.swing.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
 import java.util.*;
 import java.awt.*;
 
 import static com.sun.java.accessibility.util.AWTEventMonitor.addMouseListener;
 
-public class MainPanel extends JPanel {
+public class MainPanel extends JPanel implements MouseListener {
     private BufferedImage startScreen, endScreen;
     private BufferedImage canyon, desert, flower, forest, meadow;
     static Graphics graphic;
@@ -23,7 +25,7 @@ public class MainPanel extends JPanel {
         }
 
         setSize(getWidth(), getHeight());
-
+        addMouseListener(this);
     }
     public void setMode(String type) {
         state = type;
@@ -39,4 +41,35 @@ public class MainPanel extends JPanel {
         repaint();
     }
 
+    @Override
+    public void mouseClicked(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+        gameState.mouseX = e.getX();
+        gameState.mouseY = e.getY();
+        System.out.println(gameState.mouseX + " " + gameState.mouseY);
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+
+    }
+
+    public void addNotify() {
+        super.addNotify();
+        requestFocus();
+    }
 }
