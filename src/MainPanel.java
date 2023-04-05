@@ -16,7 +16,7 @@ public class MainPanel extends JPanel implements MouseListener {
         super();
         try {
             startScreen = ImageIO.read(MainPanel.class.getResource("/images/Start-Screen.png"));
-            endScreen = ImageIO.read(MainPanel.class.getResource("/images/End Screen.png"));
+
             //transSquare = ImageIO.read(MainPanel.class.getResource("/images/transPlayerSquare.png"));
         }
         catch (Exception e) {
