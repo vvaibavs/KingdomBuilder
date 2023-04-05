@@ -4,6 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+    <list default="true" id="0abf3940-7167-42ba-8525-f402d2848701" name="Changes" comment="end screen" />
     <list default="true" id="0abf3940-7167-42ba-8525-f402d2848701" name="Changes" comment="empty inside">
       <change afterPath="$PROJECT_DIR$/images/farmers.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/images/fishermen.png" afterDir="false" />
@@ -64,8 +65,6 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\k1215075\IdeaProjects\KingdomBuilder\images" />
-      <recent name="C:\Users\SLHSCS228\IdeaProjects\KingdomBuilder\src" />
       <recent name="C:\Users\anita\IdeaProjects\KingdomBuilder\images" />
       <recent name="C:\Users\slhscs230\IdeaProjects\Kingdom Builder\" />
       <recent name="C:\Users\slhscs230\IdeaProjects\Kingdom Builder\out\production\Kingdom Builder" />
@@ -297,22 +296,7 @@
       <option name="project" value="LOCAL" />
       <updated>1680613226523</updated>
     </task>
-    <task id="LOCAL-00030" summary="empty inside">
-      <created>1680613502487</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1680613502487</updated>
-    </task>
-    <task id="LOCAL-00031" summary="end screen">
-      <created>1680697718480</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1680697718480</updated>
-    </task>
-    <option name="localTasksCounter" value="32" />
-    <option name="localTasksCounter" value="27" />
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -329,11 +313,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="haha" />
     <MESSAGE value="asd;kfljadsf" />
-    <MESSAGE value="empty inside" />
     <MESSAGE value="exception message" />
-    <option name="LAST_COMMIT_MESSAGE" value="exception message" />
-    <MESSAGE value="empty inside" />
     <MESSAGE value="end screen" />
-    <option name="LAST_COMMIT_MESSAGE" value="end screen" />
+    <MESSAGE value="empty inside" />
+    <option name="LAST_COMMIT_MESSAGE" value="empty inside" />
   </component>
 </project>

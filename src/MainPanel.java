@@ -12,7 +12,7 @@ public class MainPanel extends JPanel {
         super();
         try {
             startScreen = ImageIO.read(MainPanel.class.getResource("/images/Start-Screen.png"));
-
+            endScreen = ImageIO.read(MainPanel.class.getResource("/images/End Screen.png"));
         }
         catch (Exception e) {
             System.out.println(e.getMessage());
