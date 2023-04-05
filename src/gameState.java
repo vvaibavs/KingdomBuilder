@@ -16,7 +16,6 @@ public class gameState implements MouseListener {
         Panel.setMode(state);
         Panel.startPaint();
 
-        addMouseListener(this);
     }
 
     @Override
