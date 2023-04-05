@@ -11,7 +11,7 @@ public class MainPanel extends JPanel {
     public MainPanel() {
         super();
         try {
-            startScreen = ImageIO.read(MainPanel.class.getResource("/Image/Start-Screen.png"));
+            startScreen = ImageIO.read(MainPanel.class.getResource("/images/+Start-Screen.png"));
             endScreen = ImageIO.read(MainPanel.class.getResource("/images/End Screen 2.png"));
         }
         catch (Exception e) {
