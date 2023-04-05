@@ -3,6 +3,9 @@ import javax.swing.*;
 import java.awt.image.BufferedImage;
 import java.util.*;
 import java.awt.*;
+
+import static com.sun.java.accessibility.util.AWTEventMonitor.addMouseListener;
+
 public class MainPanel extends JPanel {
     private BufferedImage startScreen, endScreen;
     private BufferedImage canyon, desert, flower, forest, meadow;
@@ -18,6 +21,7 @@ public class MainPanel extends JPanel {
             System.out.println(e.getMessage());
             return;
         }
+
         setSize(getWidth(), getHeight());
 
     }
