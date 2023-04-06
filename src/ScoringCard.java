@@ -11,6 +11,6 @@ public class ScoringCard {
         return cardType;
     }
     public void Paddock(){
-       jump();
+        jump();
     }
 }

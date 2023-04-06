@@ -4,16 +4,47 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0abf3940-7167-42ba-8525-f402d2848701" name="Changes" comment="scoring card">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_5_2023_7_20_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_5_2023_7_20_AM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_5_2023_7_24_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_5_2023_7_24_AM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_5_2023_7_27_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_5_2023_7_27_AM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_5_2023_7_27_AM__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_5_2023_7_27_AM__Changes_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_5_2023_7_48_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_5_2023_7_48_AM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_5_2023_8_02_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_5_2023_8_02_AM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_6_2023_7_07_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_6_2023_7_07_AM__Changes_.xml" afterDir="false" />
+    <list default="true" id="0abf3940-7167-42ba-8525-f402d2848701" name="Changes" comment="empty inside">
+      <change afterPath="$PROJECT_DIR$/images/farmers.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/fishermen.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/hermits.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/knights.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/lords.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/merchants.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/miners.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/workers.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_23_2023_8_04_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_23_2023_8_04_AM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_3_2023_7_19_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_3_2023_7_19_AM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_3_2023_8_01_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_3_2023_8_01_AM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_4_2023_7_21_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_4_2023_7_21_AM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_4_2023_7_57_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_4_2023_7_57_AM__Changes_.xml" afterDir="false" />
+    </list>
+    <list default="true" id="0abf3940-7167-42ba-8525-f402d2848701" name="Changes" comment="end screen">
+      <change afterPath="$PROJECT_DIR$/src/ScoringCard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ScoringCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ScoringCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameState.java" afterDir="false" />
+    </list>
+    <list default="true" id="0abf3940-7167-42ba-8525-f402d2848701" name="Changes" comment="empty inside" />
+    <list default="true" id="0abf3940-7167-42ba-8525-f402d2848701" name="Changes" comment="end screen" />
+    <list default="true" id="0abf3940-7167-42ba-8525-f402d2848701" name="Changes" comment="empty inside">
+      <change afterPath="$PROJECT_DIR$/images/farmers.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/fishermen.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/hermits.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/knights.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/lords.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/merchants.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/miners.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/workers.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_23_2023_8_04_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_23_2023_8_04_AM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_3_2023_7_19_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_3_2023_7_19_AM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_3_2023_8_01_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_3_2023_8_01_AM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_4_2023_7_21_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_4_2023_7_21_AM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_4_2023_7_57_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_4_2023_7_57_AM__Changes_.xml" afterDir="false" />
+    </list>
+    <list default="true" id="0abf3940-7167-42ba-8525-f402d2848701" name="Changes" comment="end screen">
+      <change afterPath="$PROJECT_DIR$/src/ScoringCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameState.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -286,12 +317,12 @@
       <option name="project" value="LOCAL" />
       <updated>1680613226523</updated>
     </task>
-    <task id="LOCAL-00030" summary="scoring card">
-      <created>1680784071619</created>
+    <task id="LOCAL-00030" summary="empty inside">
+      <created>1680613502487</created>
       <option name="number" value="00030" />
       <option name="presentableId" value="LOCAL-00030" />
       <option name="project" value="LOCAL" />
-      <updated>1680784071619</updated>
+      <updated>1680613502487</updated>
     </task>
     <task id="LOCAL-00031" summary="end screen">
       <created>1680697718480</created>
@@ -301,6 +332,9 @@
       <updated>1680697718480</updated>
     </task>
     <option name="localTasksCounter" value="31" />
+    <option name="localTasksCounter" value="32" />
+    <option name="localTasksCounter" value="27" />
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -319,9 +353,9 @@
     <MESSAGE value="asd;kfljadsf" />
     <MESSAGE value="empty inside" />
     <MESSAGE value="exception message" />
+    <option name="LAST_COMMIT_MESSAGE" value="exception message" />
     <MESSAGE value="empty inside" />
     <MESSAGE value="end screen" />
-    <MESSAGE value="scoring card" />
-    <option name="LAST_COMMIT_MESSAGE" value="scoring card" />
+    <option name="LAST_COMMIT_MESSAGE" value="end screen" />
   </component>
 </project>
