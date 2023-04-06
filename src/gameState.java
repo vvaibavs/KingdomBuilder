@@ -17,9 +17,10 @@ public class gameState {
         Panel.startPaint();
 
     }
-    public static void runClick() {
-        if (mouseX > 278 && mouseX < 705 && mouseY < 631 && mouseY > 544) {
+    public void runClick() {
+        if (mouseX > 278 && mouseX < 705 && mouseY < 631 && mouseY > 544 && state.equals("Start Screen")) {
             state = "Game Screen";
+
         }
 
     }

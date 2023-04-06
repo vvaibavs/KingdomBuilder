@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0abf3940-7167-42ba-8525-f402d2848701" name="Changes" comment="empty inside">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameState.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -279,20 +280,41 @@
       <updated>1680613226523</updated>
     </task>
     <task id="LOCAL-00030" summary="empty inside">
-      <created>1680613502487</created>
+      <created>1680699629924</created>
       <option name="number" value="00030" />
       <option name="presentableId" value="LOCAL-00030" />
       <option name="project" value="LOCAL" />
-      <updated>1680613502487</updated>
+      <updated>1680699629924</updated>
     </task>
-    <task id="LOCAL-00031" summary="end screen">
-      <created>1680697718480</created>
+    <task id="LOCAL-00031" summary="empty inside">
+      <created>1680699675051</created>
       <option name="number" value="00031" />
       <option name="presentableId" value="LOCAL-00031" />
       <option name="project" value="LOCAL" />
-      <updated>1680697718480</updated>
+      <updated>1680699675051</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00032" summary="empty inside">
+      <created>1680699823465</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1680699823465</updated>
+    </task>
+    <task id="LOCAL-00033" summary="empty inside">
+      <created>1680782743903</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1680782743903</updated>
+    </task>
+    <task id="LOCAL-00034" summary="empty inside">
+      <created>1680782855385</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1680782855385</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -309,10 +331,10 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="haha" />
     <MESSAGE value="asd;kfljadsf" />
-    <MESSAGE value="empty inside" />
     <MESSAGE value="exception message" />
-    <MESSAGE value="empty inside" />
     <MESSAGE value="end screen" />
-    <option name="LAST_COMMIT_MESSAGE" value="end screen" />
+    <MESSAGE value="empty inside" />
+    <MESSAGE value="empty inside" />
+    <option name="LAST_COMMIT_MESSAGE" value="empty inside" />
   </component>
 </project>

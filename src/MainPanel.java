@@ -40,7 +40,6 @@ public class MainPanel extends JPanel implements MouseListener {
     public void startPaint() {
         repaint();
     }
-
     @Override
     public void mouseClicked(MouseEvent e) {
 
