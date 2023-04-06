@@ -34,7 +34,10 @@ public class MainPanel extends JPanel implements MouseListener {
         if (state.equals("Start Screen")) {
             g.drawImage(startScreen, 0, 0, getWidth(), getHeight(), null);
         }
+        else if (state.equals("Game Screen")) {
+            g.fillRect(0, 0, getWidth(), getHeight());
 
+        }
     }
     public void startPaint() {
         repaint();
@@ -50,6 +53,8 @@ public class MainPanel extends JPanel implements MouseListener {
         gameState.mouseY = e.getY();
         System.out.println(gameState.mouseX + " " + gameState.mouseY);
         gameState.runClick();
+        setMode(gameState.getState());
+        repaint();
     }
 
     @Override
