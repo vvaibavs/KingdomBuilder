@@ -10,4 +10,7 @@ public class ScoringCard {
     public String getCardType() {
         return cardType;
     }
+    public void Paddock(){
+        jump();
+    }
 }
