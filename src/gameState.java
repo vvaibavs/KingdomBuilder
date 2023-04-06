@@ -18,6 +18,9 @@ public class gameState {
 
     }
     public static void runClick() {
+        if (mouseX > 278 && mouseX < 705 && mouseY < 631 && mouseY > 544) {
+            state = "Game Screen";
+        }
 
     }
 
