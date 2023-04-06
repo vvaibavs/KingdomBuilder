@@ -4,7 +4,7 @@ import java.awt.event.MouseListener;
 import static com.sun.java.accessibility.util.AWTEventMonitor.addMouseListener;
 
 public class gameState {
-    private String state = "Start Screen";
+    private static String state = "Start Screen";
     public static int mouseX;
     public static int mouseY;
     private MainPanel Panel;
@@ -15,6 +15,9 @@ public class gameState {
         mouseY = 0;
         Panel.setMode(state);
         Panel.startPaint();
+
+    }
+    public static void runClick() {
 
     }
 

@@ -51,6 +51,7 @@ public class MainPanel extends JPanel implements MouseListener {
         gameState.mouseX = e.getX();
         gameState.mouseY = e.getY();
         System.out.println(gameState.mouseX + " " + gameState.mouseY);
+        gameState.runClick();
     }
 
     @Override
