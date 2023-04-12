@@ -4,19 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0abf3940-7167-42ba-8525-f402d2848701" name="Changes" comment="asdf;ajshdflkasjhgklasj">
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_6_2023_7_50_AM_[Changes]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_6_2023_7_50_AM_[Changes_by_slhscs230]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_6_2023_7_50_AM__Changes_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_6_2023_7_50_AM__Changes_by_slhscs230_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_6_2023_7_48_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_6_2023_7_48_AM__Changes_.xml" afterDir="false" />
     <list default="true" id="0abf3940-7167-42ba-8525-f402d2848701" name="Changes" comment="empty inside">
-      <change afterPath="$PROJECT_DIR$/src/images/HexHighlight.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_6_2023_7_48_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_6_2023_7_48_AM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MainPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ScoringCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ScoringCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/End Screen .png" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/EndScreen.png" afterDir="false" />
     </list>
+    <list id="35aaed49-b13f-4d30-a362-517efcbf4050" name="Changes by slhscs230" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,12 +41,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/slhscs230/IdeaProjects/Kingdom Builder/src/images/map2.png",
+    "two.files.diff.last.used.file": "C:/Users/slhscs230/IdeaProjects/Kingdom Builder/src/images/map2.png"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\anita\IdeaProjects\KingdomBuilder\src\images" />
@@ -290,11 +284,11 @@
       <updated>1680613226523</updated>
     </task>
     <task id="LOCAL-00030" summary="empty inside">
-      <created>1680613502487</created>
+      <created>1681301897646</created>
       <option name="number" value="00030" />
       <option name="presentableId" value="LOCAL-00030" />
       <option name="project" value="LOCAL" />
-      <updated>1680613502487</updated>
+      <updated>1681301897646</updated>
     </task>
     <task id="LOCAL-00031" summary="end screen">
       <created>1680697718480</created>
@@ -303,7 +297,7 @@
       <option name="project" value="LOCAL" />
       <updated>1680697718480</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -320,10 +314,10 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="haha" />
     <MESSAGE value="asd;kfljadsf" />
-    <MESSAGE value="empty inside" />
     <MESSAGE value="exception message" />
-    <MESSAGE value="empty inside" />
     <MESSAGE value="end screen" />
-    <option name="LAST_COMMIT_MESSAGE" value="end screen" />
+    <MESSAGE value="empty inside" />
+    <MESSAGE value="empty inside" />
+    <option name="LAST_COMMIT_MESSAGE" value="empty inside" />
   </component>
 </project>
