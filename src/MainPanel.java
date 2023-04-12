@@ -3,10 +3,7 @@ import javax.swing.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
-import java.util.*;
 import java.awt.*;
-
-import static com.sun.java.accessibility.util.AWTEventMonitor.addMouseListener;
 
 public class MainPanel extends JPanel implements MouseListener {
     private BufferedImage startScreen, endScreen, transSquare, mainGameFrame;
