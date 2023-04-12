@@ -1,0 +1,51 @@
+Index: src/gameState.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import java.awt.event.MouseEvent;\r\nimport java.awt.event.MouseListener;\r\n\r\nimport static com.sun.java.accessibility.util.AWTEventMonitor.addMouseListener;\r\n\r\npublic class gameState {\r\n    private static String state = \"Start Screen\";\r\n    public static int mouseX;\r\n    public static int mouseY;\r\n    private MainPanel Panel;\r\n\r\n    public gameState(MainPanel Panely) {\r\n        Panel = Panely;\r\n        mouseX = 0;\r\n        mouseY = 0;\r\n        Panel.setMode(state);\r\n        Panel.startPaint();\r\n\r\n    }\r\n    public static void runClick() {\r\n        if (mouseX > 278 && mouseX < 705 && mouseY < 631 && mouseY > 544 && state.equals(\"Start Screen\")) {\r\n            state = \"Game Screen\";\r\n\r\n        }\r\n\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/gameState.java b/src/gameState.java
+--- a/src/gameState.java	(revision 37f2f11749c35d6a184411065ae415829c4f9c07)
++++ b/src/gameState.java	(date 1680785304233)
+@@ -22,7 +22,9 @@
+             state = "Game Screen";
+ 
+         }
+-
++    }
++    public static String getState() {
++        return state;
+     }
+ 
+ }
+Index: src/MainPanel.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import javax.imageio.ImageIO;\r\nimport javax.swing.*;\r\nimport java.awt.event.MouseEvent;\r\nimport java.awt.event.MouseListener;\r\nimport java.awt.image.BufferedImage;\r\nimport java.util.*;\r\nimport java.awt.*;\r\n\r\nimport static com.sun.java.accessibility.util.AWTEventMonitor.addMouseListener;\r\n\r\npublic class MainPanel extends JPanel implements MouseListener {\r\n    private BufferedImage startScreen, endScreen, transSquare;\r\n    static Graphics graphic;\r\n    private String state;\r\n    public MainPanel() {\r\n        super();\r\n        try {\r\n            startScreen = ImageIO.read(MainPanel.class.getResource(\"/images/Start-Screen.png\"));\r\n//            endScreen = ImageIO.read(MainPanel.class.getResource(\"/images/End Screen.png\"));\r\n        }\r\n        catch (Exception e) {\r\n            System.out.println(e.getMessage());\r\n            return;\r\n        }\r\n\r\n        setSize(getWidth(), getHeight());\r\n        addMouseListener(this);\r\n    }\r\n    public void setMode(String type) {\r\n        state = type;\r\n    }\r\n    public void paint(Graphics g){\r\n        g.drawRect(10, 10, 10, 10);\r\n        if (state.equals(\"Start Screen\")) {\r\n            g.drawImage(startScreen, 0, 0, getWidth(), getHeight(), null);\r\n        }\r\n\r\n    }\r\n    public void startPaint() {\r\n        repaint();\r\n    }\r\n    @Override\r\n    public void mouseClicked(MouseEvent e) {\r\n\r\n    }\r\n\r\n    @Override\r\n    public void mousePressed(MouseEvent e) {\r\n        gameState.mouseX = e.getX();\r\n        gameState.mouseY = e.getY();\r\n        System.out.println(gameState.mouseX + \" \" + gameState.mouseY);\r\n        gameState.runClick();\r\n    }\r\n\r\n    @Override\r\n    public void mouseReleased(MouseEvent e) {\r\n\r\n    }\r\n\r\n    @Override\r\n    public void mouseEntered(MouseEvent e) {\r\n\r\n    }\r\n\r\n    @Override\r\n    public void mouseExited(MouseEvent e) {\r\n\r\n    }\r\n\r\n    public void addNotify() {\r\n        super.addNotify();\r\n        requestFocus();\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/MainPanel.java b/src/MainPanel.java
+--- a/src/MainPanel.java	(revision 37f2f11749c35d6a184411065ae415829c4f9c07)
++++ b/src/MainPanel.java	(date 1680785304217)
+@@ -34,7 +34,10 @@
+         if (state.equals("Start Screen")) {
+             g.drawImage(startScreen, 0, 0, getWidth(), getHeight(), null);
+         }
++        else if (state.equals("Game Screen")) {
++            g.fillRect(0, 0, getWidth(), getHeight());
+ 
++        }
+     }
+     public void startPaint() {
+         repaint();
+@@ -50,6 +53,8 @@
+         gameState.mouseY = e.getY();
+         System.out.println(gameState.mouseX + " " + gameState.mouseY);
+         gameState.runClick();
++        setMode(gameState.getState());
++        repaint();
+     }
+ 
+     @Override
