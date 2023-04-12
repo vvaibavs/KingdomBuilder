@@ -9,13 +9,14 @@ import java.awt.*;
 import static com.sun.java.accessibility.util.AWTEventMonitor.addMouseListener;
 
 public class MainPanel extends JPanel implements MouseListener {
-    private BufferedImage startScreen, endScreen, transSquare;
+    private BufferedImage startScreen, endScreen, transSquare, mainGameFrame;
     static Graphics graphic;
     private String state;
     public MainPanel() {
         super();
         try {
             startScreen = ImageIO.read(MainPanel.class.getResource("/images/Start-Screen.png"));
+            mainGameFrame = ImageIO.read(MainPanel.class.getResource("/images/MainGameFrame.png"));
 //            endScreen = ImageIO.read(MainPanel.class.getResource("/images/End Screen.png"));
         }
         catch (Exception e) {
@@ -35,7 +36,7 @@ public class MainPanel extends JPanel implements MouseListener {
             g.drawImage(startScreen, 0, 0, getWidth(), getHeight(), null);
         }
         else if (state.equals("Game Screen")) {
-            g.fillRect(0, 0, getWidth(), getHeight());
+            drawGame(g);
 
         }
     }
@@ -75,5 +76,9 @@ public class MainPanel extends JPanel implements MouseListener {
     public void addNotify() {
         super.addNotify();
         requestFocus();
+    }
+
+    public void drawGame(Graphics g) {
+        g.drawImage(mainGameFrame, 0, 0, getWidth(), getHeight(), null);
     }
 }
