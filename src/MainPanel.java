@@ -41,8 +41,11 @@ public class MainPanel extends JPanel implements MouseListener {
         }
         else if (state.equals("Game Screen")) {
             drawGameFrame(g);
-            g.drawImage(temp1, 398, 147, 424, 311, null);
-            g.drawImage(temp2, 822, 147, 424, 311, null);
+            g.drawImage(temp1, 398, 147, 420, 311, null);
+            g.drawImage(temp2, 798, 147, 420, 311, null);
+
+            g.drawImage(temp3, 398, 147+311-10, 420, 311, null);
+            g.drawImage(temp4, 798, 147+311-10, 420, 311, null);
 
 
         }
