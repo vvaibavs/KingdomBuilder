@@ -19,7 +19,7 @@ public class MainPanel extends JPanel implements MouseListener {
 //            endScreen = ImageIO.read(MainPanel.class.getResource("/images/End Screen.png"));
             temp1 = ImageIO.read(MainPanel.class.getResource("/images/map1.png"));
             temp2 = ImageIO.read(MainPanel.class.getResource("/images/map2.png"));
-            temp3 = ImageIO.read(MainPanel.class.getResource("/images/map3.png"));
+            temp3 = ImageIO.read(MainPanel.class.getResource("/images/map5.png"));
             temp4 = ImageIO.read(MainPanel.class.getResource("/images/map4.png"));
 
         }
