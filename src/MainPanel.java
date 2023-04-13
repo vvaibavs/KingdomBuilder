@@ -7,14 +7,21 @@ import java.awt.*;
 
 public class MainPanel extends JPanel implements MouseListener {
     private BufferedImage startScreen, endScreen, transSquare, mainGameFrame;
+    private BufferedImage temp1, temp2, temp3, temp4;
     static Graphics graphic;
     private String state;
+    public boolean coolhighlight = false;
     public MainPanel() {
         super();
         try {
             startScreen = ImageIO.read(MainPanel.class.getResource("/images/Start-Screen.png"));
             mainGameFrame = ImageIO.read(MainPanel.class.getResource("/images/MainGameFrame.png"));
 //            endScreen = ImageIO.read(MainPanel.class.getResource("/images/End Screen.png"));
+            temp1 = ImageIO.read(MainPanel.class.getResource("/images/map1.png"));
+            temp2 = ImageIO.read(MainPanel.class.getResource("/images/map2.png"));
+            temp3 = ImageIO.read(MainPanel.class.getResource("/images/map3.png"));
+            temp4 = ImageIO.read(MainPanel.class.getResource("/images/map4.png"));
+
         }
         catch (Exception e) {
             System.out.println(e.getMessage());
@@ -34,7 +41,13 @@ public class MainPanel extends JPanel implements MouseListener {
         }
         else if (state.equals("Game Screen")) {
             drawGame(g);
+            g.drawImage(temp1, 398, 147, 424, 311, null);
+            g.drawImage(temp2, 822, 147, 424, 311, null);
 
+
+        }
+        if(coolhighlight == true){
+            g.drawRect(278, 544, 705-278, 631-544);
         }
     }
     public void startPaint() {
@@ -62,7 +75,10 @@ public class MainPanel extends JPanel implements MouseListener {
 
     @Override
     public void mouseEntered(MouseEvent e) {
-
+        if (gameState.mouseX > 278 && gameState.mouseX < 705 && gameState.mouseY < 631 && gameState.mouseY > 544 && state.equals("Start Screen")) {
+            coolhighlight = true;
+            System.out.println("yes");
+        }
     }
 
     @Override
