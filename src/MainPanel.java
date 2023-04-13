@@ -40,7 +40,7 @@ public class MainPanel extends JPanel implements MouseListener {
             g.drawImage(startScreen, 0, 0, getWidth(), getHeight(), null);
         }
         else if (state.equals("Game Screen")) {
-            drawGame(g);
+            drawGameFrame(g);
             g.drawImage(temp1, 398, 147, 424, 311, null);
             g.drawImage(temp2, 822, 147, 424, 311, null);
 
@@ -91,7 +91,7 @@ public class MainPanel extends JPanel implements MouseListener {
         requestFocus();
     }
 
-    public void drawGame(Graphics g) {
+    public void drawGameFrame(Graphics g) {
         g.drawImage(mainGameFrame, 0, 0, getWidth(), getHeight(), null);
     }
 }
