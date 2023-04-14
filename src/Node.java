@@ -7,6 +7,7 @@ public class Node {
     private int x;
     private int y;
     private HashMap<String, Node> neighbors = new HashMap<String, Node>();
+    private final int radius = 40;
     public Node(String terrain, int board, int xloc, int yloc) {
         this.terrain = terrain;
         this.board = board;
@@ -104,8 +105,8 @@ public class Node {
         }
         return temp;
     }
-    public boolean containsClick(int xloc, int yloc, int radius) {
-        if (Math.pow(xloc - x, 2) + Math.pow(yloc - y, 2) == radius) {
+    public boolean containsClick(int xloc, int yloc) {
+        if (Math.pow(xloc - x, 2) + Math.pow(yloc - y, 2) < radius) {
             return true;
         }
         return false;
