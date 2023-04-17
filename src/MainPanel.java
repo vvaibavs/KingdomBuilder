@@ -17,7 +17,9 @@ public class MainPanel extends JPanel implements MouseListener {
             startScreen = ImageIO.read(MainPanel.class.getResource("/images/Start-Screen.png"));
             mainGameFrame = ImageIO.read(MainPanel.class.getResource("/images/MainGameFrame.png"));
 //            endScreen = ImageIO.read(MainPanel.class.getResource("/images/End Screen.png"));
-            temp1 = ImageIO.read(MainPanel.class.getResource("/images/map1.png"));
+            int randInt1 = (int)Math.round(Math.random() * 6 + 1);
+
+            temp1 = ImageIO.read(MainPanel.class.getResource("/images/map" + randInt1 + ".png"));
             temp2 = ImageIO.read(MainPanel.class.getResource("/images/map2.png"));
             temp3 = ImageIO.read(MainPanel.class.getResource("/images/map3.png"));
             temp4 = ImageIO.read(MainPanel.class.getResource("/images/map4.png"));

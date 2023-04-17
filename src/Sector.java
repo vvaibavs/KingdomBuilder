@@ -12,6 +12,15 @@ public class Sector {
     String[][] map7 = {{},{},{},{},{},{},{},{},{},{}};
     public Sector(int type, int loc) {
         this.type = type;
+        switch (type) {
+            case 1:
+                for (String[] i: map1) {
+                    for (String j: i) {
+
+                    }
+                }
+
+        }
         this.loc = loc;
         createBoard();
     }
