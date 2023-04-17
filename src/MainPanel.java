@@ -51,7 +51,9 @@ public class MainPanel extends JPanel implements MouseListener {
 
 
         }
-
+        if(coolhighlight == true){
+            g.drawRect(278, 544, 705-278, 631-544);
+        }
     }
     public void startPaint() {
         repaint();
