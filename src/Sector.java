@@ -1,7 +1,7 @@
 public class Sector {
     public int type;
     public int loc;
-    public Node sector[][];
+    public Node[][] sector;
 
     String[][] map1 = {{"Desert", "Desert", "Canyon", "Water", "Water", "Forest", "Forest", "Forest", "Grass", "Grass"},{"Desert", "Castle", "Canyon", "Water", "Forest", "Forest", "Forest", "Farm", "Grass", "Grass"},{"Canyon", "Canyon", "Canyon", "Flower", "Flower", "Flower", "Forest", "Canyon", "Flower", "Flower"},{"Canyon", "Canyon", "Flower", "Flower", "Water", "Desert", "Desert", "Canyon", "Canyon", "Flower"},{"Canyon", "Grass", "Grass", "Water", "Flower", "Flower", "Desert", "Desert", "Canyon", "Canyon"},{"Grass", "Grass", "Farm", "Flower", "Water", "Flower", "Water", "Desert", "Desert"},{"Grass", "Grass", "Grass", "Forest", "Flower", "Flower", "Water", "Water", "Desert", "Desert"},{"Grass", "Grass", "Forest", "Forest", "Mountain", "Water", "Water", "Water", "Desert", "Water"},{"Grass", "Mountain", "Forest", "Forest", "Water", "Water", "Water", "Water", "Water", "Water"},{"Forest", "Forest", "Forest", "Water", "Water", "Water", "Water", "Water", "Water", "Water"}};
     String[][] map2 = {{"Grass", "Grass", "Forest", "Forest", "Forest", "Water", "Grass", "Forest", "Forest", "Flower"},{"Grass", "Flower", "Forest", "Forest", "Water", "Grass", "Forest", "Forest", "Flower", "Flower"},{"Grass", "Flower", " Flower", "Forest", "Water", "Grass", "Grass", "Flower", "Flower", "Flower"},{"Flower", "Flower", "Forest", "Forest", "Water", "Grass", "Mountain", "Flower", "Desert", "Desert"},{"Canyon", "Flower", "Castle", "Forest", "Water", "Grass", "Desert", "Desert","Desert","Desert"},{"Canyon", "Canyon", "Forest", "Water", "Grass", "Grass", "Mountain", "Mountain", "Desert", "Desert"},{"Canyon", "Canyon", "Water", "Water", "Water", "Grass", "Desert", "Desert", "Desert", "Canyon"},{"Water","Water", "Grass", "Grass", "Water", "Water", "Boat", "Canyon", "Mountain", "Canyon"},{"Water", "Desert", "Castle", "Grass", " Water", "Mountain", "Water", "Canyon", "Canyon", "Canyon"},{"Water", "Desert", "Desert", "Water", "Water", "Water", "Water", "Canyon", "Canyon", "Canyon"}};
@@ -10,17 +10,28 @@ public class Sector {
     String[][] map5 = {{"Canyon", "Canyon", "Canyon", "Desert", "Desert", "Water", "Desert",  "Desert",  "Desert",  "Desert"},{"Mountain", "Mountain", "Canyon", "Desert", "Desert", "Water", "Desert", "Desert", "Desert", "Desert"},{"Mountain", "Mountain", "Canyon", "Mountain", "Mountain", "Water", "Desert", "Desert", "Paddock", "Flower"},{"Mountain", "Canyon", "Mountain", "Mountain", "Water", "Mountain", "Desert", "Flower", "Flower", "Flower"},{"Canyon", "Canyon", "Forest", "Forest", "Water", "Mountain", "Mountain", "Canyon", "Flower", "Flower"},{"Canyon", "Forest", "Forest", "Water", "Canyon", "Canyon", "Canyon", "Mountain", "Flower", "Flower"},{"Canyon", "Paddock", "Forest", "Forest", "Water", "Flower", "Flower", "Flower", "Flower", "Flower"},{"Grass", "Grass", "Forest", "Water", "Grass", "Castle", "Grass", "Flower", "Grass", "Forest"},{"Grass", "Grass", "Forest", "Forest", "Water", "Grass", "Grass", "Grass", "Grass", "Forest"},{"Grass", "Grass", "Forest", "Forest", "Water", "Grass", "Grass", "Grass", "Forest", "Forest"}};
     String[][] map6 = {{"Flower", "Desert", "Desert", "Mountain", "Mountain", "Desert", "Desert", "Canyon", "Canyon", "Canyon" },{"Flower", "Flower", "Desert", },{},{},{},{},{},{},{},{}};
     String[][] map7 = {{"Forest", "Forest", "Forest", "Forest", "Mountain", "Mountain", "Grass", "Mountain", "Canyon", "Canyon"},{"Forest", "Mountain", "Forest", "Forest", "Flower", "Grass", "Mountain", "Mountain", "Mountain", "Canyon"},{"Flower", "Flower", "Forest", "Flower", "Flower", "Flower", "Grass", "Grass", "Water", "Mountain"},{"Desert", "Flower", "Flower", "Flower", "Water", "Tower", "Grass", "Water", "Mountain", "Mountain"},{"Desert", "Desert", "Desert", "Desert", "Flower", "Water", "Grass", "Water", "Canyon", "Canyon"},{"Desert", "Canyon", "Desert", "Desert", "Desert", "Water", "Water", "Canyon", "Grass", "Canyon"},{"Desert", "Desert", "Canyon", "Desert", "Desert", "Water", "Flower", "Castle", "Grass", "Canyon"},{"Canyon", "Canyon", "Tower", "Desert", "Water", "Flower", "Flower", "Flower", "Grass", "Grass"},{"Desert", "Canyon", "Water", "Water", "Water", "Forest", "Forest", "Flower", "Grass", "Grass"},{"Desert", "Canyon", "Canyon", "Water", "Forest", "Forest", "Forest", "Grass", "Grass", "Grass"}};
-    public Sector(int type, int loc) {
+    public Sector(int type, int loc, int xLoc, int yLoc) {
+        sector = new Node[10][10];
+        int tempX = xLoc;
         this.type = type;
         switch (type) {
             case 1:
-                for (String[] i: map1) {
-                    for (String j: i) {
-
+                for (int i = 0; i < map1.length; i ++) {
+                    tempX = xLoc;
+                    yLoc -= 30;
+                    if (i % 2 == 0) {
+                        xLoc += 20;
+                    }
+                    else {
+                        xLoc -= 20;
+                    }
+                    for (int j = 0; j < map1[i].length; j ++) {
+                        sector[i][j] = new Node(map1[i][j], loc, tempX, yLoc);
+                        xLoc += 40;
+                        }
                     }
                 }
 
-        }
         this.loc = loc;
         createBoard();
     }
