@@ -5,14 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0abf3940-7167-42ba-8525-f402d2848701" name="Changes" comment="empty inside.">
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_17_2023_7_39_AM__Changes_by_k1215075_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MainPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainPanel.java" afterDir="false" />
+    </list>
+    <list id="6ca57205-0620-47e2-96b7-d45086a08dec" name="Changes by k1215075" comment="">
+      <change beforePath="$PROJECT_DIR$/src/LocTile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LocTile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MainPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Sector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sector.java" afterDir="false" />
     </list>
-    <list id="6ca57205-0620-47e2-96b7-d45086a08dec" name="Changes by k1215075" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Sector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sector.java" afterDir="false" />
-    </list>
-    <list id="b303a198-a67a-4360-bbad-af05a5ec0022" name="Changes by slhscs228" comment="" />
     <list id="35aaed49-b13f-4d30-a362-517efcbf4050" name="Changes by slhscs230" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,10 +38,13 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/Sector.java">
+    <file path="$PROJECT_DIR$/src/MainPanel.java">
       <ranges>
-        <range start1="10" end1="12" start2="10" end2="12" changelist="6ca57205-0620-47e2-96b7-d45086a08dec" />
-        <range start1="14" end1="14" start2="14" end2="23" changelist="0abf3940-7167-42ba-8525-f402d2848701" />
+        <range start1="12" end1="13" start2="12" end2="12" changelist="6ca57205-0620-47e2-96b7-d45086a08dec" />
+        <range start1="45" end1="47" start2="44" end2="46" changelist="0abf3940-7167-42ba-8525-f402d2848701" />
+        <range start1="48" end1="50" start2="47" end2="49" changelist="0abf3940-7167-42ba-8525-f402d2848701" />
+        <range start1="53" end1="56" start2="52" end2="52" changelist="0abf3940-7167-42ba-8525-f402d2848701" />
+        <range start1="82" end1="86" start2="78" end2="79" changelist="0abf3940-7167-42ba-8525-f402d2848701" />
       </ranges>
     </file>
   </component>
@@ -347,20 +352,20 @@
       <updated>1681474360846</updated>
     </task>
     <task id="LOCAL-00037" summary="empty inside.">
-      <created>1681477537089</created>
+      <created>1681735173452</created>
       <option name="number" value="00037" />
       <option name="presentableId" value="LOCAL-00037" />
       <option name="project" value="LOCAL" />
-      <updated>1681477537089</updated>
+      <updated>1681735173452</updated>
     </task>
     <task id="LOCAL-00038" summary="empty inside.">
-      <created>1681733720472</created>
+      <created>1681735228804</created>
       <option name="number" value="00038" />
       <option name="presentableId" value="LOCAL-00038" />
       <option name="project" value="LOCAL" />
-      <updated>1681733720472</updated>
+      <updated>1681735228804</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
