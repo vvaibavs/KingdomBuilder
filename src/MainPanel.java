@@ -10,14 +10,15 @@ public class MainPanel extends JPanel implements MouseListener {
     private BufferedImage temp1, temp2, temp3, temp4;
     static Graphics graphic;
     private String state;
-    public boolean coolhighlight = false;
     public MainPanel() {
         super();
         try {
             startScreen = ImageIO.read(MainPanel.class.getResource("/images/Start-Screen.png"));
             mainGameFrame = ImageIO.read(MainPanel.class.getResource("/images/MainGameFrame.png"));
 //            endScreen = ImageIO.read(MainPanel.class.getResource("/images/End Screen.png"));
-            temp1 = ImageIO.read(MainPanel.class.getResource("/images/map1.png"));
+            int randInt1 = (int)Math.round(Math.random() * 6 + 1);
+
+            temp1 = ImageIO.read(MainPanel.class.getResource("/images/map" + randInt1 + ".png"));
             temp2 = ImageIO.read(MainPanel.class.getResource("/images/map2.png"));
             temp3 = ImageIO.read(MainPanel.class.getResource("/images/map3.png"));
             temp4 = ImageIO.read(MainPanel.class.getResource("/images/map4.png"));
@@ -41,16 +42,13 @@ public class MainPanel extends JPanel implements MouseListener {
         }
         else if (state.equals("Game Screen")) {
             drawGameFrame(g);
-            g.drawImage(temp1, 398, 147, 420, 311, null);
-            g.drawImage(temp2, 798, 147, 420, 311, null);
+            g.drawImage(temp1, 398, 147, 420, 310, null);
+            g.drawImage(temp2, 798, 147, 420, 310, null);
 
-            g.drawImage(temp3, 398, 147+311-10, 420, 311, null);
-            g.drawImage(temp4, 798, 147+311-10, 420, 311, null);
+            g.drawImage(temp3, 398, 447, 420, 310, null);
+            g.drawImage(temp4, 798, 447, 420, 310, null);
 
 
-        }
-        if(coolhighlight == true){
-            g.drawRect(278, 544, 705-278, 631-544);
         }
     }
     public void startPaint() {
@@ -78,10 +76,7 @@ public class MainPanel extends JPanel implements MouseListener {
 
     @Override
     public void mouseEntered(MouseEvent e) {
-        if (gameState.mouseX > 278 && gameState.mouseX < 705 && gameState.mouseY < 631 && gameState.mouseY > 544 && state.equals("Start Screen")) {
-            coolhighlight = true;
-            System.out.println("yes");
-        }
+
     }
 
     @Override
