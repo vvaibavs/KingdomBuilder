@@ -10,6 +10,7 @@ public class MainPanel extends JPanel implements MouseListener {
     private BufferedImage temp1, temp2, temp3, temp4;
     static Graphics graphic;
     private String state;
+    public boolean coolhighlight = false;
     public MainPanel() {
         super();
         try {

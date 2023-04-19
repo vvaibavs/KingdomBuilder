@@ -1,3 +1,2 @@
-public class LocTile{
-
+public class LocTile {
 }
