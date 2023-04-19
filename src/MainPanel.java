@@ -43,16 +43,13 @@ public class MainPanel extends JPanel implements MouseListener {
         }
         else if (state.equals("Game Screen")) {
             drawGameFrame(g);
-            g.drawImage(temp1, 398, 147, 420, 311, null);
-            g.drawImage(temp2, 798, 147, 420, 311, null);
+            g.drawImage(temp1, 398, 147, 420, 310, null);
+            g.drawImage(temp2, 798, 147, 420, 310, null);
 
-            g.drawImage(temp3, 398, 147+311-10, 420, 311, null);
-            g.drawImage(temp4, 798, 147+311-10, 420, 311, null);
+            g.drawImage(temp3, 398, 447, 420, 310, null);
+            g.drawImage(temp4, 798, 447, 420, 310, null);
 
 
-        }
-        if(coolhighlight == true){
-            g.drawRect(278, 544, 705-278, 631-544);
         }
     }
     public void startPaint() {
@@ -80,10 +77,7 @@ public class MainPanel extends JPanel implements MouseListener {
 
     @Override
     public void mouseEntered(MouseEvent e) {
-        if (gameState.mouseX > 278 && gameState.mouseX < 705 && gameState.mouseY < 631 && gameState.mouseY > 544 && state.equals("Start Screen")) {
-            coolhighlight = true;
-            System.out.println("yes");
-        }
+
     }
 
     @Override
