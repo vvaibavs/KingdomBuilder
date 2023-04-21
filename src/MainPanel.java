@@ -51,9 +51,9 @@ public class MainPanel extends JPanel implements MouseListener {
 
 
         } else if(state.equals("Scoring Card")) {
-            Color c = new Color(120, 43, 10);
+            Color c = new Color(107, 104, 103, 127);
             g.setColor(c);
-            g.fillRect(342, 229, 897, 425);
+            g.fillRect(0, 0, getWidth(), getHeight());
             g.setColor(Color.BLACK);
         }
     }
