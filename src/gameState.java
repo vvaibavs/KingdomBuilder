@@ -26,9 +26,15 @@ public class gameState {
             state = "Scoring Card";
         } else if(mouseX > 476 && mouseY > 27 && mouseX < 734 && mouseY < 76 && state.equals("Scoring Card")) {
             state = "Game Screen";
-        }
-
+        } else if(mouseX > 1342 && mouseY > 878 && mouseX < 1524 && mouseY < 926 && !state.equals("End Screen")) {
+            state = "End Screen";
+        } else if(mouseX > 1342 && mouseY > 926 && mouseX < 1524 && mouseY < 926 && state.equals("End Screen")) {
+            state = "Game Screen";
+        } else if(mouseX > 318 && mouseY > 761 && mouseX < 776 && mouseY < 828 && state.equals("End Screen")) {
+            state = "Game Screen";
     }
+
+}
     public static String getState() {
         return state;
     }

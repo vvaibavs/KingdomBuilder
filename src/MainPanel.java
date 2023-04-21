@@ -16,7 +16,7 @@ public class MainPanel extends JPanel implements MouseListener {
         try {
             startScreen = ImageIO.read(MainPanel.class.getResource("/images/Start-Screen.png"));
             mainGameFrame = ImageIO.read(MainPanel.class.getResource("/images/MainGameFrame.png"));
-//            endScreen = ImageIO.read(MainPanel.class.getResource("/images/End Screen.png"));
+            endScreen = ImageIO.read(MainPanel.class.getResource("/images/EndScreen.png"));
             int randInt1 = (int)Math.round(Math.random() * 6 + 1);
 
             temp1 = ImageIO.read(MainPanel.class.getResource("/images/map" + randInt1 + ".png"));
@@ -55,6 +55,9 @@ public class MainPanel extends JPanel implements MouseListener {
             g.setColor(c);
             g.fillRect(0, 0, getWidth(), getHeight());
             g.setColor(Color.BLACK);
+        } else if(state.equals("End Screen")) {
+            g.drawImage(endScreen, 0, 0, getWidth(), getHeight(), null);
+
         }
     }
     public void startPaint() {
