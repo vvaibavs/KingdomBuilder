@@ -99,6 +99,11 @@ public class Sector {
                         xLoc += 40;
                     }
                 }
+            for (int i = 0; i < sector.length - 1;  i ++) {
+                for (int j = 0; j < sector[i].length - 1; j ++) {
+
+                }
+            }
 
         }
 
