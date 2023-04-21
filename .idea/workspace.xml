@@ -8,6 +8,16 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MainPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ScoringCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ScoringCard.java" afterDir="false" />
+    <list default="true" id="0abf3940-7167-42ba-8525-f402d2848701" name="Changes" comment="empty inside.">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_13_2023_7_38_AM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_13_2023_7_38_AM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_13_2023_7_52_AM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_13_2023_7_52_AM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_17_2023_7_24_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_17_2023_7_24_AM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_17_2023_7_39_AM__Changes_by_k1215075_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_17_2023_7_39_AM__Changes_by_k1215075_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_19_2023_7_33_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_19_2023_7_33_AM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MainPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameState.java" afterDir="false" />
     </list>
     <list id="6ca57205-0620-47e2-96b7-d45086a08dec" name="Changes by k1215075" comment="" />
@@ -406,10 +416,9 @@
     <MESSAGE value="end screen" />
     <MESSAGE value="empty inside" />
     <MESSAGE value="empty inside" />
-    <MESSAGE value="end screen" />
-    <MESSAGE value="asdf;ajshdflkasjhgklasj" />
     <MESSAGE value="asdf;ajshdflkasjhgklasj" />
     <MESSAGE value="empty inside." />
+    <option name="LAST_COMMIT_MESSAGE" value="empty inside." />
     <MESSAGE value="scrong card" />
     <MESSAGE value="scoring button" />
     <option name="LAST_COMMIT_MESSAGE" value="scoring button" />

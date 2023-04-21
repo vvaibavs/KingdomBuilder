@@ -1,0 +1,32 @@
+Index: src/MainPanel.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import javax.imageio.ImageIO;\r\nimport javax.swing.*;\r\nimport java.awt.event.MouseEvent;\r\nimport java.awt.event.MouseListener;\r\nimport java.awt.image.BufferedImage;\r\nimport java.awt.*;\r\n\r\npublic class MainPanel extends JPanel implements MouseListener {\r\n    private BufferedImage startScreen, endScreen, transSquare, mainGameFrame;\r\n    private BufferedImage temp1, temp2, temp3, temp4;\r\n    static Graphics graphic;\r\n    private String state;\r\n    public boolean coolhighlight = false;\r\n    public MainPanel() {\r\n        super();\r\n        try {\r\n            startScreen = ImageIO.read(MainPanel.class.getResource(\"/images/Start-Screen.png\"));\r\n            mainGameFrame = ImageIO.read(MainPanel.class.getResource(\"/images/MainGameFrame.png\"));\r\n//            endScreen = ImageIO.read(MainPanel.class.getResource(\"/images/End Screen.png\"));\r\n            temp1 = ImageIO.read(MainPanel.class.getResource(\"/images/map1.png\"));\r\n            temp2 = ImageIO.read(MainPanel.class.getResource(\"/images/map2.png\"));\r\n            temp3 = ImageIO.read(MainPanel.class.getResource(\"/images/map3.png\"));\r\n            temp4 = ImageIO.read(MainPanel.class.getResource(\"/images/map4.png\"));\r\n\r\n        }\r\n        catch (Exception e) {\r\n            System.out.println(e.getMessage());\r\n            return;\r\n        }\r\n\r\n        setSize(getWidth(), getHeight());\r\n        addMouseListener(this);\r\n    }\r\n    public void setMode(String type) {\r\n        state = type;\r\n    }\r\n    public void paint(Graphics g){\r\n        g.drawRect(10, 10, 10, 10);\r\n        if (state.equals(\"Start Screen\")) {\r\n            g.drawImage(startScreen, 0, 0, getWidth(), getHeight(), null);\r\n        }\r\n        else if (state.equals(\"Game Screen\")) {\r\n            drawGameFrame(g);\r\n            g.drawImage(temp1, 398, 147, 420, 311, null);\r\n            g.drawImage(temp2, 798, 147, 420, 311, null);\r\n\r\n            g.drawImage(temp3, 398, 147+311-10, 420, 311, null);\r\n            g.drawImage(temp4, 798, 147+311-10, 420, 311, null);\r\n\r\n\r\n        }\r\n        if(coolhighlight == true){\r\n            g.drawRect(278, 544, 705-278, 631-544);\r\n        }\r\n    }\r\n    public void startPaint() {\r\n        repaint();\r\n    }\r\n    @Override\r\n    public void mouseClicked(MouseEvent e) {\r\n\r\n    }\r\n\r\n    @Override\r\n    public void mousePressed(MouseEvent e) {\r\n        gameState.mouseX = e.getX();\r\n        gameState.mouseY = e.getY();\r\n        System.out.println(gameState.mouseX + \" \" + gameState.mouseY);\r\n        gameState.runClick();\r\n        setMode(gameState.getState());\r\n        repaint();\r\n    }\r\n\r\n    @Override\r\n    public void mouseReleased(MouseEvent e) {\r\n\r\n    }\r\n\r\n    @Override\r\n    public void mouseEntered(MouseEvent e) {\r\n        if (gameState.mouseX > 278 && gameState.mouseX < 705 && gameState.mouseY < 631 && gameState.mouseY > 544 && state.equals(\"Start Screen\")) {\r\n            coolhighlight = true;\r\n            System.out.println(\"yes\");\r\n        }\r\n    }\r\n\r\n    @Override\r\n    public void mouseExited(MouseEvent e) {\r\n\r\n    }\r\n\r\n    public void addNotify() {\r\n        super.addNotify();\r\n        requestFocus();\r\n    }\r\n\r\n    public void drawGameFrame(Graphics g) {\r\n        g.drawImage(mainGameFrame, 0, 0, getWidth(), getHeight(), null);\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/MainPanel.java b/src/MainPanel.java
+--- a/src/MainPanel.java	(revision 97296d99d0110e21f70c5d062ba8d1fd42226a63)
++++ b/src/MainPanel.java	(date 1681735385188)
+@@ -48,9 +48,6 @@
+             g.drawImage(temp4, 798, 147+311-10, 420, 311, null);
+ 
+ 
+-        }
+-        if(coolhighlight == true){
+-            g.drawRect(278, 544, 705-278, 631-544);
+         }
+     }
+     public void startPaint() {
+@@ -78,10 +75,7 @@
+ 
+     @Override
+     public void mouseEntered(MouseEvent e) {
+-        if (gameState.mouseX > 278 && gameState.mouseX < 705 && gameState.mouseY < 631 && gameState.mouseY > 544 && state.equals("Start Screen")) {
+-            coolhighlight = true;
+-            System.out.println("yes");
+-        }
++
+     }
+ 
+     @Override
