@@ -5,11 +5,17 @@ public class Player {
     private int numSettlements;
     private ArrayList<LocTile> tile;
     private int score;
+    boolean turn;
     public Player(String c){
         color = c;
         numSettlements = 40;
         score = 0;
         tile = new ArrayList<LocTile>();
+        turn = false;
+    }
+
+    public void next() {
+      turn = !turn;
     }
 
     public void byeSettlements(int x) {

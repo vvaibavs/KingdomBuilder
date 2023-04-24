@@ -52,6 +52,10 @@ public class MainPanel extends JPanel implements MouseListener {
             g.setColor(c);
             g.fillRect(0, 0, getWidth(), getHeight());
             g.setColor(Color.BLACK);
+            g.drawImage(gameState.card1.pic, getWidth()/4, getHeight()/3, 225, 275, null);
+            g.drawImage(gameState.card2.pic, getWidth()/4 + 300, getHeight()/3, 225, 275, null);
+            g.drawImage(gameState.card3.pic, getWidth()/4 + 600, getHeight()/3, 225, 275, null);
+
             gameState.state = "not Scoring Card";
         } else if(gameState.state.equals("End Screen")) {
             g.drawImage(endScreen, 0, 0, getWidth(), getHeight(), null);

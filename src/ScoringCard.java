@@ -1,11 +1,11 @@
+import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 
 public class ScoringCard {
     private String cardType;
-    private BufferedImage pic;
+    public BufferedImage pic;
 
-    public ScoringCard(){
-        int random = (int)(Math.random() * 9) + 1;
+    public ScoringCard(int random){
         switch(random) {
             case 1:
                 cardType = "citizens";
@@ -38,6 +38,12 @@ public class ScoringCard {
                 cardType = "workers";
                 break;
         }
+        try {
+            pic = ImageIO.read(MainPanel.class.getResource("/images/" + this.getCardType() + ".png"));
+        } catch(Exception e) {
+            System.out.println(e);
+        }
+
 
     }
     public String getCardType() {
