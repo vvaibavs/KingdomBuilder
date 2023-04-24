@@ -8,34 +8,34 @@ public class ScoringCard {
         int random = (int)(Math.random() * 9) + 1;
         switch(random) {
             case 1:
-                cardType = "citizen";
+                cardType = "citizens";
                 break;
             case 2:
-                cardType = "discoverer";
+                cardType = "discoverers";
                 break;
             case 3:
-                cardType = "farmer";
+                cardType = "farmers";
                 break;
             case 4:
                 cardType = "fishermen";
                 break;
             case 5:
-                cardType = "hermit";
+                cardType = "hermits";
                 break;
             case 6:
-                cardType = "knight";
+                cardType = "knights";
                 break;
             case 7:
-                cardType = "lord";
+                cardType = "lords";
                 break;
             case 8:
-                cardType = "merchant";
+                cardType = "merchants";
                 break;
             case 9:
-                cardType = "miner";
+                cardType = "miners";
                 break;
             case 10:
-                cardType = "worker";
+                cardType = "workers";
                 break;
         }
 
