@@ -12,7 +12,6 @@ public class gameState {
         mouseX = 0;
         mouseY = 0;
         Panel = Panely;
-        Panel.setMode(state);
         Panel.startPaint();
     }
     public static void runClick() {

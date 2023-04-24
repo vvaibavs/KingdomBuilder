@@ -33,15 +33,12 @@ public class MainPanel extends JPanel implements MouseListener {
         setSize(getWidth(), getHeight());
         addMouseListener(this);
     }
-    public void setMode(String type) {
-        state = type;
-    }
     public void paint(Graphics g){
         g.drawRect(10, 10, 10, 10);
-        if (state.equals("Start Screen")) {
+        if (gameState.state.equals("Start Screen")) {
             g.drawImage(startScreen, 0, 0, getWidth(), getHeight(), null);
         }
-        else if (state.equals("Game Screen")) {
+        else if (gameState.state.equals("Game Screen")) {
             drawGameFrame(g);
             g.drawImage(temp1, 398, 147, 420, 310, null);
             g.drawImage(temp2, 798, 147, 420, 310, null);
@@ -50,12 +47,13 @@ public class MainPanel extends JPanel implements MouseListener {
             g.drawImage(temp4, 798, 447, 420, 310, null);
 
 
-        } else if(state.equals("Scoring Card")) {
+        } else if(gameState.state.equals("Scoring Card")) {
             Color c = new Color(107, 104, 103, 127);
             g.setColor(c);
             g.fillRect(0, 0, getWidth(), getHeight());
             g.setColor(Color.BLACK);
-        } else if(state.equals("End Screen")) {
+            gameState.state = "not Scoring Card";
+        } else if(gameState.state.equals("End Screen")) {
             g.drawImage(endScreen, 0, 0, getWidth(), getHeight(), null);
 
         }
@@ -74,7 +72,6 @@ public class MainPanel extends JPanel implements MouseListener {
         gameState.mouseY = e.getY();
         System.out.println(gameState.mouseX + " " + gameState.mouseY);
         gameState.runClick();
-        setMode(gameState.getState());
         repaint();
     }
 
