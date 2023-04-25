@@ -1,13 +1,17 @@
 public class Board {
     Node[][] board;
+    int randInt1;
+    int randInt2;
+    int randInt3;
+    int randInt4;
     public Board() {
-        int randInt1 = (int)(Math.random() * 7 + 1);
-        int randInt2 = (int)(Math.random() * 7 + 1);
+        randInt1 = (int)(Math.random() * 7 + 1);
+        randInt2 = (int)(Math.random() * 7 + 1);
         System.out.println("HELLO");
         while (randInt2 == randInt1) {
             randInt2 = (int)(Math.random() * 7 + 1);
         }
-        int randInt3 = (int)(Math.random() * 7 + 1);
+        randInt3 = (int)(Math.random() * 7 + 1);
         while (randInt3 == randInt1 || randInt3 == randInt2) {
             randInt3 = (int)(Math.random() * 7 + 1);
         }
@@ -30,6 +34,18 @@ public class Board {
     }
     public String check() {
         return "Help" + board[0][0].getTerrain();
+    }
+    public int getRand1() {
+        return randInt1;
+    }
+    public int getRand2() {
+        return randInt2;
+    }
+    public int getRand3() {
+        return randInt3;
+    }
+    public int getRand4() {
+        return randInt4;
     }
 }
 //for (int i = 0; i < sector.length;  i ++) {
