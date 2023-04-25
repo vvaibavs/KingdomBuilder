@@ -15,7 +15,7 @@ public class Board {
         while (randInt3 == randInt1 || randInt3 == randInt2) {
             randInt3 = (int)(Math.random() * 7 + 1);
         }
-        int randInt4 = (int)(Math.random() * 7 + 1);
+        randInt4 = (int)(Math.random() * 7 + 1);
         while (randInt4 == randInt1 || randInt4 == randInt2 || randInt4 == randInt3) {
             randInt4 = (int)(Math.random() * 7 + 1);
         }
