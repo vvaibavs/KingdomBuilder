@@ -9,6 +9,7 @@ public class gameState {
     public static ScoringCard card1, card2, card3;
     private MainPanel Panel;
     private ArrayList<Integer> randScoring;
+    public Board board;
 
     public static Player p1, p2, p3, p4;
 
@@ -22,6 +23,8 @@ public class gameState {
         p3 = new Player("green");
         p4 = new Player("black");
         Collections.shuffle(randScoring);
+        board = new Board();
+        System.out.print(board.check());
         card1 = new ScoringCard(randScoring.get(0));
         card2 = new ScoringCard(randScoring.get(1));
         card3 = new ScoringCard(randScoring.get(2));
@@ -29,6 +32,7 @@ public class gameState {
         mouseY = 0;
         Panel = Panely;
         Panel.startPaint();
+
     }
     public static void runClick() {
         if (mouseX > 278 && mouseX < 705 && mouseY < 631 && mouseY > 544 && state.equals("Start Screen")) {
@@ -55,6 +59,10 @@ public class gameState {
                 p1.next();
             }
         }
+    }
+
+    public void scoringCards(){
+
     }
     public static String getState() {
         return state;
