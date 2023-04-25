@@ -18,8 +18,12 @@ public class Board {
         Sector sec3 = new Sector(randInt3, 3, 398, 447);
         Sector sec4 = new Sector(randInt4, 4, 798, 447);
         int m[][] = new int[20][20];
-        System.arraycopy(sec1, 0, m, 0, sec1.get.length);
-        System.arraycopy(sec2, 0, m, 10, sec2.length);
+        for (int i = 0; i < 10; i ++) {
+            System.arraycopy(sec1.getSector()[i], 0, m[i], 0, sec1.getSector()[i].length);
+            System.arraycopy(sec2.getSector()[i], 0, m[i], 10, sec2.getSector()[i].length);
+            System.arraycopy(sec3.getSector()[i], 0, m[i + 10], 0, sec3.getSector()[i].length);
+            System.arraycopy(sec4.getSector()[i], 0, m[i + 10], 10, sec4.getSector()[i].length);
+        }
         System.out.println(m.toString());
     }
 }

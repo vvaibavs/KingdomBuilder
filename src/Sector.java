@@ -114,7 +114,9 @@ public class Sector {
 
 
     }
-
+    public Node[][] getSector() {
+        return sector;
+    }
     public void addSettlements(int x, int y) {
 
     }
