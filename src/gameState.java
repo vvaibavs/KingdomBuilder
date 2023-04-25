@@ -10,6 +10,10 @@ public class gameState {
     private MainPanel Panel;
     private ArrayList<Integer> randScoring;
     public Board board;
+    public static int rand1;
+    public static int rand2;
+    public static int rand3;
+    public static int rand4;
 
     public static Player p1, p2, p3, p4;
 
