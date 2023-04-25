@@ -46,6 +46,21 @@ public class MainPanel extends JPanel implements MouseListener {
             g.drawImage(temp3, 398, 447, 420, 310, null);
             g.drawImage(temp4, 798, 447, 420, 310, null);
 
+            Color c = new Color(107, 104, 103, 127);
+            if(gameState.p1.turn) {
+                g.setColor(c);
+                g.fillRect(58, 130, 250, 296);
+            } else if(gameState.p2.turn) {
+                g.setColor(c);
+                g.fillRect(1256, 130, 250, 296);
+            } else if(gameState.p3.turn) {
+                g.setColor(c);
+                g.fillRect(58, 526, 250, 296);
+            } else if(gameState.p4.turn) {
+                g.setColor(c);
+                g.fillRect(1266, 536, 250, 296);
+            }
+
 
         } else if(gameState.state.equals("Scoring Card")) {
             Color c = new Color(107, 104, 103, 127);
