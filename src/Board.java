@@ -23,12 +23,12 @@ public class Board {
         System.out.println(m.toString());
     }
 }
-for (int i = 0; i < sector.length;  i ++) {
-        for (int j = 0; j < sector[i].length; j ++) {
-        if (i != sector.length - 1) {
-        if (i % 2 == 0) {
-        sector[i][j].addNeighbor("SouthEast", sector[i - 1][j]);
-        }
-        }
-        }
-        }
+//for (int i = 0; i < sector.length;  i ++) {
+//        for (int j = 0; j < sector[i].length; j ++) {
+//        if (i != sector.length - 1) {
+//        if (i % 2 == 0) {
+//        sector[i][j].addNeighbor("SouthEast", sector[i - 1][j]);
+//        }
+//        }
+//        }
+//        }
