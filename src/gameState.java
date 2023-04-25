@@ -63,9 +63,12 @@ public class gameState {
             state = "Game Screen";
         } else if(mouseX > 318 && mouseY > 761 && mouseX < 776 && mouseY < 828 && state.equals("End Screen")) { //go to game board
             state = "Game Screen";
+        }
     }
 
-}
+    public void scoringCards(){
+
+    }
     public static String getState() {
         return state;
     }
