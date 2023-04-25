@@ -6,13 +6,30 @@ import java.awt.image.BufferedImage;
 import java.awt.*;
 
 public class MainPanel extends JPanel implements MouseListener {
+    static int randInt1;
+    static int randInt2;
+    static int randInt3;
+    static int randInt4;
     private BufferedImage startScreen, endScreen, transSquare, mainGameFrame;
     private BufferedImage temp1, temp2, temp3, temp4;
     static Graphics graphic;
     private String state;
-    public boolean coolhighlight = false;
     public MainPanel() {
         super();
+        randInt1 = (int)(Math.random() * 7 + 1);
+        randInt2 = (int)(Math.random() * 7 + 1);
+        System.out.println("HELLO");
+        while (randInt2 == randInt1) {
+            randInt2 = (int)(Math.random() * 7 + 1);
+        }
+        randInt3 = (int)(Math.random() * 7 + 1);
+        while (randInt3 == randInt1 || randInt3 == randInt2) {
+            randInt3 = (int)(Math.random() * 7 + 1);
+        }
+        randInt4 = (int)(Math.random() * 7 + 1);
+        while (randInt4 == randInt1 || randInt4 == randInt2 || randInt4 == randInt3) {
+            randInt4 = (int)(Math.random() * 7 + 1);
+        }
         try {
             startScreen = ImageIO.read(MainPanel.class.getResource("/images/Start-Screen.png"));
             mainGameFrame = ImageIO.read(MainPanel.class.getResource("/images/MainGameFrame.png"));
@@ -20,12 +37,16 @@ public class MainPanel extends JPanel implements MouseListener {
             int randInt1 = (int)Math.round(Math.random() * 6 + 1);
 
             temp1 = ImageIO.read(MainPanel.class.getResource("/images/map" + randInt1 + ".png"));
-            temp2 = ImageIO.read(MainPanel.class.getResource("/images/map2.png"));
-            temp3 = ImageIO.read(MainPanel.class.getResource("/images/map3.png"));
-            temp4 = ImageIO.read(MainPanel.class.getResource("/images/map4.png"));
+            temp2 = ImageIO.read(MainPanel.class.getResource("/images/map" + randInt2 + ".png"));
+            temp3 = ImageIO.read(MainPanel.class.getResource("/images/map" + randInt3 + ".png"));
+            temp4 = ImageIO.read(MainPanel.class.getResource("/images/map" + randInt4 + ".png"));
 
         }
         catch (Exception e) {
+            System.out.println(randInt1);
+            System.out.println(randInt2);
+            System.out.println(randInt3);
+            System.out.println(randInt4);
             System.out.println(e.getMessage());
             return;
         }
