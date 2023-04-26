@@ -7,6 +7,7 @@ public class gameState {
     public static int mouseX;
     public static int mouseY;
     public static ScoringCard card1, card2, card3;
+    private ArrayList<String> locTile;
     private MainPanel Panel;
     private ArrayList<Integer> randScoring;
     public Board board;
@@ -33,6 +34,15 @@ public class gameState {
         mouseY = 0;
         Panel = Panely;
         Panel.startPaint();
+        locTile = new ArrayList<String>();
+        locTile.add("Farm");
+        locTile.add("Oracle");
+        locTile.add("Tavern");
+        locTile.add("Tower");
+        locTile.add("Harbor");
+        locTile.add("Oasis");
+        locTile.add("Paddock");
+        locTile.add("Barn");
 
 
     }
@@ -70,7 +80,30 @@ public class gameState {
 
     public void scoringCards(){
 
+        String c1 = card1.getCardType();
+        String c2 = card2.getCardType();
+        String c3 = card3.getCardType();
+
+      /*  Node[][] n = sector.getSector();
+        for(Node x : n){
+            while(x.hasSettlement() == true && x.getSettlementColor() == p1.getColor()){
+                if(c1.equals("workers")){
+                    int x = worker(p1.getColor(), x);
+                }
+
+            }
+
+        }*/
     }
+
+    public int worker(String color, Node n){
+        if(locTile.contains(n.getNeighbor("east"))){
+
+        }
+        return 0;
+    }
+
+
     public static String getState() {
         return state;
     }
