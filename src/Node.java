@@ -111,5 +111,8 @@ public class Node {
         }
         return false;
     }
+    public String getLoc() {
+        return board + "";
+    }
 
 }

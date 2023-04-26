@@ -14,19 +14,23 @@ public class Board {
             System.arraycopy(sec3.getSector()[i], 0, board[i + 10], 0, sec3.getSector()[i].length);
             System.arraycopy(sec4.getSector()[i], 0, board[i + 10], 10, sec4.getSector()[i].length);
         }
-        System.out.println("HELLO");
+        for (int i = 0; i < board.length;  i ++) {
+            for (int j = 0; j < board[i].length; j ++) {
+                if (i != board.length - 1) {
+                    if (i % 2 == 0) {
+                        System.out.println(i + " " + j + " " + board[i][j].getLoc());
+                        board[i][j].addNeighbor("SouthEast", board[i + 1][j]);
+                        if (j != 0) {
+                            board[i][j].addNeighbor("SouthWest", board[i + 1][j - 1]);
+                        }
+                    }
+                }
+            }
+        }
     }
     public String check() {
-        return "Help" + board[0][0].getTerrain();
+        return "Help" + board[0][0].getTerrain() + " " + board[0][0].getLoc();
     }
 
 }
-//for (int i = 0; i < sector.length;  i ++) {
-//        for (int j = 0; j < sector[i].length; j ++) {
-//        if (i != sector.length - 1) {
-//        if (i % 2 == 0) {
-//        sector[i][j].addNeighbor("SouthEast", sector[i - 1][j]);
-//        }
-//        }
-//        }
-//        }
+

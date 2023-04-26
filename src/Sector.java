@@ -3,7 +3,7 @@ public class Sector {
     public int loc;
     public Node[][] sector;
 
-    String[][] map1 = {{"Desert", "Desert", "Canyon", "Water", "Water", "Forest", "Forest", "Forest", "Grass", "Grass"},{"Desert", "Castle", "Canyon", "Water", "Forest", "Forest", "Forest", "Farm", "Grass", "Grass"},{"Canyon", "Canyon", "Canyon", "Flower", "Flower", "Flower", "Forest", "Canyon", "Flower", "Flower"},{"Canyon", "Canyon", "Flower", "Flower", "Water", "Desert", "Desert", "Canyon", "Canyon", "Flower"},{"Canyon", "Grass", "Grass", "Water", "Flower", "Flower", "Desert", "Desert", "Canyon", "Canyon"},{"Grass", "Grass", "Farm", "Flower", "Water", "Flower", "Water", "Desert", "Desert"},{"Grass", "Grass", "Grass", "Forest", "Flower", "Flower", "Water", "Water", "Desert", "Desert"},{"Grass", "Grass", "Forest", "Forest", "Mountain", "Water", "Water", "Water", "Desert", "Water"},{"Grass", "Mountain", "Forest", "Forest", "Water", "Water", "Water", "Water", "Water", "Water"},{"Forest", "Forest", "Forest", "Water", "Water", "Water", "Water", "Water", "Water", "Water"}};
+    String[][] map1 = {{"Desert", "Desert", "Canyon", "Water", "Water", "Forest", "Forest", "Forest", "Grass", "Grass"},{"Desert", "Castle", "Canyon", "Water", "Forest", "Forest", "Forest", "Farm", "Grass", "Grass"},{"Canyon", "Canyon", "Canyon", "Flower", "Flower", "Flower", "Forest", "Canyon", "Flower", "Flower"},{"Canyon", "Canyon", "Flower", "Flower", "Water", "Desert", "Desert", "Canyon", "Canyon", "Flower"},{"Canyon", "Grass", "Grass", "Water", "Flower", "Flower", "Desert", "Desert", "Canyon", "Canyon"},{"Grass", "Grass", "Farm", "Flower", "Water", "Flower", "Water", "Desert", "Desert", "Canyon"},{"Grass", "Grass", "Grass", "Forest", "Flower", "Flower", "Water", "Water", "Desert", "Desert"},{"Grass", "Grass", "Forest", "Forest", "Mountain", "Water", "Water", "Water", "Desert", "Water"},{"Grass", "Mountain", "Forest", "Forest", "Water", "Water", "Water", "Water", "Water", "Water"},{"Forest", "Forest", "Forest", "Water", "Water", "Water", "Water", "Water", "Water", "Water"}};
     String[][] map2 = {{"Grass", "Grass", "Forest", "Forest", "Forest", "Water", "Grass", "Forest", "Forest", "Flower"},{"Grass", "Flower", "Forest", "Forest", "Water", "Grass", "Forest", "Forest", "Flower", "Flower"},{"Grass", "Flower", " Flower", "Forest", "Water", "Grass", "Grass", "Flower", "Flower", "Flower"},{"Flower", "Flower", "Forest", "Forest", "Water", "Grass", "Mountain", "Flower", "Desert", "Desert"},{"Canyon", "Flower", "Castle", "Forest", "Water", "Grass", "Desert", "Desert","Desert","Desert"},{"Canyon", "Canyon", "Forest", "Water", "Grass", "Grass", "Mountain", "Mountain", "Desert", "Desert"},{"Canyon", "Canyon", "Water", "Water", "Water", "Grass", "Desert", "Desert", "Desert", "Canyon"},{"Water","Water", "Grass", "Grass", "Water", "Water", "Boat", "Canyon", "Mountain", "Canyon"},{"Water", "Desert", "Castle", "Grass", " Water", "Mountain", "Water", "Canyon", "Canyon", "Canyon"},{"Water", "Desert", "Desert", "Water", "Water", "Water", "Water", "Canyon", "Canyon", "Canyon"}};
     String[][] map3 = {{"Desert", "Desert", "Canyon", "Water", "Water", "Forest", "Forest", "Grass", "Grass", "Grass"},{"Desert", "Canyon", "Water", "Flower", "Flower", "Forest", "Forest", "Forest", "Grass", "Grass"},{"Desert", "Desert", "Water", "Flower", "Flower", "Forest", "Forest", "Oasis", "Flower", "Grass"},{"Water", "Water", "Water", "Flower", "Grass", "Forest", "Flower", "Flower", "Flower", "Flower"},{"Water", "Water", "Water", "Water", "Grass", "Grass", "Grass", "Grass", "Flower", "Flower"},{"Water", "Forest", "Forest", "Water", "Grass", "Grass", "Canyon", "Canyon", "Desert", "Canyon"},{"Water", "Forest", "Canyon", "Forest", "Water", "Grass", "Canyon", "Canyon", "Desert", "Canyon"},{"Water", "Castle", "Canyon", "Flower", "Water", "Oasis", "Desert", "Desert", "Canyon", "Water"},{"Water", "Water", "Canyon", "Flower", "Water", "Water", "Water", "Desert", "Desert", "Water"},{"Water", "Water", "Water", "Water", "Water", "Water", "Water", "Water", "Water", "Water",}};
     String[][] map4 = {{"Grass", "Grass", "Grass", "Forest", "Forest", "Water", "Grass", "Forest", "Forest", "Forest"},{"Grass", "Grass", "Grass", "Castle", "Forest", "Water", "Grass", "Forest", "Forest", "Forest"},{"Grass", "Flower", "Flower", "Grass", "Forest", "Forest", "Water", "Grass", "Grass", "Forest"},{"Flower", "Flower", "Canyon", "Grass", "Forest", "Water", "Flower", "Oracle", "Forest", "Forest"},{"Flower", "Flower", "Flower", "Canyon", "Canyon", "Water", "Flower", "Flower", "Water", "Water"},{"Mountain", "Mountain", "Canyon", "Grass", "Grass", "Water", "Water", "Water", "Desert", "Desert"},{"Canyon", "Canyon", "Canyon", "Mountain", "Grass", "Flower", "Flower", "Flower", "Desert", "Desert"},{"Canyon", "Canyon", "City", "Desert", "Mountain", "Desert","Flower","Flower","Canyon","Canyon"},{"Water","Water","Water","Desert","Desert","Desert","Desert","Mountain","Canyon","Canyon"},{"Water","Water","Water","Water","Desert","Desert","Desert","Desert","Desert","Canyon"}};
@@ -27,6 +27,7 @@ public class Sector {
                         xLoc += 40;
                         }
                     }
+                break;
             case 2:
                 for (int i = 0; i < map2.length; i++) {
                     tempX = xLoc;
@@ -39,6 +40,7 @@ public class Sector {
                         xLoc += 40;
                     }
                 }
+                break;
             case 3:
                 for (int i = 0; i < map3.length; i++) {
                     tempX = xLoc;
@@ -51,6 +53,7 @@ public class Sector {
                         xLoc += 40;
                     }
                 }
+                break;
             case 4:
                 for (int i = 0; i < map4.length; i++) {
                     tempX = xLoc;
@@ -63,6 +66,7 @@ public class Sector {
                         xLoc += 40;
                     }
                 }
+                break;
             case 5:
                 for (int i = 0; i < map5.length; i++) {
                     tempX = xLoc;
@@ -75,6 +79,7 @@ public class Sector {
                         xLoc += 40;
                     }
                 }
+                break;
             case 6:
                 for (int i = 0; i < map6.length; i++) {
                     tempX = xLoc;
@@ -87,6 +92,7 @@ public class Sector {
                         xLoc += 40;
                     }
                 }
+                break;
             case 7:
                 for (int i = 0; i < map7.length; i++) {
                     tempX = xLoc;
@@ -99,6 +105,7 @@ public class Sector {
                         xLoc += 40;
                     }
                 }
+                break;
 
         }
 
