@@ -23,6 +23,17 @@ public class Board {
                         if (j != 0) {
                             board[i][j].addNeighbor("SouthWest", board[i + 1][j - 1]);
                         }
+
+                        if (i % 2 == 1) {
+                            System.out.println(i + " " + j + " " + board[i][j].getLoc());
+                            board[i][j].addNeighbor("SouthWest", board[i + 1][j]);
+                            if (j != board[i].length - 1) {
+                                board[i][j].addNeighbor("SouthEast", board[i + 1][j + 1]);
+                            }
+                        }
+                    }
+                    if (j != board[i].length - 1) {
+                        board[i][j].addNeighbor("East", board[i][j+1]);
                     }
                 }
             }
