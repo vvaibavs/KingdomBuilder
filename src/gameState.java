@@ -129,6 +129,26 @@ public class gameState {
         return 0;
     }
 
+    public int fishermen(String color, Node n){
+        if(n.getSettlementColor().equals(color)){
+            if(n.getNeighbor("East").getTerrain() == "Water"){
+                return 1;
+            }else if(n.getNeighbor("West").getTerrain() == "Water"){
+                return 1;
+            }else if(n.getNeighbor("NorthEast").getTerrain() == "Water"){
+                return 1;
+            }else if(n.getNeighbor("SouthEast").getTerrain() == "Water"){
+                return 1;
+            }else if(n.getNeighbor("NorthWest").getTerrain() == "Water"){
+                return 1;
+            }else if(n.getNeighbor("SouthWest").getTerrain() == "Water"){
+                return 1;
+            }
+        }
+        return 0;
+    }
+
+
 
     public static String getState() {
         return state;
