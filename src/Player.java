@@ -6,12 +6,15 @@ public class Player {
     private ArrayList<LocTile> tile;
     private int score;
     boolean turn;
+
+    public TerrainCard card;
     public Player(String c){
         color = c;
         numSettlements = 40;
         score = 0;
         tile = new ArrayList<LocTile>();
         turn = false;
+        card = new TerrainCard();
     }
 
     public void next() {

@@ -1,18 +1,16 @@
 import javax.imageio.ImageIO;
-import javax.swing.*;
 import java.awt.image.BufferedImage;
-import java.util.*;
 import java.awt.*;
 public class drawTerrainCards {
     public BufferedImage canyon, desert, flower, forest, meadow;
 
     public drawTerrainCards() {
         try {
-            canyon = ImageIO.read(MainPanel.class.getResource("/images/KB-Card-Canyon.png"));
-            desert = ImageIO.read(MainPanel.class.getResource("/images/KB-Card-Desert.png"));
-            flower = ImageIO.read(MainPanel.class.getResource("/images/KB-Card-Flower.png"));
-            forest = ImageIO.read(MainPanel.class.getResource("/images/KB-Card-Forest.png"));
-            meadow = ImageIO.read(MainPanel.class.getResource("/images/KB-Card-Meadow.png"));
+            canyon = ImageIO.read(MainPanel.class.getResource("/images/canyon.png"));
+            desert = ImageIO.read(MainPanel.class.getResource("/images/desert.png"));
+            flower = ImageIO.read(MainPanel.class.getResource("/images/flower.png"));
+            forest = ImageIO.read(MainPanel.class.getResource("/images/forest.png"));
+            meadow = ImageIO.read(MainPanel.class.getResource("/images/meadow.png"));
         } catch(Exception e) {
             System.out.println(e);
         }

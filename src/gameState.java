@@ -10,7 +10,7 @@ public class gameState {
     private MainPanel Panel;
     private ArrayList<Integer> randScoring;
     public Board board;
-
+    public static ArrayList<Integer> terrains;
     public static Player p1, p2, p3, p4;
 
     public gameState(MainPanel Panely) {
@@ -32,12 +32,18 @@ public class gameState {
         mouseY = 0;
         Panel = Panely;
         Panel.startPaint();
+        terrains = new ArrayList<>();
+        for(int i = 1; i <= 30; i++) {
+            terrains.add(i);
+        }
 
     }
     public static void runClick() {
         if (mouseX > 278 && mouseX < 705 && mouseY < 631 && mouseY > 544 && state.equals("Start Screen")) {
             state = "Game Screen";
-            p1.next();
+            p1.next(); // Player 1's turn
+            p1.card.randomize();
+            System.out.println(p1.card.type);
             mouseX = 0;
             mouseY = 0;
         } else if(mouseX > 476 && mouseY > 27 && mouseX < 734 && mouseY < 76 && !state.equals("Scoring Card") && !state.equals("not Scoring Card")) {
@@ -45,18 +51,26 @@ public class gameState {
         } else if(mouseX > 476 && mouseY > 27 && mouseX < 734 && mouseY < 76 && state.equals("not Scoring Card")) {
             state = "Game Screen";
         } else if(mouseX > 1342 && mouseY > 878 && mouseX < 1524 && mouseY < 926) {
-            if(p1.turn) {
+            if(p1.turn) { // Player 2's turn
                 p1.next();
                 p2.next();
-            } else if(p2.turn) {
+                p2.card.randomize();
+                System.out.println(p2.card.type);
+            } else if(p2.turn) { // Player 3's turn
                 p2.next();
                 p3.next();
-            } else if(p3.turn) {
+                p3.card.randomize();
+                System.out.println(p3.card.type);
+            } else if(p3.turn) { // Player 4's turn
                 p3.next();
                 p4.next();
-            } else if(p4.turn) {
+                p4.card.randomize();
+                System.out.println(p4.card.type);
+            } else if(p4.turn) { // Player 1's turn
                 p4.next();
                 p1.next();
+                p1.card.randomize();
+                System.out.println(p1.card.type);
             }
         }
     }
