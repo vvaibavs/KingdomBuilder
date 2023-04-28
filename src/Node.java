@@ -1,4 +1,6 @@
+import java.awt.*;
 import java.util.HashMap;
+
 public class Node {
     private String terrain;
     private Boolean hasSettlement = false;
@@ -110,6 +112,9 @@ public class Node {
             return true;
         }
         return false;
+    }
+    public void drawHighlight(Graphics g) {
+
     }
     public String getLoc() {
         return board + "";

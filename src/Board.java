@@ -39,9 +39,7 @@ public class Board {
             }
         }
     }
-    public String check() {
-        return "Help" + board[0][0].getTerrain() + " " + board[0][0].getLoc();
-    }
+
 
 }
 

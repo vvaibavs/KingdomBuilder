@@ -26,7 +26,6 @@ public class gameState {
         p4 = new Player("black");
         Collections.shuffle(randScoring);
         board = new Board();
-        System.out.print(board.check());
         card1 = new ScoringCard(randScoring.get(0));
         card2 = new ScoringCard(randScoring.get(1));
         card3 = new ScoringCard(randScoring.get(2));
