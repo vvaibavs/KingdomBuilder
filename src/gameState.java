@@ -7,10 +7,13 @@ public class gameState {
     public static int mouseX;
     public static int mouseY;
     public static ScoringCard card1, card2, card3;
+    private ArrayList<String> locTile;
     private MainPanel Panel;
     private ArrayList<Integer> randScoring;
     public Board board;
     public static ArrayList<Integer> terrains;
+
+
     public static Player p1, p2, p3, p4;
 
     public gameState(MainPanel Panely) {
@@ -24,7 +27,6 @@ public class gameState {
         p4 = new Player("black");
         Collections.shuffle(randScoring);
         board = new Board();
-        System.out.print(board.check());
         card1 = new ScoringCard(randScoring.get(0));
         card2 = new ScoringCard(randScoring.get(1));
         card3 = new ScoringCard(randScoring.get(2));
@@ -32,6 +34,16 @@ public class gameState {
         mouseY = 0;
         Panel = Panely;
         Panel.startPaint();
+        locTile = new ArrayList<String>();
+        locTile.add("Farm");
+        locTile.add("Oracle");
+        locTile.add("Tavern");
+        locTile.add("Tower");
+        locTile.add("Harbor");
+        locTile.add("Oasis");
+        locTile.add("Paddock");
+        locTile.add("Barn");
+
         terrains = new ArrayList<>();
         for(int i = 1; i <= 30; i++) {
             terrains.add(i);
@@ -78,6 +90,28 @@ public class gameState {
     public void scoringCards(){
 
     }
+
+    public int worker(String color, Node n){ //simplify code
+        int temp = 0;
+        if(n.getSettlementColor().equals(color)){
+            if(locTile.contains(n.getNeighbor("East"))){
+                return 1;
+            }else if(locTile.contains(n.getNeighbor("West"))){
+                return 1;
+            }else if(locTile.contains(n.getNeighbor("SouthWest"))){
+                return 1;
+            }else if(locTile.contains(n.getNeighbor("NorthWest"))){
+                return 1;
+            }else if(locTile.contains(n.getNeighbor("SouthEast"))){
+                return 1;
+            }else if(locTile.contains(n.getNeighbor("NorthEast"))){
+                return 1;
+            }
+        }
+        return 0;
+    }
+
+
     public static String getState() {
         return state;
     }
