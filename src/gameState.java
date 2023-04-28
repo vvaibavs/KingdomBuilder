@@ -95,9 +95,26 @@ public class gameState {
         }*/
     }
 
-    public int worker(String color, Node n){
-        if(locTile.contains(n.getNeighbor("east"))){
-
+    public int worker(String color, Node n){ //simplify code
+        int temp = 0;
+        if(n.getSettlementColor().equals(color)){
+            if(locTile.contains(n.getNeighbor("east"))){
+                return 1;
+            }else if(locTile.contains(n.getNeighbor("west"))){
+                return 1;
+            }else if(locTile.contains(n.getNeighbor("north"))){
+                return 1;
+            }else if(locTile.contains(n.getNeighbor("south"))){
+                return 1;
+            }else if(locTile.contains(n.getNeighbor("southwest"))){
+                return 1;
+            }else if(locTile.contains(n.getNeighbor("northwest"))){
+                return 1;
+            }else if(locTile.contains(n.getNeighbor("southeast"))){
+                return 1;
+            }else if(locTile.contains(n.getNeighbor("northeast"))){
+                return 1;
+            }
         }
         return 0;
     }

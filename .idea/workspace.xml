@@ -3,28 +3,9 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
-  <component name="BranchesTreeState">
-    <expand>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-    </expand>
-    <select />
-  </component>
   <component name="ChangeListManager">
     <list default="true" id="0abf3940-7167-42ba-8525-f402d2848701" name="Changes" comment="scoring button">
-      <change beforePath="$PROJECT_DIR$/src/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameState.java" afterDir="false" />
     </list>
     <list id="6ca57205-0620-47e2-96b7-d45086a08dec" name="Changes by k1215075" comment="Changes by k1215075" />
@@ -70,9 +51,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/slhscs230/IdeaProjects/Kingdom Builder/src/images/map2.png&quot;,
+    &quot;two.files.diff.last.used.file&quot;: &quot;C:/Users/slhscs230/IdeaProjects/Kingdom Builder/src/images/map2.png&quot;
+  }
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\anita\IdeaProjects\KingdomBuilder\src\images" />
@@ -106,6 +93,27 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1679315783181</updated>
+    </task>
+    <task id="LOCAL-00003" summary="haha">
+      <created>1679401244306</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1679401244306</updated>
+    </task>
+    <task id="LOCAL-00004" summary="asd;kfljadsf">
+      <created>1679401859378</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1679401859378</updated>
+    </task>
+    <task id="LOCAL-00005" summary="asd;kfljadsf">
+      <created>1679401915832</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1679401915832</updated>
     </task>
     <task id="LOCAL-00006" summary="empty inside">
       <created>1679403926621</created>
@@ -429,28 +437,7 @@
       <option name="project" value="LOCAL" />
       <updated>1682427921800</updated>
     </task>
-    <task id="LOCAL-00052" summary="scoring button">
-      <created>1682683676192</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1682683676192</updated>
-    </task>
-    <task id="LOCAL-00053" summary="scoring button">
-      <created>1682683689117</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1682683689117</updated>
-    </task>
-    <task id="LOCAL-00054" summary="scoring button">
-      <created>1682514283785</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1682514283785</updated>
-    </task>
-    <option name="localTasksCounter" value="54" />
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -476,7 +463,6 @@
     <MESSAGE value="empty inside.2" />
     <MESSAGE value="scrong card" />
     <MESSAGE value="scrong card" />
-    <MESSAGE value="Changes by k1215075" />
     <MESSAGE value="Changes by k1215075" />
     <MESSAGE value="scoring button" />
     <option name="LAST_COMMIT_MESSAGE" value="scoring button" />
