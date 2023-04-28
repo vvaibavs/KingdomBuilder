@@ -18,7 +18,7 @@ public class Board {
             for (int j = 0; j < board[i].length; j ++) {
                 if (i != board.length - 1) {
                     if (i % 2 == 0) {
-                        System.out.println(i + " " + j + " " + board[i][j].getLoc());
+
                         board[i][j].addNeighbor("SouthEast", board[i + 1][j]);
                         if (j != 0) {
                             board[i][j].addNeighbor("SouthWest", board[i + 1][j - 1]);
