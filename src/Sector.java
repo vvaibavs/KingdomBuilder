@@ -18,7 +18,7 @@ public class Sector {
             case 1:
                 for (int i = 0; i < map1.length; i ++) {
                     tempX = xLoc;
-                    yLoc -= 30;
+                    yLoc += 30;
                     if (i % 2 != 0) {
                         xLoc += 20;
                     }
@@ -31,7 +31,7 @@ public class Sector {
             case 2:
                 for (int i = 0; i < map2.length; i++) {
                     tempX = xLoc;
-                    yLoc -= 30;
+                    yLoc += 30;
                     if (i % 2 != 0) {
                         xLoc += 20;
                     }
@@ -44,7 +44,7 @@ public class Sector {
             case 3:
                 for (int i = 0; i < map3.length; i++) {
                     tempX = xLoc;
-                    yLoc -= 30;
+                    yLoc += 30;
                     if (i % 2 != 0) {
                         xLoc += 20;
                     }
@@ -57,7 +57,7 @@ public class Sector {
             case 4:
                 for (int i = 0; i < map4.length; i++) {
                     tempX = xLoc;
-                    yLoc -= 30;
+                    yLoc += 30;
                     if (i % 2 != 0) {
                         xLoc += 20;
                     }
@@ -70,7 +70,7 @@ public class Sector {
             case 5:
                 for (int i = 0; i < map5.length; i++) {
                     tempX = xLoc;
-                    yLoc -= 30;
+                    yLoc += 30;
                     if (i % 2 != 0) {
                         xLoc += 20;
                     }
@@ -83,7 +83,7 @@ public class Sector {
             case 6:
                 for (int i = 0; i < map6.length; i++) {
                     tempX = xLoc;
-                    yLoc -= 30;
+                    yLoc += 30;
                     if (i % 2 != 0) {
                         xLoc += 20;
                     }
@@ -96,7 +96,7 @@ public class Sector {
             case 7:
                 for (int i = 0; i < map7.length; i++) {
                     tempX = xLoc;
-                    yLoc -= 30;
+                    yLoc += 30;
                     if (i % 2 != 0) {
                         xLoc += 20;
                     }

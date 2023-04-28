@@ -10,12 +10,14 @@ public class gameState {
     private ArrayList<String> locTile;
     private MainPanel Panel;
     private ArrayList<Integer> randScoring;
-    public Board board;
+    public static Board board;
     public static ArrayList<Integer> terrains;
 
 
     public static Player p1, p2, p3, p4;
-
+    public static void inputBoard(Board theBoard) {
+        board = theBoard;
+    }
     public gameState(MainPanel Panely) {
         randScoring = new ArrayList<>();
         for(int i = 1; i <= 10; i++) {
@@ -26,13 +28,14 @@ public class gameState {
         p3 = new Player("green");
         p4 = new Player("black");
         Collections.shuffle(randScoring);
-        board = new Board();
+
         card1 = new ScoringCard(randScoring.get(0));
         card2 = new ScoringCard(randScoring.get(1));
         card3 = new ScoringCard(randScoring.get(2));
         mouseX = 0;
         mouseY = 0;
         Panel = Panely;
+
         Panel.startPaint();
         locTile = new ArrayList<String>();
         locTile.add("Farm");

@@ -39,6 +39,12 @@ public class Board {
             }
         }
     }
+    public int getLength() {
+        return board.length;
+    }
+    public Node[][] returnBoard() {
+        return board;
+    }
 
 
 }

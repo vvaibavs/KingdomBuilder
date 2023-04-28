@@ -14,8 +14,10 @@ public class MainPanel extends JPanel implements MouseListener {
     private BufferedImage temp1, temp2, temp3, temp4;
     static Graphics graphic;
     private String state;
+    private Board theBoard;
     public MainPanel() {
         super();
+
         randInt1 = (int)(Math.random() * 7 + 1);
         randInt2 = (int)(Math.random() * 7 + 1);
         while (randInt2 == randInt1) {
@@ -29,6 +31,8 @@ public class MainPanel extends JPanel implements MouseListener {
         while (randInt4 == randInt1 || randInt4 == randInt2 || randInt4 == randInt3) {
             randInt4 = (int)(Math.random() * 7 + 1);
         }
+        theBoard = new Board();
+        gameState.inputBoard(theBoard);
         try {
             startScreen = ImageIO.read(MainPanel.class.getResource("/images/Start-Screen.png"));
             mainGameFrame = ImageIO.read(MainPanel.class.getResource("/images/MainGameFrame.png"));
@@ -52,7 +56,11 @@ public class MainPanel extends JPanel implements MouseListener {
         setSize(getWidth(), getHeight());
         addMouseListener(this);
     }
+    public void inputTheBoard(Board board) {
+        theBoard = board;
+    }
     public void paint(Graphics g){
+
         g.drawRect(10, 10, 10, 10);
         if (gameState.state.equals("Start Screen")) {
             g.drawImage(startScreen, 0, 0, getWidth(), getHeight(), null);
@@ -64,6 +72,11 @@ public class MainPanel extends JPanel implements MouseListener {
 
             g.drawImage(temp3, 398, 447, 420, 310, null);
             g.drawImage(temp4, 798, 447, 420, 310, null);
+            for (int i = 0; i < theBoard.getLength(); i ++) {
+                for (int j = 0; j < theBoard.returnBoard()[i].length; j ++) {
+                    theBoard.returnBoard()[i][j].drawHighlight(g);
+                }
+            }
 
             Color c = new Color(107, 104, 103, 127);
             if(gameState.p1.turn) {
