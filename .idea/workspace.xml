@@ -24,15 +24,8 @@
   <component name="ChangeListManager">
     <list default="true" id="0abf3940-7167-42ba-8525-f402d2848701" name="Changes" comment="scoring button">
       <change beforePath="$PROJECT_DIR$/src/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_17_2023_7_40_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_17_2023_7_40_AM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_17_2023_7_43_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_17_2023_7_43_AM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_17_2023_8_05_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_17_2023_8_05_AM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_19_2023_7_18_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_19_2023_7_18_AM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_19_2023_7_33_AM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_19_2023_7_33_AM__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_21_2023_7_41_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_21_2023_7_41_AM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameState.java" afterDir="false" />
     </list>
     <list id="6ca57205-0620-47e2-96b7-d45086a08dec" name="Changes by k1215075" comment="Changes by k1215075" />
     <list id="35aaed49-b13f-4d30-a362-517efcbf4050" name="Changes by slhscs230" comment="" />
@@ -113,27 +106,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1679315783181</updated>
-    </task>
-    <task id="LOCAL-00003" summary="haha">
-      <created>1679401244306</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1679401244306</updated>
-    </task>
-    <task id="LOCAL-00004" summary="asd;kfljadsf">
-      <created>1679401859378</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1679401859378</updated>
-    </task>
-    <task id="LOCAL-00005" summary="asd;kfljadsf">
-      <created>1679401915832</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1679401915832</updated>
     </task>
     <task id="LOCAL-00006" summary="empty inside">
       <created>1679403926621</created>
@@ -458,18 +430,18 @@
       <updated>1682427921800</updated>
     </task>
     <task id="LOCAL-00052" summary="scoring button">
-      <created>1682511053726</created>
+      <created>1682683676192</created>
       <option name="number" value="00052" />
       <option name="presentableId" value="LOCAL-00052" />
       <option name="project" value="LOCAL" />
-      <updated>1682511053726</updated>
+      <updated>1682683676192</updated>
     </task>
     <task id="LOCAL-00053" summary="scoring button">
-      <created>1682513701119</created>
+      <created>1682683689117</created>
       <option name="number" value="00053" />
       <option name="presentableId" value="LOCAL-00053" />
       <option name="project" value="LOCAL" />
-      <updated>1682513701119</updated>
+      <updated>1682683689117</updated>
     </task>
     <task id="LOCAL-00054" summary="scoring button">
       <created>1682514283785</created>
@@ -478,8 +450,7 @@
       <option name="project" value="LOCAL" />
       <updated>1682514283785</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
-    <option name="localTasksCounter" value="52" />
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -492,7 +463,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="haha" />
@@ -507,18 +477,8 @@
     <MESSAGE value="scrong card" />
     <MESSAGE value="scrong card" />
     <MESSAGE value="Changes by k1215075" />
-    <MESSAGE value="scoring button" />
     <MESSAGE value="Changes by k1215075" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes by k1215075" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="147" y="64" key="MergeDialog" timestamp="1682598477787">
-      <screen x="0" y="0" width="1536" height="816" />
-    </state>
-    <state x="147" y="64" key="MergeDialog/0.0.1536.816@0.0.1536.816" timestamp="1682598477787" />
-    <state x="361" y="141" key="Vcs.Push.Dialog.v2" timestamp="1682512670097">
-      <screen x="0" y="0" width="1536" height="816" />
-    </state>
-    <state x="361" y="141" key="Vcs.Push.Dialog.v2/0.0.1536.816@0.0.1536.816" timestamp="1682512670097" />
+    <MESSAGE value="scoring button" />
+    <option name="LAST_COMMIT_MESSAGE" value="scoring button" />
   </component>
 </project>
