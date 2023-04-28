@@ -96,7 +96,6 @@ public class gameState {
     }
 
     public int worker(String color, Node n){ //simplify code
-        int temp = 0;
         if(n.getSettlementColor().equals(color)){
             if(locTile.contains(n.getNeighbor("East"))){
                 return 1;
@@ -109,6 +108,25 @@ public class gameState {
             }else if(locTile.contains(n.getNeighbor("SouthEast"))){
                 return 1;
             }else if(locTile.contains(n.getNeighbor("NorthEast"))){
+                return 1;
+            }
+        }
+        return 0;
+    }
+
+    public int miner(String color, Node n){
+        if(n.getSettlementColor().equals(color)){
+            if(n.getNeighbor("East").getTerrain() == "Mountain"){
+                return 1;
+            }else if(n.getNeighbor("West").getTerrain() == "Mountain"){
+                return 1;
+            }else if(n.getNeighbor("NorthEast").getTerrain() == "Mountain"){
+                return 1;
+            }else if(n.getNeighbor("SouthEast").getTerrain() == "Mountain"){
+                return 1;
+            }else if(n.getNeighbor("NorthWest").getTerrain() == "Mountain"){
+                return 1;
+            }else if(n.getNeighbor("SouthWest").getTerrain() == "Mountain"){
                 return 1;
             }
         }
