@@ -13,17 +13,12 @@ public class Node {
     private int y;
     private HashMap<String, Node> neighbors = new HashMap<String, Node>();
     private final int radius = 40;
-    BufferedImage hexHighLight;
     public Node(String terrain, int board, int xloc, int yloc) {
         this.terrain = terrain;
         this.board = board;
         x = xloc;
         y = yloc;
-        try {
-            hexHighLight = ImageIO.read(Node.class.getResource("/images/HexHighlight.png"));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+
     }
     public void addNeighbor(String direction, Node neighbor) {
         neighbors.put(direction, neighbor);
@@ -122,12 +117,13 @@ public class Node {
         }
         return false;
     }
-    public void drawHighlight(Graphics g) {
-        g.drawImage(hexHighLight, x, y, 20, 20, null );
-        System.out.println(x + " " + y);
-    }
     public String getLoc() {
         return board + "";
     }
-
+    public int getX() {
+        return x;
+    }
+    public int getY() {
+        return y;
+    }
 }

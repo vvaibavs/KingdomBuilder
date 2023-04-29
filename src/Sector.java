@@ -20,11 +20,11 @@ public class Sector {
                     tempX = xLoc;
                     yLoc += 30;
                     if (i % 2 != 0) {
-                        xLoc += 20;
+                        tempX += 20;
                     }
                     for (int j = 0; j < map1[i].length; j ++) {
                         sector[i][j] = new Node(map1[i][j], loc, tempX, yLoc);
-                        xLoc += 40;
+                        tempX += 40;
                         }
                     }
                 break;
@@ -33,11 +33,11 @@ public class Sector {
                     tempX = xLoc;
                     yLoc += 30;
                     if (i % 2 != 0) {
-                        xLoc += 20;
+                        tempX += 20;
                     }
                     for (int j = 0; j < map2[i].length; j++) {
                         sector[i][j] = new Node(map2[i][j], loc, tempX, yLoc);
-                        xLoc += 40;
+                        tempX += 40;
                     }
                 }
                 break;
@@ -46,11 +46,11 @@ public class Sector {
                     tempX = xLoc;
                     yLoc += 30;
                     if (i % 2 != 0) {
-                        xLoc += 20;
+                        tempX += 20;
                     }
                     for (int j = 0; j < map3[i].length; j++) {
                         sector[i][j] = new Node(map3[i][j], loc, tempX, yLoc);
-                        xLoc += 40;
+                        tempX += 40;
                     }
                 }
                 break;
@@ -59,11 +59,11 @@ public class Sector {
                     tempX = xLoc;
                     yLoc += 30;
                     if (i % 2 != 0) {
-                        xLoc += 20;
+                        tempX += 20;
                     }
                     for (int j = 0; j < map4[i].length; j++) {
                         sector[i][j] = new Node(map4[i][j], loc, tempX, yLoc);
-                        xLoc += 40;
+                        tempX += 40;
                     }
                 }
                 break;
@@ -72,11 +72,11 @@ public class Sector {
                     tempX = xLoc;
                     yLoc += 30;
                     if (i % 2 != 0) {
-                        xLoc += 20;
+                        tempX += 20;
                     }
                     for (int j = 0; j < map5[i].length; j++) {
                         sector[i][j] = new Node(map5[i][j], loc, tempX, yLoc);
-                        xLoc += 40;
+                        tempX += 40;
                     }
                 }
                 break;
@@ -85,11 +85,11 @@ public class Sector {
                     tempX = xLoc;
                     yLoc += 30;
                     if (i % 2 != 0) {
-                        xLoc += 20;
+                        tempX += 20;
                     }
                     for (int j = 0; j < map6[i].length; j++) {
                         sector[i][j] = new Node(map6[i][j], loc, tempX, yLoc);
-                        xLoc += 40;
+                        tempX += 40;
                     }
                 }
                 break;
@@ -98,11 +98,11 @@ public class Sector {
                     tempX = xLoc;
                     yLoc += 30;
                     if (i % 2 != 0) {
-                        xLoc += 20;
+                        tempX += 20;
                     }
                     for (int j = 0; j < map7[i].length; j++) {
                         sector[i][j] = new Node(map7[i][j], loc, tempX, yLoc);
-                        xLoc += 40;
+                        tempX += 40;
                     }
                 }
                 break;

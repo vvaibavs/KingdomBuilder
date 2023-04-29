@@ -11,7 +11,7 @@ public class MainPanel extends JPanel implements MouseListener {
     static int randInt3;
     static int randInt4;
     private BufferedImage startScreen, endScreen, transSquare, mainGameFrame;
-    private BufferedImage temp1, temp2, temp3, temp4;
+    private BufferedImage temp1, temp2, temp3, temp4, hexHighLight;
     static Graphics graphic;
     private String state;
     private Board theBoard;
@@ -42,6 +42,7 @@ public class MainPanel extends JPanel implements MouseListener {
             temp2 = ImageIO.read(MainPanel.class.getResource("/images/map" + randInt2 + ".png"));
             temp3 = ImageIO.read(MainPanel.class.getResource("/images/map" + randInt3 + ".png"));
             temp4 = ImageIO.read(MainPanel.class.getResource("/images/map" + randInt4 + ".png"));
+            hexHighLight = ImageIO.read(Node.class.getResource("/images/HexHighlight.png"));
 
         }
         catch (Exception e) {
@@ -74,7 +75,8 @@ public class MainPanel extends JPanel implements MouseListener {
             g.drawImage(temp4, 798, 447, 420, 310, null);
             for (int i = 0; i < theBoard.getLength(); i ++) {
                 for (int j = 0; j < theBoard.returnBoard()[i].length; j ++) {
-                    theBoard.returnBoard()[i][j].drawHighlight(g);
+                    g.fillRect( theBoard.returnBoard()[i][j].getX(), theBoard.returnBoard()[i][j].getY(), 20, 20);
+                    System.out.println("HELLO");
                 }
             }
 
