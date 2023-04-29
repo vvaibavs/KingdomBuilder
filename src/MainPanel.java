@@ -75,8 +75,8 @@ public class MainPanel extends JPanel implements MouseListener {
             g.drawImage(temp4, 798, 447, 420, 310, null);
             for (int i = 0; i < theBoard.getLength(); i ++) {
                 for (int j = 0; j < theBoard.returnBoard()[i].length; j ++) {
-                    g.fillRect( theBoard.returnBoard()[i][j].getX(), theBoard.returnBoard()[i][j].getY(), 20, 20);
-                    System.out.println("HELLO");
+                    theBoard.returnBoard()[i][j].drawHighlight(g);
+
                 }
             }
 
