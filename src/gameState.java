@@ -95,10 +95,13 @@ public class gameState {
                 else {
                     selected = contenders.get(1);
                 }
+
+
                 if (picked && selected.isValid(current.getColor(), current.card.type, nextToSettlementRequired)) {
                     selected.putSettlement(current.getColor());
                     settlementsLeft -= 1;
                 }
+                nextToSettlementRequired = false;
             }
 
         } else if(mouseX > 1342 && mouseY > 878 && mouseX < 1524 && mouseY < 926 && settlementsLeft == 0) {

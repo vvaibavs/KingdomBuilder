@@ -17,15 +17,15 @@ public class drawTerrainCards {
     }
 
     public void drawCards(Graphics g, int x, int y, String card) {
-        if(card.equals("canyon")) {
+        if(card.equals("Canyon")) {
             g.drawImage(canyon, x, y, null);
-        } else if(card.equals("desert")) {
+        } else if(card.equals("Desert")) {
             g.drawImage(desert, x, y, null);
-        } else if(card.equals("flower")) {
+        } else if(card.equals("Flower")) {
             g.drawImage(flower, x, y, null);
-        } else if(card.equals("forest")) {
+        } else if(card.equals("Forest")) {
             g.drawImage(forest, x, y, null);
-        } else if(card.equals("meadow")) {
+        } else if(card.equals("Grass")) {
             g.drawImage(meadow, x, y, null);
         }
     }

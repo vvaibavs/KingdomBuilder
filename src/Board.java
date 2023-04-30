@@ -31,10 +31,9 @@ public class Board {
                             board[i][j].addNeighbor("SouthEast", board[i + 1][j + 1]);
                         }
                     }
-                    if (j != board[i].length - 1) {
-                        board[i][j].addNeighbor("East", board[i][j+1]);
-                    }
-
+                }
+                if (j != board[i].length - 1) {
+                    board[i][j].addNeighbor("East", board[i][j+1]);
                 }
             }
         }

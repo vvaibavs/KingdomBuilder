@@ -150,22 +150,22 @@ public class Node {
     }
 
     public boolean hasColorNeighbor(String inputColor) {
-        if (getNeighbor("West").hasSettlement() && getNeighbor("West").getSettlementColor().equals(inputColor)) {
+        if (getNeighbor("West") != null && getNeighbor("West").hasSettlement() && getNeighbor("West").getSettlementColor().equals(inputColor)) {
             return true;
         }
-        if (getNeighbor("East").hasSettlement() && getNeighbor("East").getSettlementColor().equals(inputColor)) {
+        if (getNeighbor("East") != null && getNeighbor("East").hasSettlement() && getNeighbor("East").getSettlementColor().equals(inputColor)) {
             return true;
         }
-        if (getNeighbor("NorthWest").hasSettlement() && getNeighbor("NorthWest").getSettlementColor().equals(inputColor)) {
+        if (getNeighbor("NorthWest") != null && getNeighbor("NorthWest").hasSettlement() && getNeighbor("NorthWest").getSettlementColor().equals(inputColor)) {
             return true;
         }
-        if (getNeighbor("NorthEast").hasSettlement() && getNeighbor("NorthEast").getSettlementColor().equals(inputColor)) {
+        if (getNeighbor("NorthEast") != null && getNeighbor("NorthEast").hasSettlement() && getNeighbor("NorthEast").getSettlementColor().equals(inputColor)) {
             return true;
         }
-        if (getNeighbor("SouthWest").hasSettlement() && getNeighbor("SouthWest").getSettlementColor().equals(inputColor)) {
+        if (getNeighbor("SouthWest") != null && getNeighbor("SouthWest").hasSettlement() && getNeighbor("SouthWest").getSettlementColor().equals(inputColor)) {
             return true;
         }
-        if (getNeighbor("SouthEast").hasSettlement() && getNeighbor("SouthEast").getSettlementColor().equals(inputColor)) {
+        if (getNeighbor("SouthEast") != null && getNeighbor("SouthEast").hasSettlement() && getNeighbor("SouthEast").getSettlementColor().equals(inputColor)) {
             return true;
         }
         return false;
