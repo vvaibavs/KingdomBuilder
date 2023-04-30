@@ -12,7 +12,7 @@ public class Node {
     private int x;
     private int y;
     private HashMap<String, Node> neighbors = new HashMap<String, Node>();
-    private final int radius = 40;
+    private final int radius = 20;
     BufferedImage hexHighLight;
     public Node(String terrain, int board, int xloc, int yloc) {
         this.terrain = terrain;
@@ -117,7 +117,7 @@ public class Node {
         return temp;
     }
     public boolean containsClick(int xloc, int yloc) {
-        if (Math.pow(xloc - x, 2) + Math.pow(yloc - y, 2) < radius) {
+        if (Math.pow(xloc - x, 2) + Math.pow(yloc - y, 2) < Math.pow(radius, 2)) {
             return true;
         }
         return false;
@@ -128,5 +128,10 @@ public class Node {
     public String getLoc() {
         return board + "";
     }
-
+    public int getX() {
+        return x;
+    }
+    public int getY() {
+        return y;
+    }
 }

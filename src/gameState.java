@@ -12,9 +12,10 @@ public class gameState {
     private ArrayList<Integer> randScoring;
     public static Board board;
     public static ArrayList<Integer> terrains;
+    public static String substate = "placeSettlement";
 
 
-    public static Player p1, p2, p3, p4;
+    public static Player p1, p2, p3, p4, current;
     public static void inputBoard(Board theBoard) {
         board = theBoard;
     }
@@ -27,6 +28,7 @@ public class gameState {
         p2 = new Player("blue");
         p3 = new Player("green");
         p4 = new Player("black");
+        current = p1;
         Collections.shuffle(randScoring);
 
         card1 = new ScoringCard(randScoring.get(0));
@@ -65,6 +67,28 @@ public class gameState {
             state = "Scoring Card";
         } else if(mouseX > 476 && mouseY > 27 && mouseX < 734 && mouseY < 76 && state.equals("not Scoring Card")) {
             state = "Game Screen";
+        } else if (mouseX < 1218 && mouseX > 398 && mouseY < 757 && mouseY > 147 && state.equals("Game Screen")) {
+            if (substate.equals("placeSettlement")) {
+                int tempXPlace;
+                int tempYPlace;
+                ArrayList<Node> contenders = new ArrayList<>();
+                Node selected;
+                for (int i = 0; i < board.getLength(); i ++) {
+                    for (int j = 0; j < board.getLength(); j ++) {
+                        if (board.returnBoard()[i][j].containsClick(mouseX, mouseY)) {
+                            contenders.add(board.returnBoard()[i][j]);
+                        }
+                    }
+                }
+                if (Math.hypot(mouseX - contenders.get(0).getX(), mouseY - contenders.get(0).getY()) < Math.hypot(mouseX - contenders.get(1).getX(), mouseY - contenders.get(1).getY())) {
+                    selected = contenders.get(0);
+                }
+                else {
+                    selected = contenders.get(1);
+                }
+                selected.putSettlement(current.getColor());
+            }
+
         } else if(mouseX > 1342 && mouseY > 878 && mouseX < 1524 && mouseY < 926) {
             if(p1.turn) { // Player 2's turn
                 p1.next();

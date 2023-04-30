@@ -75,7 +75,9 @@ public class MainPanel extends JPanel implements MouseListener {
             g.drawImage(temp4, 798, 447, 420, 310, null);
             for (int i = 0; i < theBoard.getLength(); i ++) {
                 for (int j = 0; j < theBoard.returnBoard()[i].length; j ++) {
-                    theBoard.returnBoard()[i][j].drawHighlight(g);
+                    if (theBoard.returnBoard()[i][j].getNeighbor("West") != null && theBoard.returnBoard()[i][j].getNeighbor("West").getTerrain().equals("Grass")) {
+                        theBoard.returnBoard()[i][j].drawHighlight(g);
+                    }
 
                 }
             }
