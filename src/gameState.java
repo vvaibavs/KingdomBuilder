@@ -100,14 +100,14 @@ public class gameState {
                 }
 
 
-                if (specialToken.equals("None") && settlementsLeft > 0 && picked && selected.isValid(current.getColor(), current.card.type, nextToSettlementRequired, specialToken)) {
+                if ( current.getSettlements() != 0 && specialToken.equals("None") && settlementsLeft > 0 && picked && selected.isValid(current.getColor(), current.card.type, nextToSettlementRequired, specialToken)) {
                     selected.putSettlement(current.getColor());
                     settlementsLeft -= 1;
                     current.byeSettlements(1);
                 }
                 nextToSettlementRequired = false;
 
-        } else if(mouseX > 1342 && mouseY > 878 && mouseX < 1524 && mouseY < 926 && settlementsLeft == 0) {
+        } else if(mouseX > 1342 && mouseY > 878 && mouseX < 1524 && mouseY < 926 && (settlementsLeft == 0 || current.getSettlements() == 0)) {
             settlementsLeft = 3;
             if(p1.turn) { // Player 2's turn
                 p1.next();
@@ -115,24 +115,48 @@ public class gameState {
                 p2.card.randomize();
                 current = p2;
                 System.out.println(p2.card.type);
+                if (terrains.size() == 0) {
+                    terrains = new ArrayList<>();
+                    for(int i = 1; i <= 30; i++) {
+                        terrains.add(i);
+                    }
+                }
             } else if(p2.turn) { // Player 3's turn
                 p2.next();
                 p3.next();
                 p3.card.randomize();
                 current = p3;
                 System.out.println(p3.card.type);
+                if (terrains.size() == 0) {
+                    terrains = new ArrayList<>();
+                    for(int i = 1; i <= 30; i++) {
+                        terrains.add(i);
+                    }
+                }
             } else if(p3.turn) { // Player 4's turn
                 p3.next();
                 p4.next();
                 current = p4;
                 p4.card.randomize();
                 System.out.println(p4.card.type);
+                if (terrains.size() == 0) {
+                    terrains = new ArrayList<>();
+                    for(int i = 1; i <= 30; i++) {
+                        terrains.add(i);
+                    }
+                }
             } else if(p4.turn) { // Player 1's turn
                 p4.next();
                 p1.next();
                 p1.card.randomize();
                 current = p1;
                 System.out.println(p1.card.type);
+                if (terrains.size() == 0) {
+                    terrains = new ArrayList<>();
+                    for(int i = 1; i <= 30; i++) {
+                        terrains.add(i);
+                    }
+                }
             }
         }
     }

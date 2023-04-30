@@ -79,7 +79,13 @@ public class MainPanel extends JPanel implements MouseListener {
                         theBoard.returnBoard()[i][j].drawSettlement(g);
                     }
                 }
+
             }
+            g.setFont(new Font("Kunstler Script", Font.BOLD, 65));
+            g.drawString(gameState.p1.getSettlements() + "", 235, 238);
+            g.drawString(gameState.p2.getSettlements() + "", 1440, 238);
+            g.drawString(gameState.p3.getSettlements() + "", 238, 631);
+            g.drawString(gameState.p4.getSettlements() + "", 1450, 643);
             if (gameState.settlementsLeft > 0) {
                 for (int i = 0; i < gameState.board.getLength(); i++) {
                     for (int j = 0; j < gameState.board.getLength(); j++) {
