@@ -53,6 +53,7 @@ public class gameState {
         locTile.add("Oasis");
         locTile.add("Paddock");
         locTile.add("Barn");
+        locTile.add("Castle");
 
         terrains = new ArrayList<>();
         for(int i = 1; i <= 30; i++) {
@@ -162,65 +163,307 @@ public class gameState {
     }
 
     public void scoringCards(){
+        // need to link players number to their color here before starting
+
 
     }
 
-    public int worker(String color, Node n){ //simplify code
-        if(n.getSettlementColor().equals(color)){
-            if(locTile.contains(n.getNeighbor("East"))){
-                return 1;
-            }else if(locTile.contains(n.getNeighbor("West"))){
-                return 1;
-            }else if(locTile.contains(n.getNeighbor("SouthWest"))){
-                return 1;
-            }else if(locTile.contains(n.getNeighbor("NorthWest"))){
-                return 1;
-            }else if(locTile.contains(n.getNeighbor("SouthEast"))){
-                return 1;
-            }else if(locTile.contains(n.getNeighbor("NorthEast"))){
-                return 1;
+    public int worker(String color){ //simplify code
+        Node[][] allNodes = board.returnBoard();
+        int[][] counted = new int[allNodes.length][allNodes[0].length];
+        int score = 0;
+        for(int i = 0; i < allNodes.length; i++){
+            for(int j = 0; j < allNodes[i].length; j++){
+                Node n = allNodes[i][j];
+                if(n.hasSettlement() == true && n.getSettlementColor().equals(color)){
+                    if (n.getNeighbor("East") != null && locTile.contains(n.getNeighbor("East").getTerrain()) && counted[n.getNeighbor("East").getX()][n.getNeighbor("East").getY()] != 1) {
+                        score++;
+                        counted[n.getNeighbor("East").getX()][n.getNeighbor("East").getY()] = 1;
+                    }
+                    if (n.getNeighbor("West") != null && locTile.contains(n.getNeighbor("West").getTerrain())&& counted[n.getNeighbor("West").getX()][n.getNeighbor("West").getY()] != 1) {
+                        score++;
+                        counted[n.getNeighbor("West").getX()][n.getNeighbor("West").getY()] = 1;
+                    }
+                    if (n.getNeighbor("SouthWest") != null && locTile.contains(n.getNeighbor("SouthWest").getTerrain())&& counted[n.getNeighbor("SouthWest").getX()][n.getNeighbor("SouthWest").getY()] != 1) {
+                        score++;
+                        counted[n.getNeighbor("SouthWest").getX()][n.getNeighbor("SouthWest").getY()] = 1;
+                    }
+                    if (n.getNeighbor("NorthWest") != null && locTile.contains(n.getNeighbor("NorthWest").getTerrain())&& counted[n.getNeighbor("NorthWest").getX()][n.getNeighbor("NorthWest").getY()] != 1) {
+                        score++;
+                        counted[n.getNeighbor("NorthWest").getX()][n.getNeighbor("NorthWest").getY()] = 1;
+                    }
+                    if (n.getNeighbor("SouthEast") != null && locTile.contains(n.getNeighbor("SouthEast").getTerrain())&& counted[n.getNeighbor("SouthEast").getX()][n.getNeighbor("SouthEast").getY()] != 1) {
+                        score++;
+                        counted[n.getNeighbor("SouthEast").getX()][n.getNeighbor("SouthEast").getY()] = 1;
+                    }
+                    if (n.getNeighbor("NorthEast") != null&& locTile.contains(n.getNeighbor("NorthEast").getTerrain())&& counted[n.getNeighbor("NorthEast").getX()][n.getNeighbor("NorthEast").getY()] != 1) {
+                        score++;
+                        counted[n.getNeighbor("NorthEast").getX()][n.getNeighbor("NorthEast").getY()] = 1;
+                    }
+                }
             }
         }
-        return 0;
+
+        return score;
     }
 
-    public int miner(String color, Node n){
-        if(n.getSettlementColor().equals(color)){
-            if(n.getNeighbor("East").getTerrain() == "Mountain"){
-                return 1;
-            }else if(n.getNeighbor("West").getTerrain() == "Mountain"){
-                return 1;
-            }else if(n.getNeighbor("NorthEast").getTerrain() == "Mountain"){
-                return 1;
-            }else if(n.getNeighbor("SouthEast").getTerrain() == "Mountain"){
-                return 1;
-            }else if(n.getNeighbor("NorthWest").getTerrain() == "Mountain"){
-                return 1;
-            }else if(n.getNeighbor("SouthWest").getTerrain() == "Mountain"){
-                return 1;
+    public int miner(String color){
+        Node[][] allNodes = board.returnBoard();
+        int[][] counted = new int[allNodes.length][allNodes[0].length];
+        int score = 0;
+        for(int i = 0; i < allNodes.length; i++){
+            for(int j = 0; j < allNodes[i].length; j++){
+                Node n = allNodes[i][j];
+                if(n.hasSettlement() == true && n.getSettlementColor().equals(color)){
+                    if(n.getNeighbor("East") != null && n.getNeighbor("East").getTerrain().equals("Mountain") && counted[n.getNeighbor("East").getX()][n.getNeighbor("East").getY()] != 1) {
+                        score++;
+                        counted[n.getNeighbor("East").getX()][n.getNeighbor("East").getY()] = 1;
+                    }
+                    if(n.getNeighbor("West") != null && n.getNeighbor("West").getTerrain().equals("Mountain") && counted[n.getNeighbor("West").getX()][n.getNeighbor("West").getY()] != 1) {
+                        score++;
+                        counted[n.getNeighbor("West").getX()][n.getNeighbor("West").getY()] = 1;
+                    }
+                    if(n.getNeighbor("NorthEast") != null && n.getNeighbor("NorthEast").getTerrain().equals("Mountain") && counted[n.getNeighbor("NorthEast").getX()][n.getNeighbor("NorthEast").getY()] != 1) {
+                        score++;
+                        counted[n.getNeighbor("NorthEast").getX()][n.getNeighbor("NorthEast").getY()] = 1;
+                    }
+                    if(n.getNeighbor("SouthEast") != null && n.getNeighbor("SouthEast").getTerrain().equals("Mountain") && counted[n.getNeighbor("SouthEast").getX()][n.getNeighbor("SouthEast").getY()] != 1) {
+                        score++;
+                        counted[n.getNeighbor("SouthEast").getX()][n.getNeighbor("SouthEast").getY()] = 1;
+                    }
+                    if(n.getNeighbor("NorthWest") != null && n.getNeighbor("NorthWest").getTerrain().equals("Mountain") && counted[n.getNeighbor("NorthWest").getX()][n.getNeighbor("NorthWest").getY()] != 1) {
+                        score++;
+                        counted[n.getNeighbor("NorthWest").getX()][n.getNeighbor("NorthWest").getY()] = 1;
+
+                    }
+                    if(n.getNeighbor("SouthWest") != null && n.getNeighbor("SouthWest").getTerrain().equals("Mountain") && counted[n.getNeighbor("SouthWest").getX()][n.getNeighbor("SouthWest").getY()] != 1) {
+                        score++;
+                        counted[n.getNeighbor("SouthWest").getX()][n.getNeighbor("SouthWest").getY()] = 1;
+                    }
+
+                }
             }
+
         }
-        return 0;
+        return score;
     }
 
-    public int fishermen(String color, Node n){
-        if(n.getSettlementColor().equals(color)){
-            if(n.getNeighbor("East").getTerrain() == "Water"){
-                return 1;
-            }else if(n.getNeighbor("West").getTerrain() == "Water"){
-                return 1;
-            }else if(n.getNeighbor("NorthEast").getTerrain() == "Water"){
-                return 1;
-            }else if(n.getNeighbor("SouthEast").getTerrain() == "Water"){
-                return 1;
-            }else if(n.getNeighbor("NorthWest").getTerrain() == "Water"){
-                return 1;
-            }else if(n.getNeighbor("SouthWest").getTerrain() == "Water"){
-                return 1;
+    public int fishermen(String color){
+        Node[][] allNodes = board.returnBoard();
+        int[][] counted = new int[allNodes.length][allNodes[0].length];
+        int score = 0;
+        for(int i = 0; i < allNodes.length; i++){
+            for(int j = 0; j < allNodes[i].length; j++){
+                Node n = allNodes[i][j];
+                if(n.hasSettlement() == true && n.getSettlementColor().equals(color)){
+                    if(n.getNeighbor("East") != null && n.getNeighbor("East").getTerrain().equals("Water") && counted[n.getNeighbor("East").getX()][n.getNeighbor("East").getY()] != 1) {
+                        score++;
+                        counted[n.getNeighbor("East").getX()][n.getNeighbor("East").getY()] = 1;
+                    }
+                    if(n.getNeighbor("West") != null && n.getNeighbor("West").getTerrain().equals("Water") && counted[n.getNeighbor("West").getX()][n.getNeighbor("West").getY()] != 1) {
+                        score++;
+                        counted[n.getNeighbor("West").getX()][n.getNeighbor("West").getY()] = 1;
+                    }
+                    if(n.getNeighbor("NorthEast") != null && n.getNeighbor("NorthEast").getTerrain().equals("Water") && counted[n.getNeighbor("NorthEast").getX()][n.getNeighbor("NorthEast").getY()] != 1) {
+                        score++;
+                        counted[n.getNeighbor("NorthEast").getX()][n.getNeighbor("NorthEast").getY()] = 1;
+                    }
+                    if(n.getNeighbor("SouthEast") != null && n.getNeighbor("SouthEast").getTerrain().equals("Water") && counted[n.getNeighbor("SouthEast").getX()][n.getNeighbor("SouthEast").getY()] != 1) {
+                        score++;
+                        counted[n.getNeighbor("SouthEast").getX()][n.getNeighbor("SouthEast").getY()] = 1;
+                    }
+                    if(n.getNeighbor("NorthWest") != null && n.getNeighbor("NorthWest").getTerrain().equals("Water") && counted[n.getNeighbor("NorthWest").getX()][n.getNeighbor("NorthWest").getY()] != 1) {
+                        score++;
+                        counted[n.getNeighbor("NorthWest").getX()][n.getNeighbor("NorthWest").getY()] = 1;
+
+                    }
+                    if(n.getNeighbor("SouthWest") != null && n.getNeighbor("SouthWest").getTerrain().equals("Water") && counted[n.getNeighbor("SouthWest").getX()][n.getNeighbor("SouthWest").getY()] != 1) {
+                        score++;
+                        counted[n.getNeighbor("SouthWest").getX()][n.getNeighbor("SouthWest").getY()] = 1;
+                    }
+
+                }
+            }
+
+        }
+        return score;
+    }
+
+    public int farmers (String color){
+        Node[][] allNodes = board.returnBoard();
+        int[][] counted = new int[allNodes.length][allNodes[0].length];
+
+        int score = 0;
+        //top left
+        int minNum = Integer.MAX_VALUE;
+        for(int i = 0; i < allNodes.length/2; i++){
+            for(int j = 0; j < allNodes[i].length/2; j++){
+
+                Node n = allNodes[i][j];
+                int setSize = setArea(n, counted, color);
+                if(setSize > 0 && setSize < minNum){
+                    minNum = setSize;
+                }
+
             }
         }
-        return 0;
+        if(minNum > 0 && minNum < Integer.MAX_VALUE){
+            score += minNum * 3;
+        }
+        //top right
+        minNum = Integer.MAX_VALUE;
+        for(int i = 10; i < allNodes.length; i++){
+            for(int j = 0; j < allNodes[i].length/2; j++){
+
+                Node n = allNodes[i][j];
+                int setSize = setArea(n, counted, color);
+                if(setSize > 0 && setSize < minNum){
+                    minNum = setSize;
+                }
+
+            }
+        }
+        if(minNum > 0 && minNum < Integer.MAX_VALUE){
+            score += minNum * 3;
+        }
+        //bottom left
+        minNum = Integer.MAX_VALUE;
+        for(int i = 0; i < allNodes.length/2; i++){
+            for(int j = 10; j < allNodes[i].length; j++){
+
+                Node n = allNodes[i][j];
+                int setSize = setArea(n, counted, color);
+                if(setSize > 0 && setSize < minNum){
+                    minNum = setSize;
+                }
+
+            }
+        }
+        if(minNum > 0 && minNum < Integer.MAX_VALUE){
+            score += minNum * 3;
+        }
+        //bottom right
+        minNum = Integer.MAX_VALUE;
+        for(int i = 10; i < allNodes.length; i++){
+            for(int j = 10; j < allNodes[i].length; j++){
+
+                Node n = allNodes[i][j];
+                int setSize = setArea(n, counted, color);
+                if(setSize > 0 && setSize < minNum){
+                    minNum = setSize;
+                }
+
+            }
+        }
+        if(minNum > 0 && minNum < Integer.MAX_VALUE){
+            score += minNum * 3;
+        }
+
+        return score;
+
     }
+
+    public int citizens (String color){
+        Node[][] allNodes = board.returnBoard();
+        int[][] counted = new int[allNodes.length][allNodes[0].length];
+        int maxNum = Integer.MIN_VALUE;
+        int score = 0;
+
+        for(int i = 0; i < allNodes.length; i++){
+            for(int j = 0; j < allNodes[i].length; j++){
+
+                Node n = allNodes[i][j];
+                int setSize = setArea(n, counted, color);
+                if(setSize > maxNum){
+                    maxNum = setSize;
+                }
+
+            }
+        }
+
+        score = maxNum/2;
+        return score;
+
+    }
+
+    public int lords (String color){
+        //lords: call the numset method for each player & each sector
+        //compare the player max with each other for a certain sector
+
+        //arraylist look
+        //for loop of sectors
+            //for loop of player colors(make sure it loops in player order)
+                //save each players score in an arraylist
+            // get index of value that has the highest score && second-highest
+            // add store in arraylist look outside
+        //return arraylist look
+
+        //in the actual scoring cards method
+            //first value == player that had the most in the first sector && second value == player that had the second most in the first sector
+            //first value + 12 points to total && second value + 6 points
+            //maybe loop through odds and +12, then evens and add +6
+        return -1;
+    }
+
+    public int numSet(String color, int sectorNum){ //1 = top left, 2 = top right, 3 = bottom left, 4 = bottom right
+        //returns the number of settlements in a sector
+        Node[][] allNodes = board.returnBoard();
+        int numSettlements = 0;
+        int imax = -1;
+        int jmax = -1;
+        int imin = -1;
+        int jmin = -1;
+        switch(sectorNum){
+            case 1: //top left
+                imin = 0;
+                imax = allNodes.length/2;
+                jmin = 0;
+                jmax = allNodes[0].length/2;
+                break;
+            case 2: //top right
+                imin = allNodes.length/2;
+                imax = allNodes.length;
+                jmin = 0;
+                jmax = allNodes[0].length/2;
+                break;
+            case 3: //bottom left
+                imin = 0;
+                imax = allNodes.length/2;
+                jmin = allNodes[0].length/2;
+                jmax = allNodes[0].length;
+                break;
+            case 4: //bottom right
+                imin = allNodes.length/2;
+                imax = allNodes.length;
+                jmin = allNodes[0].length/2;
+                jmax = allNodes[0].length;
+                break;
+        }
+
+        for(int i = imin; i < imax; i++){
+            for(int j = jmin; j < jmax; j++){
+                Node l = allNodes[i][j];
+                if(l.hasSettlement() == true && l.getSettlementColor().equals(color)){
+                    numSettlements++;
+                }
+            }
+        }
+        return numSettlements;
+
+    }
+
+    public int setArea(Node n, int[][] counted, String color){
+        //returns the number of settlements in a settlement area
+        if(n.hasSettlement() == true && n.getSettlementColor().equals(color) && counted[n.getX()][n.getY()] != 1){
+            counted[n.getX()][n.getY()] = 1;
+            return 1 + setArea(n.getNeighbor("East"), counted, color) + setArea(n.getNeighbor("West"), counted, color) +
+                    setArea(n.getNeighbor("NorthEast"), counted, color) + setArea(n.getNeighbor("SouthEast"), counted, color) +
+                    setArea(n.getNeighbor("NorthWest"), counted, color) + setArea(n.getNeighbor("SouthWest"), counted, color);
+        }else{
+            return 0;
+        }
+    }
+
 
 
 
