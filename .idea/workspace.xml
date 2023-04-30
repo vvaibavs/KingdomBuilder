@@ -33,10 +33,10 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -65,13 +65,15 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "last_opened_file_path": "C:/Users/slhscs230/IdeaProjects/Kingdom Builder/src/images/map2.png",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "two.files.diff.last.used.file": "C:/Users/slhscs230/IdeaProjects/Kingdom Builder/src/images/map2.png"
+    "two.files.diff.last.used.file": "C:/Users/slhscs230/IdeaProjects/Kingdom Builder/src/images/map2.png",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -107,13 +109,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1679315783181</updated>
-    </task>
-    <task id="LOCAL-00019" summary="empty inside">
-      <created>1679921592875</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1679921592875</updated>
+      <workItem from="1682819322803" duration="81000" />
     </task>
     <task id="LOCAL-00020" summary="empty inside">
       <created>1679921661167</created>
@@ -451,7 +447,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682819139787</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="Empty Inside.">
+      <created>1682819350028</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1682819350029</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -485,6 +488,7 @@
     <MESSAGE value="Changes by k1215075" />
     <MESSAGE value="worker" />
     <MESSAGE value="scoring button" />
-    <option name="LAST_COMMIT_MESSAGE" value="scoring button" />
+    <MESSAGE value="Empty Inside." />
+    <option name="LAST_COMMIT_MESSAGE" value="Empty Inside." />
   </component>
 </project>

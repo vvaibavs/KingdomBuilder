@@ -103,6 +103,7 @@ public class gameState {
                 if (specialToken.equals("None") && settlementsLeft > 0 && picked && selected.isValid(current.getColor(), current.card.type, nextToSettlementRequired, specialToken)) {
                     selected.putSettlement(current.getColor());
                     settlementsLeft -= 1;
+                    current.byeSettlements(1);
                 }
                 nextToSettlementRequired = false;
 
