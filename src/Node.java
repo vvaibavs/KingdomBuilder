@@ -13,7 +13,7 @@ public class Node {
     private int y;
     private HashMap<String, Node> neighbors = new HashMap<String, Node>();
     private final int radius = 20;
-    BufferedImage hexHighLight;
+    BufferedImage hexHighLight, red, blue, black, orange;
     public Node(String terrain, int board, int xloc, int yloc) {
         this.terrain = terrain;
         this.board = board;
@@ -21,6 +21,10 @@ public class Node {
         y = yloc;
         try {
             hexHighLight = ImageIO.read(Node.class.getResource("/images/HexHighlight.png"));
+            blue = ImageIO.read(Node.class.getResource("/images/Blue.png"));
+            black = ImageIO.read(Node.class.getResource("/images/Black.png"));
+            orange = ImageIO.read(Node.class.getResource("/images/Orange.png"));
+            red = ImageIO.read(Node.class.getResource("/images/Red.png"));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -169,5 +173,19 @@ public class Node {
             return true;
         }
         return false;
+    }
+    public void drawSettlement(Graphics g) {
+        if (settlementColor.equals("blue")) {
+            g.drawImage(blue, x, y - 30, 40, 40, null);
+        }
+        if (settlementColor.equals("black")) {
+            g.drawImage(black, x, y - 30, 40, 40, null);
+        }
+        if (settlementColor.equals("orange")) {
+            g.drawImage(orange, x, y - 30, 40, 40, null);
+        }
+        if (settlementColor.equals("red")) {
+            g.drawImage(red, x, y - 30, 40, 40, null);
+        }
     }
 }

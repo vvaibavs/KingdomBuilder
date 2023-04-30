@@ -73,6 +73,13 @@ public class MainPanel extends JPanel implements MouseListener {
 
             g.drawImage(temp3, 398, 447, 420, 310, null);
             g.drawImage(temp4, 798, 447, 420, 310, null);
+            for (int i = 0; i < theBoard.getLength(); i ++) {
+                for (int j = 0; j < theBoard.getLength(); j ++) {
+                    if (theBoard.returnBoard()[i][j].hasSettlement()) {
+                        theBoard.returnBoard()[i][j].drawSettlement(g);
+                    }
+                }
+            }
             if (gameState.settlementsLeft > 0) {
                 for (int i = 0; i < gameState.board.getLength(); i++) {
                     for (int j = 0; j < gameState.board.getLength(); j++) {
