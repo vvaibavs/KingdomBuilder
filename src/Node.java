@@ -138,7 +138,8 @@ public class Node {
     public int getY() {
         return y;
     }
-    public boolean isValid(String color, String terrain, boolean nextToSettlementMatters) {
+    public boolean isValid(String color, String terrain, boolean nextToSettlementMatters, String specialToken) {
+
         if (hasSettlement) {
             return false;
         }

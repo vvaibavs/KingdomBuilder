@@ -15,6 +15,9 @@ public class gameState {
     public static String substate = "placeSettlement";
     public static boolean nextToSettlementRequired = false;
     public static int settlementsLeft = 3;
+    //Hi Vaibav, I left this special token variable in here for you to use tomorrow, in the Node class there is an isValid method that will have this as an input.
+    //When using the method, simply add if statements with the name of the special token and add those parameters!
+    public static String specialToken = "None";
 
 
     public static Player p1, p2, p3, p4, current;
@@ -70,7 +73,7 @@ public class gameState {
         } else if(mouseX > 476 && mouseY > 27 && mouseX < 734 && mouseY < 76 && state.equals("not Scoring Card")) {
             state = "Game Screen";
         } else if (mouseX < 1218 && mouseX > 398 && mouseY < 757 && mouseY > 147 && state.equals("Game Screen")) {
-            if (substate.equals("placeSettlement") && settlementsLeft > 0) {
+
                 int tempXPlace;
                 int tempYPlace;
                 ArrayList<Node> contenders = new ArrayList<>();
@@ -97,12 +100,11 @@ public class gameState {
                 }
 
 
-                if (picked && selected.isValid(current.getColor(), current.card.type, nextToSettlementRequired)) {
+                if (specialToken.equals("None") && settlementsLeft > 0 && picked && selected.isValid(current.getColor(), current.card.type, nextToSettlementRequired, specialToken)) {
                     selected.putSettlement(current.getColor());
                     settlementsLeft -= 1;
                 }
                 nextToSettlementRequired = false;
-            }
 
         } else if(mouseX > 1342 && mouseY > 878 && mouseX < 1524 && mouseY < 926 && settlementsLeft == 0) {
             settlementsLeft = 3;

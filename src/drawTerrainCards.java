@@ -6,11 +6,11 @@ public class drawTerrainCards {
 
     public drawTerrainCards() {
         try {
-            canyon = ImageIO.read(MainPanel.class.getResource("/images/canyon.png"));
-            desert = ImageIO.read(MainPanel.class.getResource("/images/desert.png"));
-            flower = ImageIO.read(MainPanel.class.getResource("/images/flower.png"));
-            forest = ImageIO.read(MainPanel.class.getResource("/images/forest.png"));
-            meadow = ImageIO.read(MainPanel.class.getResource("/images/meadow.png"));
+            canyon = ImageIO.read(MainPanel.class.getResource("/images/Canyon.png"));
+            desert = ImageIO.read(MainPanel.class.getResource("/images/Desert.png"));
+            flower = ImageIO.read(MainPanel.class.getResource("/images/Flower.png"));
+            forest = ImageIO.read(MainPanel.class.getResource("/images/Forest.png"));
+            meadow = ImageIO.read(MainPanel.class.getResource("/images/Grass.png"));
         } catch(Exception e) {
             System.out.println(e);
         }
