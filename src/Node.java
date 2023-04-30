@@ -117,14 +117,13 @@ public class Node {
         return temp;
     }
     public boolean containsClick(int xloc, int yloc) {
-        if (Math.pow(xloc - x + 20, 2) + Math.pow(yloc - y - 10, 2) < Math.pow(radius, 2)) {
+        if (Math.pow(xloc - x - 20, 2) + Math.pow(yloc - y + 10, 2) < Math.pow(radius, 2)) {
             return true;
         }
         return false;
     }
     public void drawHighlight(Graphics g) {
         g.drawImage(hexHighLight, x - 1, y - 31, 41, 41, null );
-        g.drawOval(x + 20, y - 10, 4, 4);
     }
     public String getLoc() {
         return board + "";
