@@ -28,7 +28,7 @@ public class gameState {
         }
         p1 = new Player("red");
         p2 = new Player("blue");
-        p3 = new Player("green");
+        p3 = new Player("orange");
         p4 = new Player("black");
         current = p1;
         Collections.shuffle(randScoring);
