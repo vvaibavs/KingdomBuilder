@@ -14,15 +14,15 @@ public class TerrainCard {
     public void randomize() {
         Collections.shuffle(gameState.terrains);
         if(gameState.terrains.get(0) <= 6) {
-            type = "canyon";
+            type = "Canyon";
         } else if(gameState.terrains.get(0) <= 12) {
-            type = "desert";
+            type = "Desert";
         } else if(gameState.terrains.get(0) <= 18) {
-            type = "flower";
+            type = "Flower";
         } else if(gameState.terrains.get(0) <= 24) {
-            type = "forest";
+            type = "Forest";
         } else if(gameState.terrains.get(0) <= 30) {
-            type = "meadow";
+            type = "Grass";
         }
         gameState.terrains.remove(0);
 

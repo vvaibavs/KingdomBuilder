@@ -117,13 +117,14 @@ public class Node {
         return temp;
     }
     public boolean containsClick(int xloc, int yloc) {
-        if (Math.pow(xloc - x, 2) + Math.pow(yloc - y, 2) < Math.pow(radius, 2)) {
+        if (Math.pow(xloc - x + 20, 2) + Math.pow(yloc - y - 10, 2) < Math.pow(radius, 2)) {
             return true;
         }
         return false;
     }
     public void drawHighlight(Graphics g) {
         g.drawImage(hexHighLight, x - 1, y - 31, 41, 41, null );
+        g.drawOval(x + 20, y - 10, 4, 4);
     }
     public String getLoc() {
         return board + "";
@@ -133,5 +134,41 @@ public class Node {
     }
     public int getY() {
         return y;
+    }
+    public boolean isValid(String color, String terrain, boolean nextToSettlementMatters) {
+        if (hasSettlement) {
+            return false;
+        }
+        if (! this.terrain.equals(terrain)) {
+            return false;
+        }
+        if (nextToSettlementMatters) {
+            if (! hasColorNeighbor(color)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public boolean hasColorNeighbor(String inputColor) {
+        if (getNeighbor("West").hasSettlement() && getNeighbor("West").getSettlementColor().equals(inputColor)) {
+            return true;
+        }
+        if (getNeighbor("East").hasSettlement() && getNeighbor("East").getSettlementColor().equals(inputColor)) {
+            return true;
+        }
+        if (getNeighbor("NorthWest").hasSettlement() && getNeighbor("NorthWest").getSettlementColor().equals(inputColor)) {
+            return true;
+        }
+        if (getNeighbor("NorthEast").hasSettlement() && getNeighbor("NorthEast").getSettlementColor().equals(inputColor)) {
+            return true;
+        }
+        if (getNeighbor("SouthWest").hasSettlement() && getNeighbor("SouthWest").getSettlementColor().equals(inputColor)) {
+            return true;
+        }
+        if (getNeighbor("SouthEast").hasSettlement() && getNeighbor("SouthEast").getSettlementColor().equals(inputColor)) {
+            return true;
+        }
+        return false;
     }
 }

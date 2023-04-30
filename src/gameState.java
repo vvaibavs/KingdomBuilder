@@ -13,6 +13,8 @@ public class gameState {
     public static Board board;
     public static ArrayList<Integer> terrains;
     public static String substate = "placeSettlement";
+    public static boolean nextToSettlementRequired = false;
+    public static int settlementsLeft = 3;
 
 
     public static Player p1, p2, p3, p4, current;
@@ -60,7 +62,7 @@ public class gameState {
             state = "Game Screen";
             p1.next(); // Player 1's turn
             p1.card.randomize();
-            System.out.println(p1.card.type);
+            System.out.println(current.card.type);
             mouseX = 0;
             mouseY = 0;
         } else if(mouseX > 476 && mouseY > 27 && mouseX < 734 && mouseY < 76 && !state.equals("Scoring Card") && !state.equals("not Scoring Card")) {
@@ -68,11 +70,11 @@ public class gameState {
         } else if(mouseX > 476 && mouseY > 27 && mouseX < 734 && mouseY < 76 && state.equals("not Scoring Card")) {
             state = "Game Screen";
         } else if (mouseX < 1218 && mouseX > 398 && mouseY < 757 && mouseY > 147 && state.equals("Game Screen")) {
-            if (substate.equals("placeSettlement")) {
+            if (substate.equals("placeSettlement") && settlementsLeft > 0) {
                 int tempXPlace;
                 int tempYPlace;
                 ArrayList<Node> contenders = new ArrayList<>();
-                Node selected;
+                Node selected = null;
                 for (int i = 0; i < board.getLength(); i ++) {
                     for (int j = 0; j < board.getLength(); j ++) {
                         if (board.returnBoard()[i][j].containsClick(mouseX, mouseY)) {
@@ -80,35 +82,50 @@ public class gameState {
                         }
                     }
                 }
-                if (Math.hypot(mouseX - contenders.get(0).getX(), mouseY - contenders.get(0).getY()) < Math.hypot(mouseX - contenders.get(1).getX(), mouseY - contenders.get(1).getY())) {
+                boolean picked = true;
+                if (contenders.size() == 0) {
+                    picked = false;
+                }
+                else if (contenders.size() > 1 && Math.hypot(mouseX - contenders.get(0).getX(), mouseY - contenders.get(0).getY()) < Math.hypot(mouseX - contenders.get(1).getX(), mouseY - contenders.get(1).getY())) {
+                    selected = contenders.get(0);
+                }
+                else if (contenders.size() == 1) {
                     selected = contenders.get(0);
                 }
                 else {
                     selected = contenders.get(1);
                 }
-                selected.putSettlement(current.getColor());
+                if (picked && selected.isValid(current.getColor(), current.card.type, nextToSettlementRequired)) {
+                    selected.putSettlement(current.getColor());
+                    settlementsLeft -= 1;
+                }
             }
 
-        } else if(mouseX > 1342 && mouseY > 878 && mouseX < 1524 && mouseY < 926) {
+        } else if(mouseX > 1342 && mouseY > 878 && mouseX < 1524 && mouseY < 926 && settlementsLeft == 0) {
+            settlementsLeft = 3;
             if(p1.turn) { // Player 2's turn
                 p1.next();
                 p2.next();
                 p2.card.randomize();
+                current = p2;
                 System.out.println(p2.card.type);
             } else if(p2.turn) { // Player 3's turn
                 p2.next();
                 p3.next();
                 p3.card.randomize();
+                current = p3;
                 System.out.println(p3.card.type);
             } else if(p3.turn) { // Player 4's turn
                 p3.next();
                 p4.next();
+                current = p4;
                 p4.card.randomize();
                 System.out.println(p4.card.type);
             } else if(p4.turn) { // Player 1's turn
                 p4.next();
                 p1.next();
                 p1.card.randomize();
+                current = p1;
                 System.out.println(p1.card.type);
             }
         }
