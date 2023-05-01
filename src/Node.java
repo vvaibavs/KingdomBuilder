@@ -12,11 +12,15 @@ public class Node{
     private int board;
     private int x;
     private int y;
+    private boolean special = false;
     private HashMap<String, Node> neighbors = new HashMap<String, Node>();
     private final int radius = 20;
     BufferedImage hexHighLight, red, blue, black, orange;
     public Node(String terrain, int board, int xloc, int yloc) {
         this.terrain = terrain;
+        if (terrain.equals("Tower") || terrain.equals("Oracle") || terrain.equals("Paddock") || terrain.equals("Farm") || terrain.equals("Tavern") || terrain.equals("Barn") || terrain.equals("Boat") || terrain.equals("Oasis")) {
+            special = true;
+        }
         this.board = board;
         x = xloc;
         y = yloc;
@@ -29,6 +33,9 @@ public class Node{
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+    public boolean isSpecial() {
+        return special;
     }
     public void addNeighbor(String direction, Node neighbor) {
         neighbors.put(direction, neighbor);
@@ -140,13 +147,17 @@ public class Node{
         return y;
     }
     public boolean isValid(String color, String terrain, boolean nextToSettlementMatters, String specialToken) {
+
+        if ( ( this.terrain.equals("Mountain") || this.terrain.equals("Water")) && ! specialToken.equals("Boat")) {
+            return false;
+        }
         if (specialToken.equals("Tower") && neighbors.size() == 6) {
             return false;
         }
         if (hasSettlement) {
             return false;
         }
-        if (! this.terrain.equals(terrain)) {
+        if (! this.terrain.equals(terrain) && ! specialToken.equals("Tower")) {
             return false;
         }
         if (nextToSettlementMatters) {
@@ -178,6 +189,27 @@ public class Node{
             return true;
         }
         return false;
+    }
+    public String hasSpecialNeighbor(String specialInput) {
+        if (getNeighbor("West") != null && getNeighbor("West").isSpecial()) {
+            return getNeighbor("West").getTerrain();
+        }
+        if (getNeighbor("East") != null && getNeighbor("East").isSpecial()) {
+            return getNeighbor("West").getTerrain();
+        }
+        if (getNeighbor("NorthWest") != null && getNeighbor("NorthWest").isSpecial()) {
+            return getNeighbor("West").getTerrain();
+        }
+        if (getNeighbor("NorthEast") != null && getNeighbor("NorthEast").isSpecial()) {
+            return getNeighbor("West").getTerrain();
+        }
+        if (getNeighbor("SouthWest") != null && getNeighbor("SouthWest").isSpecial()) {
+            return getNeighbor("West").getTerrain();
+        }
+        if (getNeighbor("SouthEast") != null && getNeighbor("SouthEast").isSpecial()) {
+            return getNeighbor("West").getTerrain();
+        }
+        return "None";
     }
 
     /*public ArrayList<String> ColorNeighbor(String inputColor) {

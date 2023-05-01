@@ -17,7 +17,7 @@ public class gameState {
     public static int settlementsLeft = 3;
     //Hi Vaibav, I left this special token variable in here for you to use tomorrow, in the Node class there is an isValid method that will have this as an input.
     //When using the method, simply add if statements with the name of the special token and add those parameters!
-    public static String specialToken = "None";
+    public static String specialToken = "Tower";
 
 
     public static Player p1, p2, p3, p4, current;
