@@ -151,6 +151,9 @@ public class gameState {
                 p1.next();
                 p1.card.randomize();
                 current = p1;
+                if (p1.getSettlements() == 0 || p2.getSettlements() == 0 || p3.getSettlements() == 0 || p4.getSettlements() == 0) {
+                    state = "End Screen";
+                }
                 System.out.println(p1.card.type);
                 if (terrains.size() == 0) {
                     terrains = new ArrayList<>();
