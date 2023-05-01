@@ -465,8 +465,6 @@ public class gameState {
     }
 
 
-
-
     public static String getState() {
         return state;
     }
