@@ -12,6 +12,7 @@ public class Node{
     private int board;
     private int x;
     private int y;
+    private int specialTokensLeft = 0;
     private boolean special = false;
     private HashMap<String, Node> neighbors = new HashMap<String, Node>();
     private final int radius = 20;
@@ -20,6 +21,7 @@ public class Node{
         this.terrain = terrain;
         if (terrain.equals("Tower") || terrain.equals("Oracle") || terrain.equals("Paddock") || terrain.equals("Farm") || terrain.equals("Tavern") || terrain.equals("Barn") || terrain.equals("Boat") || terrain.equals("Oasis")) {
             special = true;
+            specialTokensLeft = 2;
         }
         this.board = board;
         x = xloc;
@@ -35,7 +37,7 @@ public class Node{
         }
     }
     public boolean isSpecial() {
-        return special;
+        return special && specialTokensLeft > 0;
     }
     public void addNeighbor(String direction, Node neighbor) {
         neighbors.put(direction, neighbor);
@@ -190,24 +192,33 @@ public class Node{
         }
         return false;
     }
+    public void removeToken() {
+        specialTokensLeft -= 1;
+    }
     public String hasSpecialNeighbor(String specialInput) {
-        if (getNeighbor("West") != null && getNeighbor("West").isSpecial()) {
+        if (getNeighbor("West") != null && getNeighbor("West").isSpecial() ) {
+            getNeighbor("West").removeToken();
             return getNeighbor("West").getTerrain();
         }
         if (getNeighbor("East") != null && getNeighbor("East").isSpecial()) {
-            return getNeighbor("West").getTerrain();
+            getNeighbor("East").removeToken();
+            return getNeighbor("East").getTerrain();
         }
         if (getNeighbor("NorthWest") != null && getNeighbor("NorthWest").isSpecial()) {
-            return getNeighbor("West").getTerrain();
+            getNeighbor("NorthWest").removeToken();
+            return getNeighbor("NorthWest").getTerrain();
         }
         if (getNeighbor("NorthEast") != null && getNeighbor("NorthEast").isSpecial()) {
-            return getNeighbor("West").getTerrain();
+            getNeighbor("NorthEast").removeToken();
+            return getNeighbor("NorthEast").getTerrain();
         }
         if (getNeighbor("SouthWest") != null && getNeighbor("SouthWest").isSpecial()) {
-            return getNeighbor("West").getTerrain();
+            getNeighbor("SouthWest").removeToken();
+            return getNeighbor("SouthWest").getTerrain();
         }
         if (getNeighbor("SouthEast") != null && getNeighbor("SouthEast").isSpecial()) {
-            return getNeighbor("West").getTerrain();
+            getNeighbor("SouthEast").removeToken();
+            return getNeighbor("SouthEast").getTerrain();
         }
         return "None";
     }
