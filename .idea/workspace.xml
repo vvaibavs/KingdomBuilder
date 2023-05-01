@@ -5,12 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7b7fe00a-8f50-40cc-8b35-7b23e9f78bbb" name="Changes" comment="Empty Inside.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Node.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameState.java" afterDir="false" />
-    </list>
-    <list default="true" id="7b7fe00a-8f50-40cc-8b35-7b23e9f78bbb" name="Changes" comment="Empty Inside.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Node.java" afterDir="false" />
     </list>
     <list id="6ca57205-0620-47e2-96b7-d45086a08dec" name="Changes by k1215075" comment="Changes by k1215075" />
@@ -56,21 +50,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "last_opened_file_path": "C:/Users/slhscs230/IdeaProjects/Kingdom Builder/src/images/map2.png",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "two.files.diff.last.used.file": "C:/Users/slhscs230/IdeaProjects/Kingdom Builder/src/images/map2.png",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/slhscs230/IdeaProjects/Kingdom Builder/src/images/map2.png&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;two.files.diff.last.used.file&quot;: &quot;C:/Users/slhscs230/IdeaProjects/Kingdom Builder/src/images/map2.png&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\anita\IdeaProjects\KingdomBuilder\src\images" />
@@ -108,13 +102,6 @@
       <workItem from="1682826325678" duration="2457000" />
       <workItem from="1682866226443" duration="790000" />
       <workItem from="1682908105885" duration="349000" />
-    </task>
-    <task id="LOCAL-00025" summary="empty inside">
-      <created>1680524211468</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1680524211468</updated>
     </task>
     <task id="LOCAL-00026" summary="empty inside">
       <created>1680611146684</created>
@@ -452,7 +439,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682943751474</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="Empty Inside.">
+      <created>1682945686584</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1682945686584</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
