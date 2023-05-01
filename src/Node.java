@@ -140,7 +140,9 @@ public class Node{
         return y;
     }
     public boolean isValid(String color, String terrain, boolean nextToSettlementMatters, String specialToken) {
-
+        if (specialToken.equals("Tower") && neighbors.size() == 6) {
+            return false;
+        }
         if (hasSettlement) {
             return false;
         }
@@ -152,6 +154,7 @@ public class Node{
                 return false;
             }
         }
+
         return true;
     }
 
