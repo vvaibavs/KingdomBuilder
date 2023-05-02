@@ -1,4 +1,7 @@
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
 import java.util.ArrayList;
 public class Player {
     private String color;
@@ -6,7 +9,8 @@ public class Player {
     private ArrayList<LocTile> tile;
     private int score;
     boolean turn;
-
+    private ArrayList<String> specialTokens;
+    public ArrayList<BufferedImage> specialTokenImages;
     public TerrainCard card;
     public Player(String c){
         color = c;
@@ -15,6 +19,9 @@ public class Player {
         tile = new ArrayList<LocTile>();
         turn = false;
         card = new TerrainCard();
+        specialTokens = new ArrayList<>();
+        specialTokenImages = new ArrayList<>();
+
     }
 
     public void next() {
@@ -35,5 +42,20 @@ public class Player {
 
     public int getScore(){
         return score;
+    }
+    public void addSpecialToken(String tokenToAdd) {
+        specialTokens.add(tokenToAdd);
+        try {
+            specialTokenImages.add(ImageIO.read(Node.class.getResource("/images/" + tokenToAdd + ".png")));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public void removeSpecialToken(String tokenToRemove) {
+        specialTokenImages.remove(specialTokens.remove(tokenToRemove));
+    }
+
+    public ArrayList<String> getSpecialTokens() {
+        return specialTokens;
     }
 }

@@ -19,7 +19,7 @@ public class Node{
     BufferedImage hexHighLight, red, blue, black, orange;
     public Node(String terrain, int board, int xloc, int yloc) {
         this.terrain = terrain;
-        if (terrain.equals("Tower") || terrain.equals("Oracle") || terrain.equals("Paddock") || terrain.equals("Farm") || terrain.equals("Tavern") || terrain.equals("Barn") || terrain.equals("Boat") || terrain.equals("Oasis")) {
+        if (terrain.equals("tower") || terrain.equals("oracle") || terrain.equals("paddock") || terrain.equals("farm") || terrain.equals("tavern") || terrain.equals("barn") || terrain.equals("boat") || terrain.equals("oasis")) {
             special = true;
             specialTokensLeft = 2;
         }
@@ -153,13 +153,13 @@ public class Node{
         if ( ( this.terrain.equals("Mountain") || this.terrain.equals("Water")) && ! specialToken.equals("Boat")) {
             return false;
         }
-        if (specialToken.equals("Tower") && neighbors.size() == 6) {
+        if (specialToken.equals("tower") && neighbors.size() == 6) {
             return false;
         }
         if (hasSettlement) {
             return false;
         }
-        if (! this.terrain.equals(terrain) && ! specialToken.equals("Tower")) {
+        if (! this.terrain.equals(terrain) && ! specialToken.equals("tower")) {
             return false;
         }
         if (nextToSettlementMatters) {
@@ -195,7 +195,34 @@ public class Node{
     public void removeToken() {
         specialTokensLeft -= 1;
     }
-    public String hasSpecialNeighbor(String specialInput) {
+    public String hasSpecialNeighbor() {
+        if (getNeighbor("West") != null && getNeighbor("West").isSpecial() ) {
+
+            return getNeighbor("West").getTerrain();
+        }
+        if (getNeighbor("East") != null && getNeighbor("East").isSpecial()) {
+
+            return getNeighbor("East").getTerrain();
+        }
+        if (getNeighbor("NorthWest") != null && getNeighbor("NorthWest").isSpecial()) {
+
+            return getNeighbor("NorthWest").getTerrain();
+        }
+        if (getNeighbor("NorthEast") != null && getNeighbor("NorthEast").isSpecial()) {
+
+            return getNeighbor("NorthEast").getTerrain();
+        }
+        if (getNeighbor("SouthWest") != null && getNeighbor("SouthWest").isSpecial()) {
+
+            return getNeighbor("SouthWest").getTerrain();
+        }
+        if (getNeighbor("SouthEast") != null && getNeighbor("SouthEast").isSpecial()) {
+
+            return getNeighbor("SouthEast").getTerrain();
+        }
+        return "None";
+    }
+    public String removeTokenFromSpecialNeighbor() {
         if (getNeighbor("West") != null && getNeighbor("West").isSpecial() ) {
             getNeighbor("West").removeToken();
             return getNeighbor("West").getTerrain();
@@ -222,6 +249,7 @@ public class Node{
         }
         return "None";
     }
+
 
     /*public ArrayList<String> ColorNeighbor(String inputColor) {
         if (getNeighbor("West") != null && getNeighbor("West").hasSettlement() && getNeighbor("West").getSettlementColor().equals(inputColor)) {
