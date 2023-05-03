@@ -118,18 +118,21 @@ public class gameState {
                         }
 
                     }
-                    if (specialToken.equals("None") || specialToken.equals("oracle") || specialToken.equals("tower") || specialToken.equals("farm")) {
+                    if (specialToken.equals("None") || specialToken.equals("oracle") || specialToken.equals("tower") || specialToken.equals("farm") || specialToken.equals("oasis")) {
                         selected.putSettlement(current.getColor());
+                        if (selectedTile != null) {
+                            selectedTile.use();
+                        }
+
                     }
                     if (specialToken.equals("None")) {
                         settlementsLeft -= 1;
                         current.byeSettlements(1);
                     }
-                    if (selectedTile != null) {
-                        selectedTile.use();
-                    }
                     specialToken = "None";
                     selectedTile = null;
+
+
                 }
                 nextToSettlementRequired = false;
 
