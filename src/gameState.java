@@ -9,12 +9,14 @@ public class gameState {
     public static ScoringCard card1, card2, card3;
     private ArrayList<String> locTile;
     private MainPanel Panel;
+    public static int currentPlayer = 1;
     private ArrayList<Integer> randScoring;
     public static Board board;
     public static ArrayList<Integer> terrains;
     public static String substate = "placeSettlement";
     public static boolean nextToSettlementRequired = false;
     public static int settlementsLeft = 3;
+    public static SpecialTile selectedTile = null;
     //Hi Vaibav, I left this special token variable in here for you to use tomorrow, in the Node class there is an isValid method that will have this as an input.
     //When using the method, simply add if statements with the name of the special token and add those parameters!
     public static String specialToken = "None";
@@ -100,8 +102,47 @@ public class gameState {
                     selected = contenders.get(1);
                 }
 
+                    System.out.println("OK");
+                    SpecialTile pickedTile = null;
+                    int XVal;
+                    int YVal;
+                    if (currentPlayer == 1) {
+                        XVal = 154 + 20;
+                        YVal = 254 + 20;
+                    }
+                    else if (currentPlayer == 2) {
+                        XVal = 1362 + 20;
+                        YVal = 254 + 20;
+                    }
+                    else if (currentPlayer == 3) {
+                        XVal = 154 + 20;
+                        YVal = 649 + 20;
+                    }
+                    else {
+                        XVal = 1362;
+                        YVal = 649;
 
-                if ( current.getSettlements() != 0 && (settlementsLeft > 0 || ! specialToken.equals("None") )&& picked && selected.isValid(current.getColor(), current.card.type, nextToSettlementRequired, specialToken)) {
+                    }
+                    for (int i = 0; i < current.getSpecialTokens().size(); i ++) {
+                        if (  Math.pow(mouseX - XVal, 2) + Math.pow(mouseY - YVal - i * 40, 2) < 400) {
+                            pickedTile = current.getSpecialTokens().get(i);
+                            System.out.println(pickedTile.getType());
+                        }
+
+                    }
+                    if (pickedTile != null && pickedTile.isReady()) {
+                        if (pickedTile.getType().equals(specialToken)) {
+                            specialToken = "None";
+                            selectedTile = null;
+
+                        }
+                        else {
+                            specialToken = pickedTile.getType();
+                            selectedTile = pickedTile;
+                        }
+                    }
+
+                if ( current.getSettlements() != 0 && (settlementsLeft > 0 || ! specialToken.equals("None") ) && picked && selected.isValid(current.getColor(), current.card.type, nextToSettlementRequired, specialToken)) {
 
                     String specialTokenToAdd = selected.hasSpecialNeighbor();
                     if (! specialTokenToAdd.equals("None")) {
@@ -127,6 +168,8 @@ public class gameState {
         } else if(mouseX > 1342 && mouseY > 878 && mouseX < 1524 && mouseY < 926 && (settlementsLeft == 0 || current.getSettlements() == 0)) {
             settlementsLeft = 3;
             if(p1.turn) { // Player 2's turn
+                currentPlayer = 2;
+                p2.refreshTiles();
                 p1.next();
                 p2.next();
                 p2.card.randomize();
@@ -139,6 +182,8 @@ public class gameState {
                     }
                 }
             } else if(p2.turn) { // Player 3's turn
+                currentPlayer = 3;
+                p3.refreshTiles();
                 p2.next();
                 p3.next();
                 p3.card.randomize();
@@ -151,6 +196,8 @@ public class gameState {
                     }
                 }
             } else if(p3.turn) { // Player 4's turn
+                currentPlayer = 4;
+                p4.refreshTiles();
                 p3.next();
                 p4.next();
                 current = p4;
@@ -163,6 +210,8 @@ public class gameState {
                     }
                 }
             } else if(p4.turn) { // Player 1's turn
+                currentPlayer = 1;
+                p1.refreshTiles();
                 p4.next();
                 p1.next();
                 p1.card.randomize();

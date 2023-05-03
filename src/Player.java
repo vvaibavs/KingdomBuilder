@@ -51,6 +51,11 @@ public class Player {
             }
         }
     }
+    public void refreshTiles() {
+        for (SpecialTile i: specialTokens) {
+            i.refresh();
+        }
+    }
 
     public ArrayList<SpecialTile> getSpecialTokens() {
         return specialTokens;
