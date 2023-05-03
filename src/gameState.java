@@ -199,7 +199,7 @@ public class gameState {
                 }
             }
         }
-        else if (mouseX > 56 && mouseY > 127 && mouseX < 1529 && mouseY < 831 && (settlementsLeft == 0 || settlementsLeft == 3)) {
+        else if (mouseX > 56 && mouseY > 127 && mouseX < 1529 && mouseY < 831 && (settlementsLeft == 0 || settlementsLeft == 3 || current.getSettlements() == 0)) {
             System.out.println("OK");
 
             SpecialTile pickedTile = null;
@@ -218,8 +218,8 @@ public class gameState {
                 YVal = 649 + 20;
             }
             else {
-                XVal = 1362;
-                YVal = 649;
+                XVal = 1362 + 20;
+                YVal = 649 + 20;
 
             }
             for (int i = 0; i < current.getSpecialTokens().size(); i ++) {
