@@ -156,10 +156,13 @@ public class Node{
         if (specialToken.equals("tower") && neighbors.size() == 6) {
             return false;
         }
+        if (specialToken.equals("farm") && ! terrain.equals("Grass")) {
+            return false;
+        }
         if (hasSettlement) {
             return false;
         }
-        if (! this.terrain.equals(terrain) && ! specialToken.equals("tower")) {
+        if (! this.terrain.equals(terrain) && ! specialToken.equals("tower") && !specialToken.equals("farm")) {
             return false;
         }
         if (nextToSettlementMatters) {

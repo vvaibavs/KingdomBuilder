@@ -118,7 +118,9 @@ public class gameState {
                         }
 
                     }
-                    selected.putSettlement(current.getColor());
+                    if (specialToken.equals("None") || specialToken.equals("oracle") || specialToken.equals("tower") || specialToken.equals("farm")) {
+                        selected.putSettlement(current.getColor());
+                    }
                     if (specialToken.equals("None")) {
                         settlementsLeft -= 1;
                         current.byeSettlements(1);
