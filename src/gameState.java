@@ -102,50 +102,11 @@ public class gameState {
                     selected = contenders.get(1);
                 }
 
-                    System.out.println("OK");
-                    SpecialTile pickedTile = null;
-                    int XVal;
-                    int YVal;
-                    if (currentPlayer == 1) {
-                        XVal = 154 + 20;
-                        YVal = 254 + 20;
-                    }
-                    else if (currentPlayer == 2) {
-                        XVal = 1362 + 20;
-                        YVal = 254 + 20;
-                    }
-                    else if (currentPlayer == 3) {
-                        XVal = 154 + 20;
-                        YVal = 649 + 20;
-                    }
-                    else {
-                        XVal = 1362;
-                        YVal = 649;
-
-                    }
-                    for (int i = 0; i < current.getSpecialTokens().size(); i ++) {
-                        if (  Math.pow(mouseX - XVal, 2) + Math.pow(mouseY - YVal - i * 40, 2) < 400) {
-                            pickedTile = current.getSpecialTokens().get(i);
-                            System.out.println(pickedTile.getType());
-                        }
-
-                    }
-                    if (pickedTile != null && pickedTile.isReady()) {
-                        if (pickedTile.getType().equals(specialToken)) {
-                            specialToken = "None";
-                            selectedTile = null;
-
-                        }
-                        else {
-                            specialToken = pickedTile.getType();
-                            selectedTile = pickedTile;
-                        }
-                    }
-
-                if ( current.getSettlements() != 0 && (settlementsLeft > 0 || ! specialToken.equals("None") ) && picked && selected.isValid(current.getColor(), current.card.type, nextToSettlementRequired, specialToken)) {
+                if ( ((current.getSettlements() != 0 && settlementsLeft > 0) || ! specialToken.equals("None") ) && picked && selected.isValid(current.getColor(), current.card.type, nextToSettlementRequired, specialToken)) {
 
                     String specialTokenToAdd = selected.hasSpecialNeighbor();
                     if (! specialTokenToAdd.equals("None")) {
+
                         boolean contains = false;
                         for (int i = 0; i < current.getSpecialTokens().size(); i ++) {
                             if (current.getSpecialTokens().get(i).getType().equals(specialTokenToAdd)) {
@@ -155,13 +116,18 @@ public class gameState {
                             current.addSpecialToken(specialTokenToAdd);
                             selected.removeTokenFromSpecialNeighbor();
                         }
+
                     }
                     selected.putSettlement(current.getColor());
                     if (specialToken.equals("None")) {
                         settlementsLeft -= 1;
                         current.byeSettlements(1);
                     }
+                    if (selectedTile != null) {
+                        selectedTile.use();
+                    }
                     specialToken = "None";
+                    selectedTile = null;
                 }
                 nextToSettlementRequired = false;
 
@@ -228,6 +194,50 @@ public class gameState {
                 }
             }
         }
+        else if (mouseX > 56 && mouseY > 127 && mouseX < 1529 && mouseY < 831 && (settlementsLeft == 0 || settlementsLeft == 3)) {
+            System.out.println("OK");
+
+            SpecialTile pickedTile = null;
+            int XVal;
+            int YVal;
+            if (currentPlayer == 1) {
+                XVal = 154 + 20;
+                YVal = 254 + 20;
+            }
+            else if (currentPlayer == 2) {
+                XVal = 1362 + 20;
+                YVal = 254 + 20;
+            }
+            else if (currentPlayer == 3) {
+                XVal = 154 + 20;
+                YVal = 649 + 20;
+            }
+            else {
+                XVal = 1362;
+                YVal = 649;
+
+            }
+            for (int i = 0; i < current.getSpecialTokens().size(); i ++) {
+                if (  Math.pow(mouseX - XVal, 2) + Math.pow(mouseY - YVal - i * 40, 2) < 400) {
+                    pickedTile = current.getSpecialTokens().get(i);
+
+                }
+
+            }
+            if (pickedTile != null && pickedTile.isReady()) {
+                if (pickedTile.getType().equals(specialToken)) {
+                    specialToken = "None";
+                    selectedTile = null;
+
+                }
+                else {
+                    specialToken = pickedTile.getType();
+                    selectedTile = pickedTile;
+                }
+            }
+            System.out.println(specialToken);
+        }
+
     }
 
     public void scoringCards(){

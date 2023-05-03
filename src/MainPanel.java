@@ -104,7 +104,7 @@ public class MainPanel extends JPanel implements MouseListener {
             for (int i = 0; i < gameState.p4.getSpecialTokens().size(); i ++) {
                 g.drawImage(gameState.p4.getSpecialTokens().get(i).getImage(), 1362, 649 + i * 40, 40, 40, null);
             }
-            if (gameState.settlementsLeft > 0) {
+            if (gameState.settlementsLeft > 0 || ! gameState.specialToken.equals("None")) {
                 for (int i = 0; i < gameState.board.getLength(); i++) {
                     for (int j = 0; j < gameState.board.getLength(); j++) {
                         if (gameState.board.returnBoard()[i][j].isValid(gameState.current.getColor(), gameState.current.card.type, true, gameState.specialToken)) {
