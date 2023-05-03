@@ -9,8 +9,7 @@ public class Player {
     private ArrayList<LocTile> tile;
     private int score;
     boolean turn;
-    private ArrayList<String> specialTokens;
-    public ArrayList<BufferedImage> specialTokenImages;
+    private ArrayList<SpecialTile> specialTokens;
     public TerrainCard card;
     public Player(String c){
         color = c;
@@ -20,7 +19,6 @@ public class Player {
         turn = false;
         card = new TerrainCard();
         specialTokens = new ArrayList<>();
-        specialTokenImages = new ArrayList<>();
 
     }
 
@@ -44,18 +42,17 @@ public class Player {
         return score;
     }
     public void addSpecialToken(String tokenToAdd) {
-        specialTokens.add(tokenToAdd);
-        try {
-            specialTokenImages.add(ImageIO.read(Node.class.getResource("/images/" + tokenToAdd + ".png")));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+        specialTokens.add(new SpecialTile(tokenToAdd));
+    }
+    public void removeSpecialToken(String type) {
+        for (int i = 0; i < specialTokens.size(); i ++) {
+            if (specialTokens.get(i).equals(type)) {
+                specialTokens.remove(i);
+            }
         }
     }
-    public void removeSpecialToken(String tokenToRemove) {
-        specialTokenImages.remove(specialTokens.remove(tokenToRemove));
-    }
 
-    public ArrayList<String> getSpecialTokens() {
+    public ArrayList<SpecialTile> getSpecialTokens() {
         return specialTokens;
     }
 }

@@ -105,10 +105,14 @@ public class gameState {
 
                     String specialTokenToAdd = selected.hasSpecialNeighbor();
                     if (! specialTokenToAdd.equals("None")) {
-                        if (! current.getSpecialTokens().contains(specialTokenToAdd)) {
-                            selected.removeTokenFromSpecialNeighbor();
+                        boolean contains = false;
+                        for (int i = 0; i < current.getSpecialTokens().size(); i ++) {
+                            if (current.getSpecialTokens().get(i).getType().equals(specialTokenToAdd)) {
+                                contains = true;                            }
+                        }
+                        if (! contains) {
                             current.addSpecialToken(specialTokenToAdd);
-
+                            selected.removeTokenFromSpecialNeighbor();
                         }
                     }
                     selected.putSettlement(current.getColor());
