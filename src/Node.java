@@ -162,11 +162,25 @@ public class Node{
         if (specialToken.equals("oasis") && ! this.terrain.equals("Desert")) {
             return false;
         }
-        
+        if(specialToken.equals("tavern")) {
+            if(tavern("NorthWest", color)) {
+                return true;
+            } else if(tavern("NorthEast", color)) {
+                return true;
+            } else if(tavern("SouthWest", color)) {
+                return true;
+            } else if(tavern("SouthEast", color)) {
+                return true;
+            } else if(tavern("West", color)) {
+                return true;
+            } else if(tavern("East", color)) {
+                return true;
+            }
+        }
         if (hasSettlement) {
             return false;
         }
-        if (! this.terrain.equals(terrain) && ! specialToken.equals("tower") && !specialToken.equals("farm") && ! specialToken.equals("oasis")) {
+        if (! this.terrain.equals(terrain) && ! specialToken.equals("tower") && !specialToken.equals("farm") && ! specialToken.equals("oasis") && ! specialToken.equals("tavern")) {
             return false;
         }
         if (nextToSettlementMatters) {
@@ -175,9 +189,16 @@ public class Node{
             }
         }
 
+
         return true;
     }
 
+    public boolean tavern(String direction, String color) {
+        if(neighbors.get(direction) != null && neighbors.get(direction).settlementColor == color && neighbors.get(direction).getNeighbor(direction) != null && neighbors.get(direction).getNeighbor(direction).settlementColor == color && neighbors.get(direction).getNeighbor(direction).getNeighbor(direction) != null && neighbors.get(direction).getNeighbor(direction).getNeighbor(direction).settlementColor == color) {
+            return true;
+        }
+        return false;
+    }
     public boolean hasColorNeighbor(String inputColor) {
         if (getNeighbor("West") != null && getNeighbor("West").hasSettlement() && getNeighbor("West").getSettlementColor().equals(inputColor)) {
             return true;

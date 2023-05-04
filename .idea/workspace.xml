@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="7b7fe00a-8f50-40cc-8b35-7b23e9f78bbb" name="Changes" comment="Empty Inside." />
     <list default="true" id="7b7fe00a-8f50-40cc-8b35-7b23e9f78bbb" name="Changes" comment="Empty Inside.">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_25_2023_7_27_AM_[Changes]1/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <list id="6ca57205-0620-47e2-96b7-d45086a08dec" name="Changes by k1215075" comment="Changes by k1215075" />
@@ -478,9 +480,10 @@
     <MESSAGE value="scrong card" />
     <MESSAGE value="scrong card" />
     <MESSAGE value="Changes by k1215075" />
+    <MESSAGE value="worker" />
     <MESSAGE value="scoring button" />
     <MESSAGE value="worker" />
     <MESSAGE value="Empty Inside." />
-    <option name="LAST_COMMIT_MESSAGE" value="Empty Inside." />
+    <option name="LAST_COMMIT_MESSAGE" value="scoring button" />
   </component>
 </project>
