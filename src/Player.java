@@ -19,7 +19,11 @@ public class Player {
         turn = false;
         card = new TerrainCard();
         specialTokens = new ArrayList<>();
-
+        addSpecialToken("tower");
+        addSpecialToken("tower");
+        addSpecialToken("farm");
+        addSpecialToken("tavern");
+        addSpecialToken("oracle");
     }
 
     public void next() {

@@ -223,32 +223,32 @@ public class Node{
     public void removeToken() {
         specialTokensLeft -= 1;
     }
-    public String hasSpecialNeighbor() {
+    public Node hasSpecialNeighbor() {
         if (getNeighbor("West") != null && getNeighbor("West").isSpecial() ) {
 
-            return getNeighbor("West").getTerrain();
+            return getNeighbor("West");
         }
         if (getNeighbor("East") != null && getNeighbor("East").isSpecial()) {
 
-            return getNeighbor("East").getTerrain();
+            return getNeighbor("East");
         }
         if (getNeighbor("NorthWest") != null && getNeighbor("NorthWest").isSpecial()) {
 
-            return getNeighbor("NorthWest").getTerrain();
+            return getNeighbor("NorthWest");
         }
         if (getNeighbor("NorthEast") != null && getNeighbor("NorthEast").isSpecial()) {
 
-            return getNeighbor("NorthEast").getTerrain();
+            return getNeighbor("NorthEast");
         }
         if (getNeighbor("SouthWest") != null && getNeighbor("SouthWest").isSpecial()) {
 
-            return getNeighbor("SouthWest").getTerrain();
+            return getNeighbor("SouthWest");
         }
         if (getNeighbor("SouthEast") != null && getNeighbor("SouthEast").isSpecial()) {
 
-            return getNeighbor("SouthEast").getTerrain();
+            return getNeighbor("SouthEast");
         }
-        return "None";
+        return null;
     }
     public String removeTokenFromSpecialNeighbor() {
         if (getNeighbor("West") != null && getNeighbor("West").isSpecial() ) {

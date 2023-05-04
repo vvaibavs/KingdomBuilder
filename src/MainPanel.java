@@ -92,18 +92,35 @@ public class MainPanel extends JPanel implements MouseListener {
             g.drawString(gameState.p2.getSettlements() + "", 1440, 238);
             g.drawString(gameState.p3.getSettlements() + "", 238, 631);
             g.drawString(gameState.p4.getSettlements() + "", 1450, 643);
+            int y = 0;
             for (int i = 0; i < gameState.p1.getSpecialTokens().size(); i ++) {
-                g.drawImage(gameState.p1.getSpecialTokens().get(i).getImage(), 154, 254 + i * 40, 40, 40, null);
+                g.drawImage(gameState.p1.getSpecialTokens().get(i).getImage(), 154 + y, 254 + i%4 * 40, 40, 40, null);
+                if (i == 3) {
+                    y += 40;
+                }
             }
+            y = 0;
             for (int i = 0; i < gameState.p2.getSpecialTokens().size(); i ++) {
-                g.drawImage(gameState.p2.getSpecialTokens().get(i).getImage(), 1362, 254 + i * 40, 40, 40, null);
+                g.drawImage(gameState.p2.getSpecialTokens().get(i).getImage(), 1362 + y, 254 + i%4 * 40, 40, 40, null);
+                if (i == 3) {
+                    y += 40;
+                }
             }
+            y = 0;
             for (int i = 0; i < gameState.p3.getSpecialTokens().size(); i ++) {
-                g.drawImage(gameState.p3.getSpecialTokens().get(i).getImage(), 154, 649 + i * 40, 40, 40, null);
+                g.drawImage(gameState.p3.getSpecialTokens().get(i).getImage(), 154 + y, 649 + i%4 * 40, 40, 40, null);
+                if (i == 3) {
+                    y += 40;
+                }
             }
+            y = 0;
             for (int i = 0; i < gameState.p4.getSpecialTokens().size(); i ++) {
-                g.drawImage(gameState.p4.getSpecialTokens().get(i).getImage(), 1362, 649 + i * 40, 40, 40, null);
+                g.drawImage(gameState.p4.getSpecialTokens().get(i).getImage(), 1362 + y, 649 + i%4 * 40, 40, 40, null);
+                if (i == 3) {
+                    y += 40;
+                }
             }
+
             if (gameState.settlementsLeft > 0 || ! gameState.specialToken.equals("None")) {
                 for (int i = 0; i < gameState.board.getLength(); i++) {
                     for (int j = 0; j < gameState.board.getLength(); j++) {
@@ -193,5 +210,8 @@ public class MainPanel extends JPanel implements MouseListener {
 
     public void drawGameFrame(Graphics g) {
         g.drawImage(mainGameFrame, 0, 0, getWidth(), getHeight(), null);
+    }
+    public void redraw() {
+        repaint();
     }
 }

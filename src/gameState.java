@@ -8,7 +8,7 @@ public class gameState {
     public static int mouseY;
     public static ScoringCard card1, card2, card3;
     private ArrayList<String> locTile;
-    private MainPanel Panel;
+    private static MainPanel Panel;
     public static int currentPlayer = 1;
     private ArrayList<Integer> randScoring;
     public static Board board;
@@ -104,15 +104,12 @@ public class gameState {
 
                 if ( ((current.getSettlements() != 0 && settlementsLeft > 0) || ! specialToken.equals("None") ) && picked && selected.isValid(current.getColor(), current.card.type, nextToSettlementRequired, specialToken)) {
 
-                    String specialTokenToAdd = selected.hasSpecialNeighbor();
-                    if (! specialTokenToAdd.equals("None")) {
+                    Node specialTokenToUse = selected.hasSpecialNeighbor();
 
-                        boolean contains = false;
-                        for (int i = 0; i < current.getSpecialTokens().size(); i ++) {
-                            if (current.getSpecialTokens().get(i).getType().equals(specialTokenToAdd)) {
-                                contains = true;                            }
-                        }
-                        if (! contains) {
+                    if ( specialTokenToUse != null) {
+                        String specialTokenToAdd = specialTokenToUse.getTerrain();
+
+                        if (! specialTokenToUse.hasColorNeighbor(current.getColor())) {
                             current.addSpecialToken(specialTokenToAdd);
                             selected.removeTokenFromSpecialNeighbor();
                         }
@@ -223,9 +220,16 @@ public class gameState {
                 YVal = 649 + 20;
 
             }
+            ;
             for (int i = 0; i < current.getSpecialTokens().size(); i ++) {
-                if (  Math.pow(mouseX - XVal, 2) + Math.pow(mouseY - YVal - i * 40, 2) < 400) {
-                    pickedTile = current.getSpecialTokens().get(i);
+                if (i > 3) {
+                    if (  Math.pow(mouseX - XVal, 2) + Math.pow(mouseY - YVal - i%4 * 40, 2) < 400) {
+                        pickedTile = current.getSpecialTokens().get(i);
+                }
+                else {
+                    if (  Math.pow(mouseX - XVal - 40, 2) + Math.pow(mouseY - YVal - i%4 * 40, 2) < 400) {
+                        pickedTile = current.getSpecialTokens().get(i);
+                    }
 
                 }
 
@@ -242,6 +246,8 @@ public class gameState {
                 }
             }
             System.out.println(specialToken);
+            Panel.redraw();
+
         }
 
     }
