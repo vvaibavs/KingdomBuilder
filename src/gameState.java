@@ -249,6 +249,11 @@ public class gameState {
     public void scoringCards(){
         // need to link players number to their color here before starting
 
+        //lords
+        //in the actual scoring cards method
+        //first value == player that had the most in the first sector && second value == player that had the second most in the first sector
+        //first value + 12 points to total && second value + 6 points
+        //maybe loop through odds and +12, then evens and add +6
 
     }
 
@@ -470,23 +475,32 @@ public class gameState {
 
     }
 
-    public int lords (String color){
-        //lords: call the numset method for each player & each sector
-        //compare the player max with each other for a certain sector
+    public ArrayList<Integer> lords (String color){
 
-        //arraylist look
-        //for loop of sectors
-            //for loop of player colors(make sure it loops in player order)
-                //save each players score in an arraylist
-            // get index of value that has the highest score && second-highest
-            // add store in arraylist look outside
-        //return arraylist look
+        ArrayList<Integer> nums = new ArrayList<Integer>();
+        ArrayList<String> pColor = new ArrayList<String>();
+        pColor.add(p1.getColor());
+        pColor.add(p2.getColor());
+        pColor.add(p3.getColor());
+        pColor.add(p4.getColor());
 
-        //in the actual scoring cards method
-            //first value == player that had the most in the first sector && second value == player that had the second most in the first sector
-            //first value + 12 points to total && second value + 6 points
-            //maybe loop through odds and +12, then evens and add +6
-        return -1;
+        for(int i = 1; i <= 4; i++){
+            int max = -1;
+            int max2 = -1;
+            for(int j= 0; j < 4; j++){ //0 == p1; 1 == p2; 2 == p3; 3 == p4;
+                int x = numSet(pColor.get(j), i);
+                if(x > max && x > max2){
+                    max = x;
+                }else if(x < max && x > max2){
+                    max2 = x;
+                }
+            }
+            nums.add(max);
+            nums.add(max2);
+        }
+
+        return nums;
+
     }
 
     public int numSet(String color, int sectorNum){ //1 = top left, 2 = top right, 3 = bottom left, 4 = bottom right
