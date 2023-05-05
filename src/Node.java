@@ -194,7 +194,7 @@ public class Node{
     }
 
     public boolean tavern(String direction, String color) {
-        if(neighbors.get(direction) != null && neighbors.get(direction).settlementColor.equals(color) && neighbors.get(direction).getNeighbor(direction) != null && neighbors.get(direction).getNeighbor(direction).settlementColor == color && neighbors.get(direction).getNeighbor(direction).getNeighbor(direction) != null && neighbors.get(direction).getNeighbor(direction).getNeighbor(direction).settlementColor == color) {
+        if(neighbors.get(direction) != null && neighbors.get(direction).hasSettlement() && neighbors.get(direction).settlementColor.equals(color) && neighbors.get(direction).getNeighbor(direction) != null && neighbors.get(direction).getNeighbor(direction).hasSettlement() && neighbors.get(direction).getNeighbor(direction).settlementColor.equals( color) && neighbors.get(direction).getNeighbor(direction).getNeighbor(direction) != null && neighbors.get(direction).getNeighbor(direction).getNeighbor(direction).hasSettlement() && neighbors.get(direction).getNeighbor(direction).getNeighbor(direction).settlementColor.equals(color)) {
             return true;
         }
         return false;
