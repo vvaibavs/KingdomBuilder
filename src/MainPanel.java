@@ -35,7 +35,7 @@ public class MainPanel extends JPanel implements MouseListener {
         gameState.inputBoard(theBoard);
         try {
             startScreen = ImageIO.read(MainPanel.class.getResource("/images/Start-Screen.png"));
-            mainGameFrame = ImageIO.read(MainPanel.class.getResource("/images/MainGameFrame.png"));
+            mainGameFrame = ImageIO.read(MainPanel.class.getResource("/images/nMainGameFrame.png"));
             endScreen = ImageIO.read(MainPanel.class.getResource("/images/EndScreen.png"));
 
             temp1 = ImageIO.read(MainPanel.class.getResource("/images/map" + randInt1 + ".png"));

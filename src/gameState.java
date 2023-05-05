@@ -66,14 +66,42 @@ public class gameState {
     public static void runClick() {
         if (mouseX > 278 && mouseX < 705 && mouseY < 631 && mouseY > 544 && state.equals("Start Screen")) {
             state = "Game Screen";
-            p1.next(); // Player 1's turn
-            p1.card.randomize();
+            int rand = ((int)(Math.random() * 4) + 1);
+            System.out.println(rand);
+            switch(rand) {
+
+                case 1:
+                    p1.next();
+                    p1.card.randomize();
+                    currentPlayer = 1;
+                    current = p1;
+                    break;
+                case 2:
+                    p2.next();
+                    p2.card.randomize();
+                    currentPlayer = 2;
+                    current = p2;
+                    break;
+                case 3:
+                    p3.next();
+                    p3.card.randomize();
+                    currentPlayer = 3;
+                    current = p3;
+                    break;
+                case 4:
+                    p4.next();
+                    p4.card.randomize();
+                    currentPlayer = 4;
+                    current = p4;
+                    break;
+            }
+
             System.out.println(current.card.type);
             mouseX = 0;
             mouseY = 0;
-        } else if(mouseX > 476 && mouseY > 27 && mouseX < 734 && mouseY < 76 && !state.equals("Scoring Card") && !state.equals("not Scoring Card")) {
+        } else if(mouseX > 670 && mouseY > 31 && mouseX < 916 && mouseY < 71 && !state.equals("Scoring Card") && !state.equals("not Scoring Card")) {
             state = "Scoring Card";
-        } else if(mouseX > 476 && mouseY > 27 && mouseX < 734 && mouseY < 76 && state.equals("not Scoring Card")) {
+        } else if(mouseX > 670 && mouseY > 31 && mouseX < 916 && mouseY < 71 && state.equals("not Scoring Card")) {
             state = "Game Screen";
         } else if (mouseX < 1218 && mouseX > 398 && mouseY < 757 && mouseY > 147 && state.equals("Game Screen")) {
 
