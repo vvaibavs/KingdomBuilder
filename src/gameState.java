@@ -222,9 +222,10 @@ public class gameState {
             }
             ;
             for (int i = 0; i < current.getSpecialTokens().size(); i ++) {
-                if (i > 3) {
-                    if (  Math.pow(mouseX - XVal, 2) + Math.pow(mouseY - YVal - i%4 * 40, 2) < 400) {
+                if (i <= 3) {
+                    if (Math.pow(mouseX - XVal, 2) + Math.pow(mouseY - YVal - i % 4 * 40, 2) < 400) {
                         pickedTile = current.getSpecialTokens().get(i);
+                    }
                 }
                 else {
                     if (  Math.pow(mouseX - XVal - 40, 2) + Math.pow(mouseY - YVal - i%4 * 40, 2) < 400) {
@@ -252,7 +253,7 @@ public class gameState {
 
     }
 
-    public void scoringCards(){
+    public void scoringCards() {
         // need to link players number to their color here before starting
 
         //lords
