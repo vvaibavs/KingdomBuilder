@@ -115,7 +115,7 @@ public class gameState {
                         }
 
                     }
-                    if (specialToken.equals("None") || specialToken.equals("oracle") || specialToken.equals("tower") || specialToken.equals("farm") || specialToken.equals("oasis")) {
+                    if (specialToken.equals("None") || specialToken.equals("oracle") || specialToken.equals("tower") || specialToken.equals("farm") || specialToken.equals("oasis") || specialToken.equals("tavern") ) {
                         selected.putSettlement(current.getColor());
                         current.byeSettlements(1);
                         if (selectedTile != null) {

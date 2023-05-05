@@ -150,7 +150,7 @@ public class Node{
     }
     public boolean isValid(String color, String terrain, boolean nextToSettlementMatters, String specialToken) {
 
-        if ( ( this.terrain.equals("Mountain") || this.terrain.equals("Water")) && ! specialToken.equals("Boat")) {
+        if ( ( this.terrain.equals("Mountain") || (this.terrain.equals("water")) && ! specialToken.equals("boat"))) {
             return false;
         }
         if (specialToken.equals("tower") && neighbors.size() == 6) {
@@ -163,18 +163,18 @@ public class Node{
             return false;
         }
         if(specialToken.equals("tavern")) {
-            if(tavern("NorthWest", color)) {
-                return true;
-            } else if(tavern("NorthEast", color)) {
-                return true;
-            } else if(tavern("SouthWest", color)) {
-                return true;
-            } else if(tavern("SouthEast", color)) {
-                return true;
-            } else if(tavern("West", color)) {
-                return true;
-            } else if(tavern("East", color)) {
-                return true;
+            if(!tavern("NorthWest", color)) {
+                return false;
+            } else if(!tavern("NorthEast", color)) {
+                return false;
+            } else if(!tavern("SouthWest", color)) {
+                return false;
+            } else if(!tavern("SouthEast", color)) {
+                return false;
+            } else if(!tavern("West", color)) {
+                return false;
+            } else if(!tavern("East", color)) {
+                return false;
             }
         }
         if (hasSettlement) {
