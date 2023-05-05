@@ -155,6 +155,9 @@ public class Node{
         else if (specialToken.equals("boat") && ! hasSettlement && ! color.equals(this.settlementColor)){
             return false;
         }
+        if (gameState.stage2 && specialToken.equals("boat") && terrain.equals("water")) {
+            return true;
+        }
         if ( ( this.terrain.equals("Mountain") || (this.terrain.equals("water")) && ! specialToken.equals("boat"))) {
             return false;
         }
