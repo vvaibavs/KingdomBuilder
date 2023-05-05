@@ -149,7 +149,12 @@ public class Node{
         return y;
     }
     public boolean isValid(String color, String terrain, boolean nextToSettlementMatters, String specialToken) {
-
+        if (specialToken.equals("boat") && hasSettlement && color.equals(this.settlementColor) && !gameState.stage2) {
+            return true;
+        }
+        else if (specialToken.equals("boat") && ! hasSettlement && ! color.equals(this.settlementColor)){
+            return false;
+        }
         if ( ( this.terrain.equals("Mountain") || (this.terrain.equals("water")) && ! specialToken.equals("boat"))) {
             return false;
         }

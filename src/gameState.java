@@ -6,6 +6,7 @@ public class gameState {
     public static String state = "Start Screen";
     public static int mouseX;
     public static int mouseY;
+    public static boolean stage2 = false;
     public static ScoringCard card1, card2, card3;
     private ArrayList<String> locTile;
     private static MainPanel Panel;
@@ -116,51 +117,50 @@ public class gameState {
                         }
                     }
                 }
-                boolean picked = true;
-                if (contenders.size() == 0) {
-                    picked = false;
-                }
-                else if (contenders.size() > 1 && Math.hypot(mouseX - contenders.get(0).getX(), mouseY - contenders.get(0).getY()) < Math.hypot(mouseX - contenders.get(1).getX(), mouseY - contenders.get(1).getY())) {
-                    selected = contenders.get(0);
-                }
-                else if (contenders.size() == 1) {
-                    selected = contenders.get(0);
-                }
-                else {
-                    selected = contenders.get(1);
-                }
+                if (!stage2) {
+                    boolean picked = true;
+                    if (contenders.size() == 0) {
+                        picked = false;
+                    } else if (contenders.size() > 1 && Math.hypot(mouseX - contenders.get(0).getX(), mouseY - contenders.get(0).getY()) < Math.hypot(mouseX - contenders.get(1).getX(), mouseY - contenders.get(1).getY())) {
+                        selected = contenders.get(0);
+                    } else if (contenders.size() == 1) {
+                        selected = contenders.get(0);
+                    } else {
+                        selected = contenders.get(1);
+                    }
 
-                if ( ((current.getSettlements() != 0 && settlementsLeft > 0) || ! specialToken.equals("None") ) && picked && selected.isValid(current.getColor(), current.card.type, nextToSettlementRequired, specialToken)) {
+                    if (((current.getSettlements() != 0 && settlementsLeft > 0) || !specialToken.equals("None")) && picked && selected.isValid(current.getColor(), current.card.type, nextToSettlementRequired, specialToken)) {
 
-                    Node specialTokenToUse = selected.hasSpecialNeighbor();
+                        Node specialTokenToUse = selected.hasSpecialNeighbor();
 
-                    if ( specialTokenToUse != null) {
-                        String specialTokenToAdd = specialTokenToUse.getTerrain();
+                        if (specialTokenToUse != null) {
+                            String specialTokenToAdd = specialTokenToUse.getTerrain();
 
-                        if (! specialTokenToUse.hasColorNeighbor(current.getColor())) {
-                            current.addSpecialToken(specialTokenToAdd);
-                            selected.removeTokenFromSpecialNeighbor();
+                            if (!specialTokenToUse.hasColorNeighbor(current.getColor())) {
+                                current.addSpecialToken(specialTokenToAdd);
+                                selected.removeTokenFromSpecialNeighbor();
+                            }
+
                         }
+                        if (specialToken.equals("None") || specialToken.equals("oracle") || specialToken.equals("tower") || specialToken.equals("farm") || specialToken.equals("oasis") || specialToken.equals("tavern")) {
+                            selected.putSettlement(current.getColor());
+                            current.byeSettlements(1);
+                            if (selectedTile != null) {
+                                selectedTile.use();
+                            }
 
-                    }
-                    if (specialToken.equals("None") || specialToken.equals("oracle") || specialToken.equals("tower") || specialToken.equals("farm") || specialToken.equals("oasis") || specialToken.equals("tavern") ) {
-                        selected.putSettlement(current.getColor());
-                        current.byeSettlements(1);
-                        if (selectedTile != null) {
-                            selectedTile.use();
                         }
+                        if (specialToken.equals("None")) {
+                            settlementsLeft -= 1;
+
+                        }
+                        specialToken = "None";
+                        selectedTile = null;
+
 
                     }
-                    if (specialToken.equals("None")) {
-                        settlementsLeft -= 1;
-
-                    }
-                    specialToken = "None";
-                    selectedTile = null;
-
-
+                    nextToSettlementRequired = false;
                 }
-                nextToSettlementRequired = false;
 
         } else if(mouseX > 1342 && mouseY > 878 && mouseX < 1524 && mouseY < 926 && (settlementsLeft == 0 || current.getSettlements() == 0)) {
             settlementsLeft = 3;

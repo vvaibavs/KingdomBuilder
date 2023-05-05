@@ -10,7 +10,6 @@
       <change beforePath="$PROJECT_DIR$/src/gameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameState.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Node.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameState.java" afterDir="false" />
     </list>
     <list id="6ca57205-0620-47e2-96b7-d45086a08dec" name="Changes by k1215075" comment="Changes by k1215075" />
@@ -355,12 +354,12 @@
       <option name="project" value="LOCAL" />
       <updated>1683289500267</updated>
     </task>
-    <task id="LOCAL-00063" summary="scoring button">
-      <created>1682817270130</created>
+    <task id="LOCAL-00063" summary="Empty Inside.">
+      <created>1683290586586</created>
       <option name="number" value="00063" />
       <option name="presentableId" value="LOCAL-00063" />
       <option name="project" value="LOCAL" />
-      <updated>1682817270131</updated>
+      <updated>1683290586586</updated>
     </task>
     <task id="LOCAL-00064" summary="scoring button">
       <created>1682817954568</created>
@@ -453,7 +452,7 @@
       <option name="project" value="LOCAL" />
       <updated>1682945686584</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
