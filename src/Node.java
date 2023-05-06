@@ -152,14 +152,16 @@ public class Node{
         if (specialToken.equals("boat") && hasSettlement && color.equals(this.settlementColor) && !gameState.stage2) {
             return true;
         }
-        else if (specialToken.equals("boat") && ! hasSettlement && ! color.equals(this.settlementColor)){
+        else if (specialToken.equals("boat") && ! hasSettlement && ! color.equals(this.settlementColor) && ! gameState.stage2){
             return false;
         }
-        if (gameState.stage2 && specialToken.equals("boat") && terrain.equals("water")) {
-            return true;
-        }
-        if ( ( this.terrain.equals("Mountain") || (this.terrain.equals("water")) && ! specialToken.equals("boat"))) {
+        if (gameState.stage2 && specialToken.equals("boat") && !terrain.equals("water")) {
             return false;
+        }
+        if (  this.terrain.equals("Mountain") || ((this.terrain.equals("water")) )) {
+            if ( !specialToken.equals("boat")) {
+                return false;
+            }
         }
         if (specialToken.equals("tower") && neighbors.size() == 6) {
             return false;
@@ -171,24 +173,34 @@ public class Node{
             return false;
         }
         if(specialToken.equals("tavern")) {
-            if(!tavern("NorthWest", color)) {
-                return false;
-            } else if(!tavern("NorthEast", color)) {
-                return false;
-            } else if(!tavern("SouthWest", color)) {
-                return false;
-            } else if(!tavern("SouthEast", color)) {
-                return false;
-            } else if(!tavern("West", color)) {
-                return false;
-            } else if(!tavern("East", color)) {
+            boolean found = false;
+            if(tavern("NorthWest", color)) {
+
+                found = true;
+            } else if(tavern("NorthEast", color)) {
+
+                found = true;
+            } else if(tavern("SouthWest", color)) {
+
+                found = true;
+            } else if(tavern("SouthEast", color)) {
+
+                found = true;
+            } else if(tavern("West", color)) {
+
+                found = true;
+            } else if(tavern("East", color)) {
+
+                found = true;
+            }
+            if ( !found) {
                 return false;
             }
         }
         if (hasSettlement) {
             return false;
         }
-        if (! this.terrain.equals(terrain) && ! specialToken.equals("tower") && !specialToken.equals("farm") && ! specialToken.equals("oasis") && ! specialToken.equals("tavern")) {
+        if (! this.terrain.equals(terrain) && ! specialToken.equals("tower") && !specialToken.equals("farm") && ! specialToken.equals("oasis") && ! specialToken.equals("tavern") ) {
             return false;
         }
         if (nextToSettlementMatters) {

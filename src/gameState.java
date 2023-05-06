@@ -154,8 +154,13 @@ public class gameState {
                             settlementsLeft -= 1;
 
                         }
-                        specialToken = "None";
-                        selectedTile = null;
+                        if (specialToken.equals("None") || specialToken.equals("oracle") || specialToken.equals("tower") || specialToken.equals("farm") || specialToken.equals("oasis") || specialToken.equals("tavern")) {
+                            specialToken = "None";
+                            selectedTile = null;
+                        }
+                        else {
+                            stage2 = true;
+                        }
 
 
                     }
