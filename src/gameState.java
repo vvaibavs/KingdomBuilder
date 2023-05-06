@@ -13,6 +13,7 @@ public class gameState {
     public static int currentPlayer = 1;
     private ArrayList<Integer> randScoring;
     public static Board board;
+    static Node selected;
     public static ArrayList<Integer> terrains;
     public static String substate = "placeSettlement";
     public static boolean nextToSettlementRequired = false;
@@ -109,7 +110,6 @@ public class gameState {
                 int tempXPlace;
                 int tempYPlace;
                 ArrayList<Node> contenders = new ArrayList<>();
-                Node selected = null;
                 for (int i = 0; i < board.getLength(); i ++) {
                     for (int j = 0; j < board.getLength(); j ++) {
                         if (board.returnBoard()[i][j].containsClick(mouseX, mouseY)) {
@@ -118,6 +118,7 @@ public class gameState {
                     }
                 }
                 if (!stage2) {
+                    selected = null;
                     boolean picked = true;
                     if (contenders.size() == 0) {
                         picked = false;
@@ -166,8 +167,50 @@ public class gameState {
                     }
                     nextToSettlementRequired = false;
                 }
+                else if (stage2) {
+                    boolean picked = true;
+                    Node secondSelected = null;
+                    if (contenders.size() == 0) {
+                        picked = false;
+                    } else if (contenders.size() > 1 && Math.hypot(mouseX - contenders.get(0).getX(), mouseY - contenders.get(0).getY()) < Math.hypot(mouseX - contenders.get(1).getX(), mouseY - contenders.get(1).getY())) {
+                        secondSelected = contenders.get(0);
+                    } else if (contenders.size() == 1) {
+                        secondSelected = contenders.get(0);
+                    } else {
+                        secondSelected = contenders.get(1);
+                    }
+                    if (picked && secondSelected.isValid(current.getColor(), current.card.type, nextToSettlementRequired, specialToken)) {
+                        selected.removeSettlement();
+                        if (picked && secondSelected.isValid(current.getColor(), current.card.type, nextToSettlementRequired, specialToken)) {
+                            if (selected.hasSpecialNeighbor(false) != null && !selected.hasSpecialNeighbor(false).hasColorNeighbor(current.getColor())) {
+                                current.removeSpecialToken(selected.hasSpecialNeighbor(false).getTerrain());
+                            }
+                            secondSelected.putSettlement(current.getColor());
+                            Node specialTokenToUse = selected.hasSpecialNeighbor();
+
+                            if (specialTokenToUse != null) {
+                                String specialTokenToAdd = specialTokenToUse.getTerrain();
+
+                                if (!specialTokenToUse.hasColorNeighbor(current.getColor())) {
+                                    current.addSpecialToken(specialTokenToAdd);
+                                    selected.removeTokenFromSpecialNeighbor();
+                                }
+
+                            }
+                            selectedTile.use();
+                            specialToken = "None";
+                            selectedTile = null;
+                            stage2 = false;
+                        }
+                        else {
+                            selected.putSettlement(current.getColor());
+                        }
+
+                    }
+                }
 
         } else if(mouseX > 1342 && mouseY > 878 && mouseX < 1524 && mouseY < 926 && (settlementsLeft == 0 || current.getSettlements() == 0)) {
+            stage2 = false;
             settlementsLeft = 3;
             if(p1.turn) { // Player 2's turn
                 currentPlayer = 2;
@@ -269,9 +312,11 @@ public class gameState {
 
             }
             if (pickedTile != null && pickedTile.isReady()) {
+                stage2 = false;
                 if (pickedTile.getType().equals(specialToken)) {
                     specialToken = "None";
                     selectedTile = null;
+
 
                 }
                 else {

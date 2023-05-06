@@ -39,6 +39,9 @@ public class Node{
     public boolean isSpecial() {
         return special && specialTokensLeft > 0;
     }
+    public boolean isSpecial(boolean plac) {
+        return special;
+    }
     public void addNeighbor(String direction, Node neighbor) {
         neighbors.put(direction, neighbor);
         if (direction.equals("West")) {
@@ -96,6 +99,10 @@ public class Node{
         hasSettlement = true;
         settlementColor = color;
     }
+    public void removeSettlement() {
+        hasSettlement = false;
+        settlementColor = null;
+    }
     public String getSettlementColor() {
         return settlementColor;
     }
@@ -149,16 +156,17 @@ public class Node{
         return y;
     }
     public boolean isValid(String color, String terrain, boolean nextToSettlementMatters, String specialToken) {
+
         if (specialToken.equals("boat") && hasSettlement && color.equals(this.settlementColor) && !gameState.stage2) {
             return true;
         }
         else if (specialToken.equals("boat") && ! hasSettlement && ! color.equals(this.settlementColor) && ! gameState.stage2){
             return false;
         }
-        if (gameState.stage2 && specialToken.equals("boat") && !terrain.equals("water")) {
+        if (gameState.stage2 && specialToken.equals("boat") && !this.terrain.equals("Water")) {
             return false;
         }
-        if (  this.terrain.equals("Mountain") || ((this.terrain.equals("water")) )) {
+        if (  this.terrain.equals("Mountain") || ((this.terrain.equals("Water")) )) {
             if ( !specialToken.equals("boat")) {
                 return false;
             }
@@ -200,7 +208,7 @@ public class Node{
         if (hasSettlement) {
             return false;
         }
-        if (! this.terrain.equals(terrain) && ! specialToken.equals("tower") && !specialToken.equals("farm") && ! specialToken.equals("oasis") && ! specialToken.equals("tavern") ) {
+        if (! this.terrain.equals(terrain) && ! specialToken.equals("tower") && !specialToken.equals("farm") && ! specialToken.equals("oasis") && ! specialToken.equals("tavern") && ! specialToken.equals("boat") ) {
             return false;
         }
         if (nextToSettlementMatters) {
@@ -265,6 +273,33 @@ public class Node{
             return getNeighbor("SouthWest");
         }
         if (getNeighbor("SouthEast") != null && getNeighbor("SouthEast").isSpecial()) {
+
+            return getNeighbor("SouthEast");
+        }
+        return null;
+    }
+    public Node hasSpecialNeighbor(boolean plac) {
+        if (getNeighbor("West") != null && getNeighbor("West").isSpecial(false) ) {
+
+            return getNeighbor("West");
+        }
+        if (getNeighbor("East") != null && getNeighbor("East").isSpecial(false)) {
+
+            return getNeighbor("East");
+        }
+        if (getNeighbor("NorthWest") != null && getNeighbor("NorthWest").isSpecial(false)) {
+
+            return getNeighbor("NorthWest");
+        }
+        if (getNeighbor("NorthEast") != null && getNeighbor("NorthEast").isSpecial(false)) {
+
+            return getNeighbor("NorthEast");
+        }
+        if (getNeighbor("SouthWest") != null && getNeighbor("SouthWest").isSpecial(false)) {
+
+            return getNeighbor("SouthWest");
+        }
+        if (getNeighbor("SouthEast") != null && getNeighbor("SouthEast").isSpecial(false)) {
 
             return getNeighbor("SouthEast");
         }

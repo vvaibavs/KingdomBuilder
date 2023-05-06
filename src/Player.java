@@ -48,6 +48,7 @@ public class Player {
         for (int i = 0; i < specialTokens.size(); i ++) {
             if (specialTokens.get(i).equals(type)) {
                 specialTokens.remove(i);
+                break;
             }
         }
     }
