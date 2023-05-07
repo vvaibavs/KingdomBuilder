@@ -41,6 +41,14 @@ public class Player {
     public int getScore(){
         return score;
     }
+
+    public void setScore(int x) {
+        score = x;
+    }
+
+    public void addScore(int x) {
+        score += x;
+    }
     public void addSpecialToken(String tokenToAdd) {
         specialTokens.add(new SpecialTile(tokenToAdd));
     }

@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ArtifactsWorkspaceSettings">
-    <artifacts-to-build>
-      <artifact name="Kingdom Builder:jar" />
-    </artifacts-to-build>
-  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7b7fe00a-8f50-40cc-8b35-7b23e9f78bbb" name="Changes" comment="Empty Inside.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Node.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameState.java" afterDir="false" />
     </list>
@@ -64,14 +58,11 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/swing/Desktop&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/slhscs230/IdeaProjects/Kingdom Builder/src/images/map2.png&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;two.files.diff.last.used.file&quot;: &quot;C:/Users/slhscs230/IdeaProjects/Kingdom Builder/src/images/map2.png&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -114,9 +105,6 @@
       <workItem from="1682866226443" duration="790000" />
       <workItem from="1682908105885" duration="371000" />
       <workItem from="1683072875782" duration="4126000" />
-      <workItem from="1683336222819" duration="81000" />
-      <workItem from="1683345156575" duration="2224000" />
-      <workItem from="1683396594345" duration="3409000" />
     </task>
     <task id="LOCAL-00026" summary="empty inside">
       <created>1680611146684</created>
@@ -370,19 +358,19 @@
       <option name="project" value="LOCAL" />
       <updated>1683290586586</updated>
     </task>
-    <task id="LOCAL-00064" summary="Empty Inside.">
-      <created>1683346711024</created>
+    <task id="LOCAL-00064" summary="scoring button">
+      <created>1682817954568</created>
       <option name="number" value="00064" />
       <option name="presentableId" value="LOCAL-00064" />
       <option name="project" value="LOCAL" />
-      <updated>1683346711024</updated>
+      <updated>1682817954568</updated>
     </task>
-    <task id="LOCAL-00065" summary="Empty Inside.">
-      <created>1683347389505</created>
+    <task id="LOCAL-00065" summary="scoring button">
+      <created>1682818203278</created>
       <option name="number" value="00065" />
       <option name="presentableId" value="LOCAL-00065" />
       <option name="project" value="LOCAL" />
-      <updated>1683347389505</updated>
+      <updated>1682818203278</updated>
     </task>
     <task id="LOCAL-00066" summary="scoring button">
       <created>1682818471451</created>
@@ -461,7 +449,7 @@
       <option name="project" value="LOCAL" />
       <updated>1682945686584</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -494,8 +482,8 @@
     <MESSAGE value="worker" />
     <MESSAGE value="scoring button" />
     <MESSAGE value="worker" />
-    <MESSAGE value="tavern" />
     <MESSAGE value="Empty Inside." />
-    <option name="LAST_COMMIT_MESSAGE" value="Empty Inside." />
+    <MESSAGE value="tavern" />
+    <option name="LAST_COMMIT_MESSAGE" value="tavern" />
   </component>
 </project>

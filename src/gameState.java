@@ -332,13 +332,68 @@ public class gameState {
     }
 
     public void scoringCards() {
-        // need to link players number to their color here before starting
+        ArrayList<String> cards = new ArrayList<String>();
+        cards.add(card1.getCardType());
+        cards.add(card2.getCardType());
+        cards.add(card3.getCardType());
+        ArrayList<Player> players = new ArrayList<Player>(); //🤡
+        players.add(p1);
+        players.add(p2);
+        players.add(p3);
+        players.add(p4);
 
-        //lords
-        //in the actual scoring cards method
-        //first value == player that had the most in the first sector && second value == player that had the second most in the first sector
-        //first value + 12 points to total && second value + 6 points
-        //maybe loop through odds and +12, then evens and add +6
+        if(cards.contains("lords")){ // lords method if it exists scores before the rest of the scoring cards
+            ArrayList<Integer> plyrs = lords();
+            for(int i = 0; i < 8; i++){ //first value == evens & is the player with the highest number of settlements in a sector
+                if(i % 2 == 0){         // second value == odds & is the player with the 2nd highest number of settlements in a sector
+                    if(plyrs.get(i) == 0){
+                        p1.addScore(12);
+                    }else if (plyrs.get(i) == 1){
+                        p2.addScore(12);
+                    }else if (plyrs.get(i) == 2){
+                        p3.addScore(12);
+                    }else if (plyrs.get(i) == 3){
+                        p4.addScore(12);
+                    }
+                }else if( i % 2 != 0){
+                    if(plyrs.get(i) == 0){
+                        p1.addScore(6);
+                    }else if (plyrs.get(i) == 1){
+                        p2.addScore(6);
+                    }else if (plyrs.get(i) == 2){
+                        p3.addScore(6);
+                    }else if (plyrs.get(i) == 3){
+                        p4.addScore(6);
+                    }
+                }
+            }
+        }
+
+
+        for(Player p : players){ //scores the rest of the scoring cards
+            for(int i = 0; i < 3; i++) { //iterates through every scoring card except for lords (done outside)
+                if (cards.get(i).equals("workers")) {
+                    p.addScore(workers(p.getColor()));
+                }else if (cards.get(i).equals("miners")) {
+                    p.addScore(miners(p.getColor()));
+                } else if (cards.get(i).equals("fisherman")) {
+                    p.addScore(fishermen(p.getColor()));
+                } else if (cards.get(i).equals("farmers")) {
+                    p.addScore(farmers(p.getColor()));
+                } else if (cards.get(i).equals("citizens")) {
+                    p.addScore(citizens(p.getColor()));
+                } else if(cards.get(i).equals("lords")){
+                    break; //does this break out of just this for loop for scoring cards or does it also break through the for loop for players?
+                }
+            }
+
+        }
+
+
+        for(Player p : players){ //adds castle points separately after all the scoring card points have been added
+            p.addScore(castle(p.getColor()));
+        }
+
 
     }
 
@@ -382,7 +437,7 @@ public class gameState {
         }
         return score;
     }
-    public int worker(String color){ //simplify code
+    public int workers(String color){ //simplify code
         Node[][] allNodes = board.returnBoard();
         int[][] counted = new int[allNodes.length][allNodes[0].length];
         int score = 0;
@@ -421,7 +476,7 @@ public class gameState {
         return score;
     }
 
-    public int miner(String color){
+    public int miners(String color){
         Node[][] allNodes = board.returnBoard();
         int[][] counted = new int[allNodes.length][allNodes[0].length];
         int score = 0;
@@ -600,28 +655,34 @@ public class gameState {
 
     }
 
-    public ArrayList<Integer> lords (String color){
+    public ArrayList<Integer> lords (){ //🤴AHH
 
-        ArrayList<Integer> nums = new ArrayList<Integer>();
+        ArrayList<Integer> nums = new ArrayList<Integer>(); //contains player numbers
         ArrayList<String> pColor = new ArrayList<String>();
         pColor.add(p1.getColor());
         pColor.add(p2.getColor());
         pColor.add(p3.getColor());
         pColor.add(p4.getColor());
 
-        for(int i = 1; i <= 4; i++){
+        for(int i = 1; i <= 4; i++){//loops through the sectors
             int max = -1;
+            int plyr1 = -1;
             int max2 = -1;
+            int plyr2 = -1;
             for(int j= 0; j < 4; j++){ //0 == p1; 1 == p2; 2 == p3; 3 == p4;
                 int x = numSet(pColor.get(j), i);
                 if(x > max && x > max2){
                     max = x;
+                    plyr1 = j;
                 }else if(x < max && x > max2){
                     max2 = x;
+                    plyr2 = j;
                 }
             }
-            nums.add(max);
-            nums.add(max2);
+            //nums.add(max);
+            nums.add(plyr1);
+            //nums.add(max2);
+            nums.add(plyr2);
         }
 
         return nums;
@@ -629,7 +690,7 @@ public class gameState {
     }
 
     public int numSet(String color, int sectorNum){ //1 = top left, 2 = top right, 3 = bottom left, 4 = bottom right
-        //returns the number of settlements in a sector
+        //returns the number of settlements in a sector (each individual board 😥😮)
         Node[][] allNodes = board.returnBoard();
         int numSettlements = 0;
         int imax = -1;
@@ -676,7 +737,7 @@ public class gameState {
     }
 
     public int setArea(Node n, int[][] counted, String color){
-        //returns the number of settlements in a settlement area
+        //returns the number of settlements in a settlement area (can be random blobs 🦑🦑)
         if(n.hasSettlement() == true && n.getSettlementColor().equals(color) && counted[n.getX()][n.getY()] != 1){
             counted[n.getX()][n.getY()] = 1;
             return 1 + setArea(n.getNeighbor("East"), counted, color) + setArea(n.getNeighbor("West"), counted, color) +
