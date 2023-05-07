@@ -156,6 +156,9 @@ public class Node{
         return y;
     }
     public boolean isValid(String color, String terrain, boolean nextToSettlementMatters, String specialToken) {
+        if (this.terrain.equals("Castle") || this.isSpecial(false)) {
+            return false;
+        }
 
         if ((specialToken.equals("boat") || specialToken.equals("paddock")) && hasSettlement && color.equals(this.settlementColor) && !gameState.stage2) {
             return true;
