@@ -14,6 +14,7 @@ public class gameState {
     private ArrayList<Integer> randScoring;
     public static Board board;
     static Node selected;
+    static int startPlayer;
     public static ArrayList<Integer> terrains;
     public static String substate = "placeSettlement";
     public static boolean nextToSettlementRequired = false;
@@ -73,24 +74,28 @@ public class gameState {
             switch(rand) {
 
                 case 1:
+                    startPlayer = 1;
                     p1.next();
                     p1.card.randomize();
                     currentPlayer = 1;
                     current = p1;
                     break;
                 case 2:
+                    startPlayer = 2;
                     p2.next();
                     p2.card.randomize();
                     currentPlayer = 2;
                     current = p2;
                     break;
                 case 3:
+                    startPlayer = 3;
                     p3.next();
                     p3.card.randomize();
                     currentPlayer = 3;
                     current = p3;
                     break;
                 case 4:
+                    startPlayer = 4;
                     p4.next();
                     p4.card.randomize();
                     currentPlayer = 4;
@@ -219,6 +224,9 @@ public class gameState {
                 p2.next();
                 p2.card.randomize();
                 current = p2;
+                if ((p1.getSettlements() == 0 || p2.getSettlements() == 0 || p3.getSettlements() == 0 || p4.getSettlements() == 0) && startPlayer == 2) {
+                    state = "End Screen";
+                }
                 System.out.println(p2.card.type);
                 if (terrains.size() == 0) {
                     terrains = new ArrayList<>();
@@ -233,6 +241,9 @@ public class gameState {
                 p3.next();
                 p3.card.randomize();
                 current = p3;
+                if ((p1.getSettlements() == 0 || p2.getSettlements() == 0 || p3.getSettlements() == 0 || p4.getSettlements() == 0) && startPlayer == 3) {
+                    state = "End Screen";
+                }
                 System.out.println(p3.card.type);
                 if (terrains.size() == 0) {
                     terrains = new ArrayList<>();
@@ -247,6 +258,9 @@ public class gameState {
                 p4.next();
                 current = p4;
                 p4.card.randomize();
+                if ((p1.getSettlements() == 0 || p2.getSettlements() == 0 || p3.getSettlements() == 0 || p4.getSettlements() == 0) && startPlayer == 4) {
+                    state = "End Screen";
+                }
                 System.out.println(p4.card.type);
                 if (terrains.size() == 0) {
                     terrains = new ArrayList<>();
@@ -261,7 +275,7 @@ public class gameState {
                 p1.next();
                 p1.card.randomize();
                 current = p1;
-                if (p1.getSettlements() == 0 || p2.getSettlements() == 0 || p3.getSettlements() == 0 || p4.getSettlements() == 0) {
+                if ((p1.getSettlements() == 0 || p2.getSettlements() == 0 || p3.getSettlements() == 0 || p4.getSettlements() == 0) && startPlayer == 1) {
                     state = "End Screen";
                 }
                 System.out.println(p1.card.type);
