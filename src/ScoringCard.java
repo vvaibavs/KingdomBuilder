@@ -8,34 +8,25 @@ public class ScoringCard {
     public ScoringCard(int random){
         switch(random) {
             case 1:
-                cardType = "citizens";
+                cardType = "citizens"; //
                 break;
             case 2:
-                cardType = "discoverers";
+                cardType = "farmers"; //
                 break;
             case 3:
-                cardType = "farmers";
+                cardType = "fishermen"; //
                 break;
             case 4:
-                cardType = "fishermen";
+                cardType = "knights"; //
                 break;
             case 5:
-                cardType = "hermits";
+                cardType = "lords"; //
                 break;
             case 6:
-                cardType = "knights";
+                cardType = "miners"; //
                 break;
             case 7:
-                cardType = "lords";
-                break;
-            case 8:
-                cardType = "merchants";
-                break;
-            case 9:
-                cardType = "miners";
-                break;
-            case 10:
-                cardType = "workers";
+                cardType = "workers"; //
                 break;
         }
         try {

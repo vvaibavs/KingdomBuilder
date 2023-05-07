@@ -9,6 +9,8 @@ public class Player {
     private ArrayList<LocTile> tile;
     private int score;
     boolean turn;
+
+    public int c1Score, c2Score, c3Score;
     private ArrayList<SpecialTile> specialTokens;
     public TerrainCard card;
     public Player(String c){
@@ -19,7 +21,9 @@ public class Player {
         turn = false;
         card = new TerrainCard();
         specialTokens = new ArrayList<>();
-
+        c1Score = 0;
+        c2Score = 0;
+        c3Score = 0;
     }
 
     public void next() {

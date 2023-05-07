@@ -31,7 +31,7 @@ public class gameState {
     }
     public gameState(MainPanel Panely) {
         randScoring = new ArrayList<>();
-        for(int i = 1; i <= 10; i++) {
+        for(int i = 1; i <= 7; i++) {
             randScoring.add(i);
         }
         p1 = new Player("red");
@@ -65,6 +65,7 @@ public class gameState {
             terrains.add(i);
         }
 
+        state = "End Screen";
     }
     public static void runClick() {
         if (mouseX > 278 && mouseX < 705 && mouseY < 631 && mouseY > 544 && state.equals("Start Screen")) {
@@ -310,7 +311,7 @@ public class gameState {
                 YVal = 649 + 20;
 
             }
-            ;
+
             for (int i = 0; i < current.getSpecialTokens().size(); i ++) {
                 if (i <= 3) {
                     if (Math.pow(mouseX - XVal, 2) + Math.pow(mouseY - YVal - i % 4 * 40, 2) < 400) {
@@ -361,22 +362,78 @@ public class gameState {
             for(int i = 0; i < 8; i++){ //first value == evens & is the player with the highest number of settlements in a sector
                 if(i % 2 == 0){         // second value == odds & is the player with the 2nd highest number of settlements in a sector
                     if(plyrs.get(i) == 0){
+                        if(cards.get(0).equals("lords")) {
+                            p1.c1Score = 12;
+                        } else if(cards.get(1).equals("lords")) {
+                            p1.c2Score = 12;
+                        } else if(cards.get(2).equals("lords")) {
+                            p1.c3Score = 12;
+                        }
                         p1.addScore(12);
                     }else if (plyrs.get(i) == 1){
+                        if(cards.get(0).equals("lords")) {
+                            p2.c1Score = 12;
+                        } else if(cards.get(1).equals("lords")) {
+                            p2.c2Score = 12;
+                        } else if(cards.get(2).equals("lords")) {
+                            p2.c3Score = 12;
+                        }
                         p2.addScore(12);
                     }else if (plyrs.get(i) == 2){
+                        if(cards.get(0).equals("lords")) {
+                            p3.c1Score = 12;
+                        } else if(cards.get(1).equals("lords")) {
+                            p3.c2Score = 12;
+                        } else if(cards.get(2).equals("lords")) {
+                            p3.c3Score = 12;
+                        }
                         p3.addScore(12);
                     }else if (plyrs.get(i) == 3){
+                        if(cards.get(0).equals("lords")) {
+                            p4.c1Score = 12;
+                        } else if(cards.get(1).equals("lords")) {
+                            p4.c2Score = 12;
+                        } else if(cards.get(2).equals("lords")) {
+                            p4.c3Score = 12;
+                        }
                         p4.addScore(12);
                     }
                 }else if( i % 2 != 0){
                     if(plyrs.get(i) == 0){
+                        if(cards.get(0).equals("lords")) {
+                            p1.c1Score = 6;
+                        } else if(cards.get(1).equals("lords")) {
+                            p1.c2Score = 6;
+                        } else if(cards.get(2).equals("lords")) {
+                            p1.c3Score = 6;
+                        }
                         p1.addScore(6);
                     }else if (plyrs.get(i) == 1){
+                        if(cards.get(0).equals("lords")) {
+                            p2.c1Score = 6;
+                        } else if(cards.get(1).equals("lords")) {
+                            p2.c2Score = 6;
+                        } else if(cards.get(2).equals("lords")) {
+                            p2.c3Score = 6;
+                        }
                         p2.addScore(6);
                     }else if (plyrs.get(i) == 2){
+                        if(cards.get(0).equals("lords")) {
+                            p3.c1Score = 6;
+                        } else if(cards.get(1).equals("lords")) {
+                            p3.c2Score = 6;
+                        } else if(cards.get(2).equals("lords")) {
+                            p3.c3Score = 6;
+                        }
                         p3.addScore(6);
                     }else if (plyrs.get(i) == 3){
+                        if(cards.get(0).equals("lords")) {
+                            p4.c1Score = 6;
+                        } else if(cards.get(1).equals("lords")) {
+                            p4.c2Score = 6;
+                        } else if(cards.get(2).equals("lords")) {
+                            p4.c3Score = 6;
+                        }
                         p4.addScore(6);
                     }
                 }
@@ -387,17 +444,72 @@ public class gameState {
         for(Player p : players){ //scores the rest of the scoring cards
             for(int i = 0; i < 3; i++) { //iterates through every scoring card except for lords (done outside)
                 if (cards.get(i).equals("workers")) {
-                    p.addScore(workers(p.getColor()));
+                    if(i == 0) {
+                        p.c1Score = workers(p.getColor());
+                        p.addScore(p.c1Score);
+                    } else if(i == 1) {
+                        p.c2Score = workers(p.getColor());
+                        p.addScore(p.c2Score);
+                    } else if(i == 2) {
+                        p.c3Score = workers(p.getColor());
+                        p.addScore(p.c3Score);
+                    }
+
                 }else if (cards.get(i).equals("miners")) {
-                    p.addScore(miners(p.getColor()));
+                    if(i == 0) {
+                        p.c1Score = miners(p.getColor());
+                        p.addScore(p.c1Score);
+                    } else if(i == 1) {
+                        p.c2Score = miners(p.getColor());
+                        p.addScore(p.c2Score);
+                    } else if(i == 2) {
+                        p.c3Score = miners(p.getColor());
+                        p.addScore(p.c3Score);
+                    }
                 } else if (cards.get(i).equals("fisherman")) {
-                    p.addScore(fishermen(p.getColor()));
+                    if(i == 0) {
+                        p.c1Score = fishermen(p.getColor());
+                        p.addScore(p.c1Score);
+                    } else if(i == 1) {
+                        p.c2Score = fishermen(p.getColor());
+                        p.addScore(p.c2Score);
+                    } else if(i == 2) {
+                        p.c3Score = fishermen(p.getColor());
+                        p.addScore(p.c3Score);
+                    }
                 } else if (cards.get(i).equals("farmers")) {
-                    p.addScore(farmers(p.getColor()));
+                    if(i == 0) {
+                        p.c1Score = farmers(p.getColor());
+                        p.addScore(p.c1Score);
+                    } else if(i == 1) {
+                        p.c2Score = farmers(p.getColor());
+                        p.addScore(p.c2Score);
+                    } else if(i == 2) {
+                        p.c3Score = farmers(p.getColor());
+                        p.addScore(p.c3Score);
+                    }
                 } else if (cards.get(i).equals("citizens")) {
-                    p.addScore(citizens(p.getColor()));
-                } else if(cards.get(i).equals("lords")){
-                    break; //does this break out of just this for loop for scoring cards or does it also break through the for loop for players?
+                    if(i == 0) {
+                        p.c1Score = citizens(p.getColor());
+                        p.addScore(p.c1Score);
+                    } else if(i == 1) {
+                        p.c2Score = citizens(p.getColor());
+                        p.addScore(p.c2Score);
+                    } else if(i == 2) {
+                        p.c3Score = citizens(p.getColor());
+                        p.addScore(p.c3Score);
+                    }
+                } else if (cards.get(i).equals("knight")) {
+                    if(i == 0) {
+                        p.c1Score = knight(p.getColor());
+                        p.addScore(p.c1Score);
+                    } else if(i == 1) {
+                        p.c2Score = knight(p.getColor());
+                        p.addScore(p.c2Score);
+                    } else if(i == 2) {
+                        p.c3Score = knight(p.getColor());
+                        p.addScore(p.c3Score);
+                    }
                 }
             }
 

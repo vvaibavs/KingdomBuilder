@@ -168,6 +168,10 @@ public class MainPanel extends JPanel implements MouseListener {
             gameState.state = "not Scoring Card";
         } else if(gameState.state.equals("End Screen")) {
             g.drawImage(endScreen, 0, 0, getWidth(), getHeight(), null);
+            g.drawImage(gameState.card1.pic, 375, 243, 90, 120, null);
+            g.drawImage(gameState.card2.pic, 491, 243, 90, 120, null);
+            g.drawImage(gameState.card3.pic, 610, 243, 90, 120, null);
+
 
         }
     }
