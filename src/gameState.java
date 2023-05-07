@@ -689,6 +689,27 @@ public class gameState {
 
     }
 
+    public int knight(String color) {
+        int num = 0;
+        Node[][] nodes = board.returnBoard();
+        int maxLength = Integer.MIN_VALUE;
+        for(int i = 0; i < nodes.length; i++) {
+            for(int j = 0; j < nodes[i].length; j++) {
+                if(nodes[i][j].hasSettlement() && nodes[i][j].getSettlementColor().equals(color)) {
+                    num++;
+                }
+                if(j < nodes[i].length - 1) {
+                    if((!nodes[i][j+1].hasSettlement()) || (!nodes[i][j+1].getSettlementColor().equals(color))) {
+                        if(num > maxLength) {
+                            maxLength = num;
+                        }
+                    }
+                }
+            }
+        }
+        return maxLength * 2;
+    }
+
     public int numSet(String color, int sectorNum){ //1 = top left, 2 = top right, 3 = bottom left, 4 = bottom right
         //returns the number of settlements in a sector (each individual board 😥😮)
         Node[][] allNodes = board.returnBoard();
