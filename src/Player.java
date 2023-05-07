@@ -54,7 +54,7 @@ public class Player {
     }
     public void removeSpecialToken(String type) {
         for (int i = 0; i < specialTokens.size(); i ++) {
-            if (specialTokens.get(i).equals(type)) {
+            if (specialTokens.get(i).getType().equals(type)) {
                 specialTokens.remove(i);
                 break;
             }

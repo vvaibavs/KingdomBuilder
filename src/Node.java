@@ -157,11 +157,36 @@ public class Node{
     }
     public boolean isValid(String color, String terrain, boolean nextToSettlementMatters, String specialToken) {
 
-        if (specialToken.equals("boat") && hasSettlement && color.equals(this.settlementColor) && !gameState.stage2) {
+        if ((specialToken.equals("boat") || specialToken.equals("paddock")) && hasSettlement && color.equals(this.settlementColor) && !gameState.stage2) {
             return true;
         }
-        else if (specialToken.equals("boat") && ! hasSettlement && ! color.equals(this.settlementColor) && ! gameState.stage2){
+        else if ((specialToken.equals("boat") || specialToken.equals("paddock")) && ! hasSettlement && ! color.equals(this.settlementColor) && ! gameState.stage2){
             return false;
+        }
+        if (gameState.stage2 && specialToken.equals("paddock")) {
+            boolean validity = false;
+            if (gameState.selected.getPaddockDistance("West") == this) {
+                validity = true;
+            }
+            if (gameState.selected.getPaddockDistance("East") == this) {
+                validity = true;
+            }
+            if (gameState.selected.getPaddockDistance("SouthEast") == this) {
+                validity = true;
+            }
+            if (gameState.selected.getPaddockDistance("NorthEast") == this) {
+                validity = true;
+            }
+            if (gameState.selected.getPaddockDistance("SouthWest") == this) {
+                validity = true;
+            }
+            if (gameState.selected.getPaddockDistance("NorthWest") == this) {
+                validity = true;
+            }
+            if (! validity) {
+                return false;
+            }
+
         }
         if (gameState.stage2 && specialToken.equals("boat") && !this.terrain.equals("Water")) {
             return false;
@@ -208,13 +233,16 @@ public class Node{
         if (hasSettlement) {
             return false;
         }
-        if (! this.terrain.equals(terrain) && ! specialToken.equals("tower") && !specialToken.equals("farm") && ! specialToken.equals("oasis") && ! specialToken.equals("tavern") && ! specialToken.equals("boat") ) {
+        if (! this.terrain.equals(terrain) && ! specialToken.equals("tower") && !specialToken.equals("farm") && ! specialToken.equals("oasis") && ! specialToken.equals("tavern") && ! specialToken.equals("boat") && ! specialToken.equals("paddock")) {
             return false;
         }
-        if (nextToSettlementMatters) {
+        if (nextToSettlementMatters && ! specialToken.equals("paddock")) {
             if (! hasColorNeighbor(color)) {
                 return false;
             }
+        }
+        if (specialToken.equals("paddock") && this.isSpecial(false)) {
+            return false;
         }
 
 
@@ -368,5 +396,11 @@ public class Node{
         if (settlementColor.equals("red")) {
             g.drawImage(red, x, y - 30, 40, 40, null);
         }
+    }
+    public Node getPaddockDistance(String direction) {
+        if (getNeighbor(direction) != null) {
+            return getNeighbor(direction).getNeighbor(direction);
+        }
+        return null;
     }
 }

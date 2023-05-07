@@ -191,7 +191,7 @@ public class gameState {
                                 current.removeSpecialToken(selected.hasSpecialNeighbor(false).getTerrain());
                             }
                             secondSelected.putSettlement(current.getColor());
-                            Node specialTokenToUse = selected.hasSpecialNeighbor();
+                            Node specialTokenToUse = secondSelected.hasSpecialNeighbor();
 
                             if (specialTokenToUse != null) {
                                 String specialTokenToAdd = specialTokenToUse.getTerrain();
