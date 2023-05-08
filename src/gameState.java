@@ -50,14 +50,14 @@ public class gameState {
 
         Panel.startPaint();
         locTile = new ArrayList<String>();
-        locTile.add("Farm");
-        locTile.add("Oracle");
-        locTile.add("Tavern");
-        locTile.add("Tower");
-        locTile.add("Harbor");
-        locTile.add("Oasis");
-        locTile.add("Paddock");
-        locTile.add("Barn");
+        locTile.add("farm");
+        locTile.add("oracle");
+        locTile.add("tavern");
+        locTile.add("tower");
+        locTile.add("harbor");
+        locTile.add("oasis");
+        locTile.add("paddock");
+        locTile.add("barn");
         locTile.add("Castle");
 
         terrains = new ArrayList<>();
