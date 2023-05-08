@@ -223,6 +223,8 @@ public class gameState {
         } else if(mouseX > 1342 && mouseY > 878 && mouseX < 1524 && mouseY < 926 && (settlementsLeft == 0 || current.getSettlements() == 0) && state.equals("Game Screen")) {
             stage2 = false;
             settlementsLeft = 3;
+            specialToken = "None";
+            selectedTile = null;
             if(p1.turn) { // Player 2's turn
                 currentPlayer = 2;
                 p2.refreshTiles();
