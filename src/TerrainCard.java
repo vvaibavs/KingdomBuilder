@@ -15,26 +15,27 @@ public class TerrainCard {
     public void randomize() {
         if(gameState.terrains.size() == 0) {
             gameState.terrains = new ArrayList<>();
-            for(int i = 1; i <= 30; i++) {
+            for(int i = 1; i <= 25; i++) {
                 gameState.terrains.add(i);
             }
         }
         Collections.shuffle(gameState.terrains);
-        if(gameState.terrains.get(0) <= 6) {
+        if(gameState.terrains.get(0) <= 5) {
             type = "Canyon";
-        } else if(gameState.terrains.get(0) <= 12) {
+        } else if(gameState.terrains.get(0) <= 10) {
             type = "Desert";
-        } else if(gameState.terrains.get(0) <= 18) {
+        } else if(gameState.terrains.get(0) <= 15) {
             type = "Flower";
-        } else if(gameState.terrains.get(0) <= 24) {
+        } else if(gameState.terrains.get(0) <= 20) {
             type = "Forest";
-        } else if(gameState.terrains.get(0) <= 30) {
+        } else if(gameState.terrains.get(0) <= 25) {
             type = "Grass";
         }
         gameState.terrains.remove(0);
 
         try {
             pic = ImageIO.read(MainPanel.class.getResource("/images/" + type + ".png"));
+
         } catch(Exception e) {
             System.out.println(e);
         }

@@ -10,7 +10,7 @@ public class MainPanel extends JPanel implements MouseListener {
     static int randInt2;
     static int randInt3;
     static int randInt4;
-    static BufferedImage startToken;
+    static BufferedImage startToken, pic2;
     static boolean hasEnded = false;
     private BufferedImage startScreen, endScreen, transSquare, mainGameFrame;
     private BufferedImage temp1, temp2, temp3, temp4, hexHighLight;
@@ -40,7 +40,7 @@ public class MainPanel extends JPanel implements MouseListener {
             mainGameFrame = ImageIO.read(MainPanel.class.getResource("/images/nMainGameFrame.png"));
             endScreen = ImageIO.read(MainPanel.class.getResource("/images/EndScreen.png"));
             startToken = ImageIO.read(MainPanel.class.getResource("/images/StartToken.png"));
-
+            pic2 = ImageIO.read(MainPanel.class.getResource("/images/" + "CardBack" + ".png"));
             temp1 = ImageIO.read(MainPanel.class.getResource("/images/map" + randInt1 + ".png"));
             temp2 = ImageIO.read(MainPanel.class.getResource("/images/map" + randInt2 + ".png"));
             temp3 = ImageIO.read(MainPanel.class.getResource("/images/map" + randInt3 + ".png"));
@@ -93,7 +93,6 @@ public class MainPanel extends JPanel implements MouseListener {
 
 
 
-
         }
         catch (Exception e) {
             System.out.println(randInt1);
@@ -125,6 +124,26 @@ public class MainPanel extends JPanel implements MouseListener {
             g.drawImage(gameState.p2.card.pic, 1289, 277, 50, 50, null);
             g.drawImage(gameState.p3.card.pic, 84, 673, 50, 50, null);
             g.drawImage(gameState.p4.card.pic, 1289, 683, 50, 50, null);
+            if (gameState.currentPlayer == 1) {
+                g.drawImage(pic2, 1289, 277, 50, 50, null);
+                g.drawImage(pic2, 84, 673, 50, 50, null);
+                g.drawImage(pic2, 1289, 683, 50, 50, null);
+            }
+            if (gameState.currentPlayer == 2) {
+                g.drawImage(pic2,  84, 277, 50, 50, null);
+                g.drawImage(pic2, 84, 673, 50, 50, null);
+                g.drawImage(pic2, 1289, 683, 50, 50, null);
+            }
+            if (gameState.currentPlayer == 3) {
+                g.drawImage(pic2, 1289, 277, 50, 50, null);
+                g.drawImage(pic2,  84, 277, 50, 50, null);
+                g.drawImage(pic2, 1289, 683, 50, 50, null);
+            }
+            if (gameState.currentPlayer == 4) {
+                g.drawImage(pic2, 1289, 277, 50, 50, null);
+                g.drawImage(pic2, 84, 673, 50, 50, null);
+                g.drawImage(pic2,  84, 277, 50, 50, null);
+            }
             for (int i = 0; i < theBoard.getLength(); i ++) {
                 for (int j = 0; j < theBoard.getLength(); j ++) {
                     if (theBoard.returnBoard()[i][j].hasSettlement()) {
