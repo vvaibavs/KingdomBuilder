@@ -24,6 +24,7 @@ public class Player {
         c1Score = 0;
         c2Score = 0;
         c3Score = 0;
+        castleScore = 0;
     }
 
     public void next() {
@@ -52,6 +53,9 @@ public class Player {
 
     public void addScore(int x) {
         score += x;
+}
+    public void combineScores() {
+        score = c1Score + c2Score + c3Score + castleScore;
     }
     public void addSpecialToken(String tokenToAdd) {
         specialTokens.add(new SpecialTile(tokenToAdd));
