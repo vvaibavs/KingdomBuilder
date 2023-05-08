@@ -69,8 +69,10 @@ public class gameState {
         state = "End Screen";
     }
     public static void runClick() {
+        boolean temp = false;
         if (hasEnded && state.equals("Game Screen")) {
             state = "End Screen";
+            temp = true;
         }
         if (mouseX > 278 && mouseX < 705 && mouseY < 631 && mouseY > 544 && state.equals("Start Screen")) {
             state = "Game Screen";
@@ -350,10 +352,11 @@ public class gameState {
             if (! hasEnded) {
                 scoringCards();
             }
-            if (mouseX > 326 && mouseY > 759 && mouseY < 824 && mouseX < 764) {
+            if (mouseX > 326 && mouseY > 759 && mouseY < 824 && mouseX < 764 && !temp) {
                 hasEnded = true;
                 state = "Game Screen";
             }
+            temp = false;
             System.out.println(state);
 
         }
