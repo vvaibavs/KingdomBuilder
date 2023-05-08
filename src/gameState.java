@@ -429,7 +429,7 @@ public class gameState {
 
 
         for(Player p : players){ //adds castle points separately after all the scoring card points have been added
-            p.addScore(castle(p.getColor()));
+            p.castleScore = (castle(p.getColor()));
         }
 
 
@@ -442,31 +442,9 @@ public class gameState {
         for(int i = 0; i < allNodes.length; i++){
             for(int j = 0; j < allNodes[i].length; j++){
                 Node n = allNodes[i][j];
-                if(n.hasSettlement() == true && n.getSettlementColor().equals(color)){
-                    if(n.getNeighbor("East") != null && n.getNeighbor("East").getTerrain().equals("Castle") && counted[n.getNeighbor("East").getX()][n.getNeighbor("East").getY()] != 1) {
-                        score+=3;
-                        counted[n.getNeighbor("East").getX()][n.getNeighbor("East").getY()] = 1;
-                    }
-                    if(n.getNeighbor("West") != null && n.getNeighbor("West").getTerrain().equals("Castle") && counted[n.getNeighbor("West").getX()][n.getNeighbor("West").getY()] != 1) {
-                        score+=3;
-                        counted[n.getNeighbor("West").getX()][n.getNeighbor("West").getY()] = 1;
-                    }
-                    if(n.getNeighbor("NorthEast") != null && n.getNeighbor("NorthEast").getTerrain().equals("Castle") && counted[n.getNeighbor("NorthEast").getX()][n.getNeighbor("NorthEast").getY()] != 1) {
-                        score+=3;
-                        counted[n.getNeighbor("NorthEast").getX()][n.getNeighbor("NorthEast").getY()] = 1;
-                    }
-                    if(n.getNeighbor("SouthEast") != null && n.getNeighbor("SouthEast").getTerrain().equals("Castle") && counted[n.getNeighbor("SouthEast").getX()][n.getNeighbor("SouthEast").getY()] != 1) {
-                        score+=3;
-                        counted[n.getNeighbor("SouthEast").getX()][n.getNeighbor("SouthEast").getY()] = 1;
-                    }
-                    if(n.getNeighbor("NorthWest") != null && n.getNeighbor("NorthWest").getTerrain().equals("Castle") && counted[n.getNeighbor("NorthWest").getX()][n.getNeighbor("NorthWest").getY()] != 1) {
-                        score+=3;
-                        counted[n.getNeighbor("NorthWest").getX()][n.getNeighbor("NorthWest").getY()] = 1;
-
-                    }
-                    if(n.getNeighbor("SouthWest") != null && n.getNeighbor("SouthWest").getTerrain().equals("Castle") && counted[n.getNeighbor("SouthWest").getX()][n.getNeighbor("SouthWest").getY()] != 1) {
-                        score+=3;
-                        counted[n.getNeighbor("SouthWest").getX()][n.getNeighbor("SouthWest").getY()] = 1;
+                if(n.getTerrain().equals("Castle")) {
+                    if (n.hasColorNeighbor(color)) {
+                        score += 3;
                     }
 
                 }
