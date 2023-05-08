@@ -8,7 +8,7 @@ public class gameState {
     public static int mouseY;
     public static boolean stage2 = false;
     public static ScoringCard card1, card2, card3;
-    private ArrayList<String> locTile;
+    private static ArrayList<String> locTile;
     private static MainPanel Panel;
     public static int currentPlayer = 1;
     private ArrayList<Integer> randScoring;
@@ -342,11 +342,13 @@ public class gameState {
             System.out.println(specialToken);
             Panel.redraw();
 
+        } else if(state.equals("End Screen")) {
+            scoringCards();
         }
 
     }
 
-    public void scoringCards() {
+    public static void scoringCards() {
         ArrayList<String> cards = new ArrayList<String>();
         cards.add(card1.getCardType());
         cards.add(card2.getCardType());
@@ -523,7 +525,7 @@ public class gameState {
 
     }
 
-    public int castle(String color){
+    public static int castle(String color){
         Node[][] allNodes = board.returnBoard();
         int[][] counted = new int[allNodes.length][allNodes[0].length];
         int score = 0;
@@ -563,7 +565,7 @@ public class gameState {
         }
         return score;
     }
-    public int workers(String color){ //simplify code
+    public static int workers(String color){ //simplify code
         Node[][] allNodes = board.returnBoard();
         int[][] counted = new int[allNodes.length][allNodes[0].length];
         int score = 0;
@@ -602,7 +604,7 @@ public class gameState {
         return score;
     }
 
-    public int miners(String color){
+    public static int miners(String color){
         Node[][] allNodes = board.returnBoard();
         int[][] counted = new int[allNodes.length][allNodes[0].length];
         int score = 0;
@@ -643,7 +645,7 @@ public class gameState {
         return score;
     }
 
-    public int fishermen(String color){
+    public static int fishermen(String color){
         Node[][] allNodes = board.returnBoard();
         int[][] counted = new int[allNodes.length][allNodes[0].length];
         int score = 0;
@@ -684,7 +686,7 @@ public class gameState {
         return score;
     }
 
-    public int farmers (String color){
+    public static int farmers(String color){
         Node[][] allNodes = board.returnBoard();
         int[][] counted = new int[allNodes.length][allNodes[0].length];
 
@@ -758,7 +760,7 @@ public class gameState {
 
     }
 
-    public int citizens (String color){
+    public static int citizens(String color){
         Node[][] allNodes = board.returnBoard();
         int[][] counted = new int[allNodes.length][allNodes[0].length];
         int maxNum = Integer.MIN_VALUE;
@@ -781,7 +783,7 @@ public class gameState {
 
     }
 
-    public ArrayList<Integer> lords (){ //🤴AHH
+    public static ArrayList<Integer> lords(){ //🤴AHH
 
         ArrayList<Integer> nums = new ArrayList<Integer>(); //contains player numbers
         ArrayList<String> pColor = new ArrayList<String>();
@@ -815,7 +817,7 @@ public class gameState {
 
     }
 
-    public int knight(String color) {
+    public static int knight(String color) {
         int num = 0;
         Node[][] nodes = board.returnBoard();
         int maxLength = Integer.MIN_VALUE;
@@ -836,7 +838,7 @@ public class gameState {
         return maxLength * 2;
     }
 
-    public int numSet(String color, int sectorNum){ //1 = top left, 2 = top right, 3 = bottom left, 4 = bottom right
+    public static int numSet(String color, int sectorNum){ //1 = top left, 2 = top right, 3 = bottom left, 4 = bottom right
         //returns the number of settlements in a sector (each individual board 😥😮)
         Node[][] allNodes = board.returnBoard();
         int numSettlements = 0;
@@ -883,7 +885,7 @@ public class gameState {
 
     }
 
-    public int setArea(Node n, int[][] counted, String color){
+    public static int setArea(Node n, int[][] counted, String color){
         //returns the number of settlements in a settlement area (can be random blobs 🦑🦑)
         if(n.hasSettlement() == true && n.getSettlementColor().equals(color) && counted[n.getX()][n.getY()] != 1){
             counted[n.getX()][n.getY()] = 1;
