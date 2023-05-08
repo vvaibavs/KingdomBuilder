@@ -73,4 +73,16 @@ public class Player {
     public ArrayList<SpecialTile> getSpecialTokens() {
         return specialTokens;
     }
+
+    public void scoringVariable(int i, int score) {
+        if(i == 0) {
+            c1Score += score;
+        } else if(i == 1) {
+            c2Score += score;
+        } else if(i == 2) {
+            c3Score += score;
+        } else if(i == 3) {
+
+        }
+    }
 }
