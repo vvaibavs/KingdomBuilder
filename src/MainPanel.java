@@ -59,6 +59,45 @@ public class MainPanel extends JPanel implements MouseListener {
         setSize(getWidth(), getHeight());
         addMouseListener(this);
     }
+    public void restart() {
+        randInt1 = (int)(Math.random() * 7 + 1);
+        randInt2 = (int)(Math.random() * 7 + 1);
+        while (randInt2 == randInt1) {
+            randInt2 = (int)(Math.random() * 7 + 1);
+        }
+        randInt3 = (int)(Math.random() * 7 + 1);
+        while (randInt3 == randInt1 || randInt3 == randInt2) {
+            randInt3 = (int)(Math.random() * 7 + 1);
+        }
+        randInt4 = (int)(Math.random() * 7 + 1);
+        while (randInt4 == randInt1 || randInt4 == randInt2 || randInt4 == randInt3) {
+            randInt4 = (int)(Math.random() * 7 + 1);
+        }
+        theBoard = new Board();
+        gameState.inputBoard(theBoard);
+        try {
+            startScreen = ImageIO.read(MainPanel.class.getResource("/images/Start-Screen.png"));
+            mainGameFrame = ImageIO.read(MainPanel.class.getResource("/images/nMainGameFrame.png"));
+            endScreen = ImageIO.read(MainPanel.class.getResource("/images/EndScreen.png"));
+
+            temp1 = ImageIO.read(MainPanel.class.getResource("/images/map" + randInt1 + ".png"));
+            temp2 = ImageIO.read(MainPanel.class.getResource("/images/map" + randInt2 + ".png"));
+            temp3 = ImageIO.read(MainPanel.class.getResource("/images/map" + randInt3 + ".png"));
+            temp4 = ImageIO.read(MainPanel.class.getResource("/images/map" + randInt4 + ".png"));
+            hexHighLight = ImageIO.read(Node.class.getResource("/images/HexHighlight.png"));
+
+
+
+        }
+        catch (Exception e) {
+            System.out.println(randInt1);
+            System.out.println(randInt2);
+            System.out.println(randInt3);
+            System.out.println(randInt4);
+            System.out.println(e.getMessage());
+            return;
+        }
+    }
     public void inputTheBoard(Board board) {
         theBoard = board;
     }
