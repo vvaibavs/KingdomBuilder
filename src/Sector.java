@@ -11,6 +11,18 @@ public class Sector {
     String[][] map6 = {{"Flower", "Desert", "Desert", "Mountain", "Mountain", "Desert", "Desert", "Canyon", "Canyon", "Canyon" },{"Flower", "Flower", "Desert", "Desert","Desert", "Mountain", "Mountain", "Canyon", "Canyon", "Canyon" },{"Flower", "Flower", "Flower","Flower","Flower","Flower","Flower","Mountain", "Mountain", "Mountain"},{"Water", "Water", "Flower", "Castle", "Grass", "Grass", "Forest", "Forest", "Mountain", "Mountain"},{"Flower", "Flower", "Water", "Water", "Grass", "Grass", "Grass", "Forest", "Forest", "Canyon"},{"Flower", "Canyon", "Canyon", "Water", "Grass", "Forest", "Forest", "Canyon", "Canyon", "Canyon"},{"Desert", "Flower", "tavern", "Canyon", "Water", "Forest", "Forest", "tavern", "Canyon", "Grass"},{"Desert", "Desert", "Canyon", "Water", "Forest", "Forest", "Grass", "Grass", "Grass", "Grass"},{"Desert", "Desert", "Desert", "Water", "Forest", "Forest", "Forest", "Grass", "Grass", "Grass"},{"Desert", "Desert", "Water", "Water", "Forest", "Forest", "Forest", "Grass", "Grass", "Grass"}};
     String[][] map7 = {{"Forest", "Forest", "Forest", "Forest", "Mountain", "Mountain", "Grass", "Mountain", "Canyon", "Canyon"},{"Forest", "Mountain", "Forest", "Forest", "Flower", "Grass", "Mountain", "Mountain", "Mountain", "Canyon"},{"Flower", "Flower", "Forest", "Flower", "Flower", "Flower", "Grass", "Grass", "Water", "Mountain"},{"Desert", "Flower", "Flower", "Flower", "Water", "tower", "Grass", "Water", "Mountain", "Mountain"},{"Desert", "Desert", "Desert", "Desert", "Flower", "Water", "Grass", "Water", "Canyon", "Canyon"},{"Desert", "Canyon", "Desert", "Desert", "Desert", "Water", "Water", "Canyon", "Grass", "Canyon"},{"Desert", "Desert", "Canyon", "Desert", "Desert", "Water", "Flower", "Castle", "Grass", "Canyon"},{"Canyon", "Canyon", "tower", "Desert", "Water", "Flower", "Flower", "Flower", "Grass", "Grass"},{"Desert", "Canyon", "Water", "Water", "Water", "Forest", "Forest", "Flower", "Grass", "Grass"},{"Desert", "Canyon", "Canyon", "Water", "Forest", "Forest", "Forest", "Grass", "Grass", "Grass"}};
     public Sector(int type, int loc, int xLoc, int yLoc) {
+        int matX = 0;
+        int matY = 0;
+        if (loc == 2) {
+            matX = 10;
+        }
+        if (loc == 3) {
+            matY = 10;
+        }
+        if (loc == 4) {
+            matX = 10;
+            matY = 10;
+        }
         sector = new Node[10][10];
         int tempX = xLoc;
         this.type = type;
@@ -23,9 +35,11 @@ public class Sector {
                         tempX += 20;
                     }
                     for (int j = 0; j < map1[i].length; j ++) {
-                        sector[i][j] = new Node(map1[i][j], loc, tempX, yLoc);
+                        sector[i][j] = new Node(map1[i][j], loc, tempX, yLoc, i + matY, j + matX);
                         tempX += 40;
                         }
+
+
                     }
                 break;
             case 2:
@@ -36,7 +50,7 @@ public class Sector {
                         tempX += 20;
                     }
                     for (int j = 0; j < map2[i].length; j++) {
-                        sector[i][j] = new Node(map2[i][j], loc, tempX, yLoc);
+                        sector[i][j] = new Node(map2[i][j], loc, tempX, yLoc,i + matY, j + matX);
                         tempX += 40;
                     }
                 }
@@ -49,7 +63,7 @@ public class Sector {
                         tempX += 20;
                     }
                     for (int j = 0; j < map3[i].length; j++) {
-                        sector[i][j] = new Node(map3[i][j], loc, tempX, yLoc);
+                        sector[i][j] = new Node(map3[i][j], loc, tempX, yLoc, i + matY, j + matX);
                         tempX += 40;
                     }
                 }
@@ -62,7 +76,7 @@ public class Sector {
                         tempX += 20;
                     }
                     for (int j = 0; j < map4[i].length; j++) {
-                        sector[i][j] = new Node(map4[i][j], loc, tempX, yLoc);
+                        sector[i][j] = new Node(map4[i][j], loc, tempX, yLoc, i + matY, j + matX);
                         tempX += 40;
                     }
                 }
@@ -75,7 +89,7 @@ public class Sector {
                         tempX += 20;
                     }
                     for (int j = 0; j < map5[i].length; j++) {
-                        sector[i][j] = new Node(map5[i][j], loc, tempX, yLoc);
+                        sector[i][j] = new Node(map5[i][j], loc, tempX, yLoc, i + matY, j + matX);
                         tempX += 40;
                     }
                 }
@@ -88,7 +102,7 @@ public class Sector {
                         tempX += 20;
                     }
                     for (int j = 0; j < map6[i].length; j++) {
-                        sector[i][j] = new Node(map6[i][j], loc, tempX, yLoc);
+                        sector[i][j] = new Node(map6[i][j], loc, tempX, yLoc, i + matY, j + matX);
                         tempX += 40;
                     }
                 }
@@ -101,7 +115,7 @@ public class Sector {
                         tempX += 20;
                     }
                     for (int j = 0; j < map7[i].length; j++) {
-                        sector[i][j] = new Node(map7[i][j], loc, tempX, yLoc);
+                        sector[i][j] = new Node(map7[i][j], loc, tempX, yLoc, i + matY, j + matX);
                         tempX += 40;
                     }
                 }
