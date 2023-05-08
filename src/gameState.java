@@ -347,7 +347,9 @@ public class gameState {
             Panel.redraw();
 
         } else if(state.equals("End Screen")) {
-            scoringCards();
+            if (! hasEnded) {
+                scoringCards();
+            }
             if (mouseX > 326 && mouseY > 759 && mouseY < 824 && mouseX < 764) {
                 hasEnded = true;
                 state = "Game Screen";
