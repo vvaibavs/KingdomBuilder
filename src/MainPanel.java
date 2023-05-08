@@ -10,6 +10,7 @@ public class MainPanel extends JPanel implements MouseListener {
     static int randInt2;
     static int randInt3;
     static int randInt4;
+    static BufferedImage startToken;
     static boolean hasEnded = false;
     private BufferedImage startScreen, endScreen, transSquare, mainGameFrame;
     private BufferedImage temp1, temp2, temp3, temp4, hexHighLight;
@@ -38,6 +39,7 @@ public class MainPanel extends JPanel implements MouseListener {
             startScreen = ImageIO.read(MainPanel.class.getResource("/images/Start-Screen.png"));
             mainGameFrame = ImageIO.read(MainPanel.class.getResource("/images/nMainGameFrame.png"));
             endScreen = ImageIO.read(MainPanel.class.getResource("/images/EndScreen.png"));
+            startToken = ImageIO.read(MainPanel.class.getResource("/images/StartPlayerToken.png"));
 
             temp1 = ImageIO.read(MainPanel.class.getResource("/images/map" + randInt1 + ".png"));
             temp2 = ImageIO.read(MainPanel.class.getResource("/images/map" + randInt2 + ".png"));
@@ -111,6 +113,18 @@ public class MainPanel extends JPanel implements MouseListener {
             g.drawImage(startScreen, 0, 0, getWidth(), getHeight(), null);
         }
         else if (gameState.state.equals("Game Screen")) {
+            if (gameState.startPlayerInt == 1) {
+                g.drawImage(startToken, 10, 147, 30, 30, null);
+            }
+            if (gameState.startPlayerInt == 2) {
+                g.drawImage(startToken, 10, 147, 30, 30, null);
+            }
+            if (gameState.startPlayerInt == 3) {
+                g.drawImage(startToken, 10, 147, 30, 30, null);
+            }
+            if (gameState.startPlayerInt == 4) {
+                g.drawImage(startToken, 10, 147, 30, 30, null);
+            }
             drawGameFrame(g);
             g.drawImage(temp1, 398, 147, 420, 310, null);
             g.drawImage(temp2, 798, 147, 420, 310, null);

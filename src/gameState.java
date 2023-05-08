@@ -15,6 +15,7 @@ public class gameState {
     public static Board board;
     static Node selected;
     static int startPlayer;
+    public static int startPlayerInt;
     public static ArrayList<Integer> terrains;
     public static boolean nextToSettlementRequired = false;
     public static int settlementsLeft = 3;
@@ -76,7 +77,7 @@ public class gameState {
         if (mouseX > 278 && mouseX < 705 && mouseY < 631 && mouseY > 544 && state.equals("Start Screen")) {
             state = "Game Screen";
             int rand = ((int)(Math.random() * 4) + 1);
-            System.out.println(rand);
+            startPlayerInt = rand;
             switch(rand) {
 
                 case 1:
