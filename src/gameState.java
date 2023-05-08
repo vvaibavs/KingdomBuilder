@@ -534,7 +534,7 @@ public class gameState {
                 Node n = allNodes[i][j];
                 if(n.getTerrain().equals("Castle")) {
                     if (n.hasColorNeighbor(color)) {
-                        score = 3;
+                        score += 3;
                     }
 
                 }
