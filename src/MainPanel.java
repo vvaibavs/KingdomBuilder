@@ -10,6 +10,7 @@ public class MainPanel extends JPanel implements MouseListener {
     static int randInt2;
     static int randInt3;
     static int randInt4;
+    static boolean hasEnded = false;
     private BufferedImage startScreen, endScreen, transSquare, mainGameFrame;
     private BufferedImage temp1, temp2, temp3, temp4, hexHighLight;
     static Graphics graphic;
@@ -212,7 +213,15 @@ public class MainPanel extends JPanel implements MouseListener {
             g.drawImage(gameState.card2.ESpic, 491, 243, 90, 120, null);
             g.drawImage(gameState.card3.ESpic, 610, 243, 90, 120, null);
             g.setFont(new Font("Kunstler Script", Font.BOLD, 100));
-
+            if (!hasEnded) {
+                gameState.scoringCards();
+                gameState.p1.combineScores();
+                gameState.p2.combineScores();
+                gameState.p3.combineScores();
+                gameState.p4.combineScores();
+                hasEnded = true;
+                System.out.println("end");
+            }
             g.drawString("" + gameState.p1.c1Score, 375, 410);
             g.drawString("" + gameState.p2.c1Score, 375, 500);
             g.drawString("" + gameState.p3.c1Score, 375, 590);
