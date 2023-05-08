@@ -112,7 +112,7 @@ public class gameState {
             System.out.println(current.card.type);
             mouseX = 0;
             mouseY = 0;
-        } else if(mouseX > 670 && mouseY > 31 && mouseX < 916 && mouseY < 71 && !state.equals("Scoring Card") && !state.equals("not Scoring Card")) {
+        } else if(mouseX > 670 && mouseY > 31 && mouseX < 916 && mouseY < 71 && !state.equals("Scoring Card") && !state.equals("not Scoring Card") && !state.equals("End Screen")) {
             state = "Scoring Card";
         } else if(mouseX > 670 && mouseY > 31 && mouseX < 916 && mouseY < 71 && state.equals("not Scoring Card")) {
             state = "Game Screen";
