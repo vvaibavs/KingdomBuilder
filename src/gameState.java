@@ -355,10 +355,10 @@ public class gameState {
                 System.out.println("end");
             }
             if (mouseX > 326 && mouseY > 759 && mouseY < 824 && mouseX < 764 && !temp) {
-                hasEnded = true;
+
                 state = "Game Screen";
             }
-
+            hasEnded = true;
             temp = false;
             System.out.println(state);
 
