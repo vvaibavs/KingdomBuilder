@@ -39,12 +39,13 @@ public class MainPanel extends JPanel implements MouseListener {
             startScreen = ImageIO.read(MainPanel.class.getResource("/images/Start-Screen.png"));
             mainGameFrame = ImageIO.read(MainPanel.class.getResource("/images/nMainGameFrame.png"));
             endScreen = ImageIO.read(MainPanel.class.getResource("/images/EndScreen.png"));
-            startToken = ImageIO.read(MainPanel.class.getResource("/images/StartPlayerToken.png"));
+            startToken = ImageIO.read(MainPanel.class.getResource("/images/StartToken.png"));
 
             temp1 = ImageIO.read(MainPanel.class.getResource("/images/map" + randInt1 + ".png"));
             temp2 = ImageIO.read(MainPanel.class.getResource("/images/map" + randInt2 + ".png"));
             temp3 = ImageIO.read(MainPanel.class.getResource("/images/map" + randInt3 + ".png"));
             temp4 = ImageIO.read(MainPanel.class.getResource("/images/map" + randInt4 + ".png"));
+
             hexHighLight = ImageIO.read(Node.class.getResource("/images/HexHighlight.png"));
 
 
@@ -113,18 +114,7 @@ public class MainPanel extends JPanel implements MouseListener {
             g.drawImage(startScreen, 0, 0, getWidth(), getHeight(), null);
         }
         else if (gameState.state.equals("Game Screen")) {
-            if (gameState.startPlayerInt == 1) {
-                g.drawImage(startToken, 10, 147, 30, 30, null);
-            }
-            if (gameState.startPlayerInt == 2) {
-                g.drawImage(startToken, 10, 147, 30, 30, null);
-            }
-            if (gameState.startPlayerInt == 3) {
-                g.drawImage(startToken, 10, 147, 30, 30, null);
-            }
-            if (gameState.startPlayerInt == 4) {
-                g.drawImage(startToken, 10, 147, 30, 30, null);
-            }
+
             drawGameFrame(g);
             g.drawImage(temp1, 398, 147, 420, 310, null);
             g.drawImage(temp2, 798, 147, 420, 310, null);
@@ -142,6 +132,19 @@ public class MainPanel extends JPanel implements MouseListener {
                     }
                 }
 
+            }
+            if (gameState.startPlayerInt == 1) {
+                System.out.println("HELLO");
+                g.drawImage(startToken, 10, 147, 50, 50, null);
+            }
+            if (gameState.startPlayerInt == 2) {
+                g.drawImage(startToken, 1507, 147, 50, 50, null);
+            }
+            if (gameState.startPlayerInt == 3) {
+                g.drawImage(startToken, 10, 544, 50, 50, null);
+            }
+            if (gameState.startPlayerInt == 4) {
+                g.drawImage(startToken, 1507, 544, 50, 50, null);
             }
             g.setFont(new Font("Kunstler Script", Font.BOLD, 65));
             g.drawString(gameState.p1.getSettlements() + "", 235, 238);
