@@ -795,7 +795,7 @@ public class gameState {
 
     public static int setArea(Node n, int[][] counted, String color){
         //returns the number of settlements in a settlement area (can be random blobs 🦑🦑)
-        if(n.hasSettlement() == true && n.getSettlementColor().equals(color) && counted[n.getMX()][n.getMY()] != 1){
+        if(n != null && n.hasSettlement() == true && n.getSettlementColor().equals(color) && counted[n.getMX()][n.getMY()] != 1){
             counted[n.getMX()][n.getMY()] = 1;
             return 1 + setArea(n.getNeighbor("East"), counted, color) + setArea(n.getNeighbor("West"), counted, color) +
                     setArea(n.getNeighbor("NorthEast"), counted, color) + setArea(n.getNeighbor("SouthEast"), counted, color) +
