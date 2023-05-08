@@ -9,7 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b7fe00a-8f50-40cc-8b35-7b23e9f78bbb" name="Changes" comment="Empty Inside." />
+    <list default="true" id="7b7fe00a-8f50-40cc-8b35-7b23e9f78bbb" name="Changes" comment="Empty Inside.">
+      <change beforePath="$PROJECT_DIR$/src/MainPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainPanel.java" afterDir="false" />
+    </list>
     <list id="6ca57205-0620-47e2-96b7-d45086a08dec" name="Changes by k1215075" comment="Changes by k1215075" />
     <list id="35aaed49-b13f-4d30-a362-517efcbf4050" name="Changes by slhscs230" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -427,18 +429,18 @@
       <updated>1683510683408</updated>
     </task>
     <task id="LOCAL-00073" summary="Empty Inside.">
-      <created>1682866269800</created>
+      <created>1683510862419</created>
       <option name="number" value="00073" />
       <option name="presentableId" value="LOCAL-00073" />
       <option name="project" value="LOCAL" />
-      <updated>1682866269801</updated>
+      <updated>1683510862419</updated>
     </task>
     <task id="LOCAL-00074" summary="Empty Inside.">
-      <created>1682887760863</created>
+      <created>1683511026370</created>
       <option name="number" value="00074" />
       <option name="presentableId" value="LOCAL-00074" />
       <option name="project" value="LOCAL" />
-      <updated>1682887760863</updated>
+      <updated>1683511026370</updated>
     </task>
     <task id="LOCAL-00054" summary="Empty Inside.">
       <created>1682943751474</created>
@@ -454,7 +456,7 @@
       <option name="project" value="LOCAL" />
       <updated>1682945686584</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
