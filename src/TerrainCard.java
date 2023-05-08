@@ -37,7 +37,7 @@ public class TerrainCard {
             pic = ImageIO.read(MainPanel.class.getResource("/images/" + type + ".png"));
 
         } catch(Exception e) {
-            System.out.println(e);
+            System.out.println(e + "HELLO" + type);
         }
     }
 

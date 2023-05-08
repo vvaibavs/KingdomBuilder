@@ -62,7 +62,7 @@ public class gameState {
         locTile.add("Castle");
 
         terrains = new ArrayList<>();
-        for(int i = 1; i <= 30; i++) {
+        for(int i = 1; i <= 25; i++) {
             terrains.add(i);
         }
 
