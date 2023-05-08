@@ -350,10 +350,11 @@ public class gameState {
 
                 state = "Game Screen";
             }
-            if (mouseX > 1340 && mouseY > 548 && mouseX < 1340 && mouseY < 608) {
+            hasEnded = true;
+            if (mouseX > 1135 && mouseY > 548 && mouseX < 1340 && mouseY < 608) {
                 restartState();
             }
-            hasEnded = true;
+
             temp = false;
             System.out.println(state);
 
@@ -564,20 +565,20 @@ public class gameState {
                         score++;
                         counted[n.getNeighbor("West").getMX()][n.getNeighbor("West").getMY()] = 1;
                     }
-                    if(n.getNeighbor("NorthEast") != null && n.getNeighbor("NorthEast").getTerrain().equals("Water") && counted[n.getNeighbor("NorthEast").getX()][n.getNeighbor("NorthEast").getMY()] != 1) {
+                    if(n.getNeighbor("NorthEast") != null && n.getNeighbor("NorthEast").getTerrain().equals("Water") && counted[n.getNeighbor("NorthEast").getMX()][n.getNeighbor("NorthEast").getMY()] != 1) {
                         score++;
                         counted[n.getNeighbor("NorthEast").getMX()][n.getNeighbor("NorthEast").getMY()] = 1;
                     }
-                    if(n.getNeighbor("SouthEast") != null && n.getNeighbor("SouthEast").getTerrain().equals("Water") && counted[n.getNeighbor("SouthEast").getX()][n.getNeighbor("SouthEast").getMY()] != 1) {
+                    if(n.getNeighbor("SouthEast") != null && n.getNeighbor("SouthEast").getTerrain().equals("Water") && counted[n.getNeighbor("SouthEast").getMX()][n.getNeighbor("SouthEast").getMY()] != 1) {
                         score++;
                         counted[n.getNeighbor("SouthEast").getMX()][n.getNeighbor("SouthEast").getMY()] = 1;
                     }
-                    if(n.getNeighbor("NorthWest") != null && n.getNeighbor("NorthWest").getTerrain().equals("Water") && counted[n.getNeighbor("NorthWest").getX()][n.getNeighbor("NorthWest").getMY()] != 1) {
+                    if(n.getNeighbor("NorthWest") != null && n.getNeighbor("NorthWest").getTerrain().equals("Water") && counted[n.getNeighbor("NorthWest").getMX()][n.getNeighbor("NorthWest").getMY()] != 1) {
                         score++;
                         counted[n.getNeighbor("NorthWest").getMX()][n.getNeighbor("NorthWest").getMY()] = 1;
 
                     }
-                    if(n.getNeighbor("SouthWest") != null && n.getNeighbor("SouthWest").getTerrain().equals("Water") && counted[n.getNeighbor("SouthWest").getX()][n.getNeighbor("SouthWest").getMY()] != 1) {
+                    if(n.getNeighbor("SouthWest") != null && n.getNeighbor("SouthWest").getTerrain().equals("Water") && counted[n.getNeighbor("SouthWest").getMX()][n.getNeighbor("SouthWest").getMY()] != 1) {
                         score++;
                         counted[n.getNeighbor("SouthWest").getMX()][n.getNeighbor("SouthWest").getMY()] = 1;
                     }
@@ -806,6 +807,7 @@ public class gameState {
     }
 
     public static void restartState() {
+        hasEnded = false;
         state = "Start Screen";
         stage2 = false;
         Collections.shuffle(randScoring);
