@@ -351,6 +351,10 @@ public class gameState {
 
         } else if(state.equals("End Screen")) {
             if (! hasEnded) {
+                p1.combineScores();
+                p2.combineScores();
+                p3.combineScores();
+                p4.combineScores();
                 scoringCards();
             }
             if (mouseX > 326 && mouseY > 759 && mouseY < 824 && mouseX < 764 && !temp) {
