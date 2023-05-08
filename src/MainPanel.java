@@ -192,22 +192,11 @@ public class MainPanel extends JPanel implements MouseListener {
             g.drawString("" + gameState.p2.castleScore, 730, 500);
             g.drawString("" + gameState.p3.castleScore, 730, 590);
             g.drawString("" + gameState.p4.castleScore, 730, 680);
-            gameState.p1.combineScores();
-            gameState.p2.combineScores();
-            gameState.p3.combineScores();
-            gameState.p4.combineScores();
+
             g.drawString("" + gameState.p1.getScore(), 855, 410);
             g.drawString("" + gameState.p2.getScore(), 855, 500);
             g.drawString("" + gameState.p3.getScore(), 855, 590);
             g.drawString("" + gameState.p4.getScore(), 855, 680);
-
-
-            g.drawString("" + gameState.p1.getScore(), 840, 410);
-            g.drawString("" + gameState.p2.getScore(), 840, 500);
-            g.drawString("" + gameState.p3.getScore(), 840, 590);
-            g.drawString("" + gameState.p4.getScore(), 840, 680);
-
-
         }
     }
     public void startPaint() {
