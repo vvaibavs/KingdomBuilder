@@ -9,11 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b7fe00a-8f50-40cc-8b35-7b23e9f78bbb" name="Changes" comment="Empty Inside.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameState.java" afterDir="false" />
-    </list>
+    <list default="true" id="7b7fe00a-8f50-40cc-8b35-7b23e9f78bbb" name="Changes" comment="Empty Inside." />
     <list id="6ca57205-0620-47e2-96b7-d45086a08dec" name="Changes by k1215075" comment="Changes by k1215075" />
     <list id="35aaed49-b13f-4d30-a362-517efcbf4050" name="Changes by slhscs230" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -119,20 +115,6 @@
       <workItem from="1683396594345" duration="3409000" />
       <workItem from="1683488636792" duration="1319000" />
       <workItem from="1683512285317" duration="1979000" />
-    </task>
-    <task id="LOCAL-00035" summary="asdf;ajshdflkasjhgklasj">
-      <created>1681391118142</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1681391118142</updated>
-    </task>
-    <task id="LOCAL-00036" summary="asdf;ajshdflkasjhgklasj">
-      <created>1681474360846</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1681474360846</updated>
     </task>
     <task id="LOCAL-00037" summary="empty inside.">
       <created>1681735173452</created>
@@ -463,7 +445,21 @@
       <option name="project" value="LOCAL" />
       <updated>1683518774665</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="Empty Inside.">
+      <created>1683519465592</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1683519465592</updated>
+    </task>
+    <task id="LOCAL-00085" summary="Empty Inside.">
+      <created>1683519620147</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1683519620147</updated>
+    </task>
+    <option name="localTasksCounter" value="86" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
