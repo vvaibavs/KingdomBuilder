@@ -434,8 +434,8 @@ public class gameState {
                     int x = citizens(p.getColor());
                     p.addScore(x);
                     p.scoringVariable(i, x);
-                } else if (cards.get(i).equals("knights")) {
-                    int x = knights(p.getColor());
+                } else if (cards.get(i).equals("knight")) {
+                    int x = knight(p.getColor());
                     p.addScore(x);
                     p.scoringVariable(i, x);
                 }
@@ -479,29 +479,29 @@ public class gameState {
             for(int j = 0; j < allNodes[i].length; j++){
                 Node n = allNodes[i][j];
                 if(n.hasSettlement() == true && n.getSettlementColor().equals(color)){
-                    if (n.getNeighbor("East") != null && locTile.contains(n.getNeighbor("East").getTerrain()) && counted[n.getNeighbor("East").getX()][n.getNeighbor("East").getY()] != 1) {
+                    if (n.getNeighbor("East") != null && locTile.contains(n.getNeighbor("East").getTerrain()) && counted[n.getNeighbor("East").getMX()][n.getNeighbor("East").getMY()] != 1) {
                         score++;
-                        counted[n.getNeighbor("East").getX()][n.getNeighbor("East").getY()] = 1;
+                        counted[n.getNeighbor("East").getMX()][n.getNeighbor("East").getMY()] = 1;
                     }
-                    if (n.getNeighbor("West") != null && locTile.contains(n.getNeighbor("West").getTerrain())&& counted[n.getNeighbor("West").getX()][n.getNeighbor("West").getY()] != 1) {
+                    if (n.getNeighbor("West") != null && locTile.contains(n.getNeighbor("West").getTerrain())&& counted[n.getNeighbor("West").getMX()][n.getNeighbor("West").getMY()] != 1) {
                         score++;
-                        counted[n.getNeighbor("West").getX()][n.getNeighbor("West").getY()] = 1;
+                        counted[n.getNeighbor("West").getMX()][n.getNeighbor("West").getMY()] = 1;
                     }
-                    if (n.getNeighbor("SouthWest") != null && locTile.contains(n.getNeighbor("SouthWest").getTerrain())&& counted[n.getNeighbor("SouthWest").getX()][n.getNeighbor("SouthWest").getY()] != 1) {
+                    if (n.getNeighbor("SouthWest") != null && locTile.contains(n.getNeighbor("SouthWest").getTerrain())&& counted[n.getNeighbor("SouthWest").getMX()][n.getNeighbor("SouthWest").getMY()] != 1) {
                         score++;
-                        counted[n.getNeighbor("SouthWest").getX()][n.getNeighbor("SouthWest").getY()] = 1;
+                        counted[n.getNeighbor("SouthWest").getMX()][n.getNeighbor("SouthWest").getMY()] = 1;
                     }
-                    if (n.getNeighbor("NorthWest") != null && locTile.contains(n.getNeighbor("NorthWest").getTerrain())&& counted[n.getNeighbor("NorthWest").getX()][n.getNeighbor("NorthWest").getY()] != 1) {
+                    if (n.getNeighbor("NorthWest") != null && locTile.contains(n.getNeighbor("NorthWest").getTerrain())&& counted[n.getNeighbor("NorthWest").getMX()][n.getNeighbor("NorthWest").getMY()] != 1) {
                         score++;
-                        counted[n.getNeighbor("NorthWest").getX()][n.getNeighbor("NorthWest").getY()] = 1;
+                        counted[n.getNeighbor("NorthWest").getMX()][n.getNeighbor("NorthWest").getMY()] = 1;
                     }
-                    if (n.getNeighbor("SouthEast") != null && locTile.contains(n.getNeighbor("SouthEast").getTerrain())&& counted[n.getNeighbor("SouthEast").getX()][n.getNeighbor("SouthEast").getY()] != 1) {
+                    if (n.getNeighbor("SouthEast") != null && locTile.contains(n.getNeighbor("SouthEast").getTerrain())&& counted[n.getNeighbor("SouthEast").getMX()][n.getNeighbor("SouthEast").getMY()] != 1) {
                         score++;
-                        counted[n.getNeighbor("SouthEast").getX()][n.getNeighbor("SouthEast").getY()] = 1;
+                        counted[n.getNeighbor("SouthEast").getMX()][n.getNeighbor("SouthEast").getMY()] = 1;
                     }
-                    if (n.getNeighbor("NorthEast") != null&& locTile.contains(n.getNeighbor("NorthEast").getTerrain())&& counted[n.getNeighbor("NorthEast").getX()][n.getNeighbor("NorthEast").getY()] != 1) {
+                    if (n.getNeighbor("NorthEast") != null&& locTile.contains(n.getNeighbor("NorthEast").getTerrain())&& counted[n.getNeighbor("NorthEast").getMX()][n.getNeighbor("NorthEast").getMY()] != 1) {
                         score++;
-                        counted[n.getNeighbor("NorthEast").getX()][n.getNeighbor("NorthEast").getY()] = 1;
+                        counted[n.getNeighbor("NorthEast").getMX()][n.getNeighbor("NorthEast").getMY()] = 1;
                     }
                 }
             }
@@ -518,30 +518,30 @@ public class gameState {
             for(int j = 0; j < allNodes[i].length; j++){
                 Node n = allNodes[i][j];
                 if(n.hasSettlement() == true && n.getSettlementColor().equals(color)){
-                    if(n.getNeighbor("East") != null && n.getNeighbor("East").getTerrain().equals("Mountain") && counted[n.getNeighbor("East").getX()][n.getNeighbor("East").getY()] != 1) {
+                    if(n.getNeighbor("East") != null && n.getNeighbor("East").getTerrain().equals("Mountain") && counted[n.getNeighbor("East").getMX()][n.getNeighbor("East").getMY()] != 1) {
                         score++;
-                        counted[n.getNeighbor("East").getX()][n.getNeighbor("East").getY()] = 1;
+                        counted[n.getNeighbor("East").getMX()][n.getNeighbor("East").getMY()] = 1;
                     }
-                    if(n.getNeighbor("West") != null && n.getNeighbor("West").getTerrain().equals("Mountain") && counted[n.getNeighbor("West").getX()][n.getNeighbor("West").getY()] != 1) {
+                    if(n.getNeighbor("West") != null && n.getNeighbor("West").getTerrain().equals("Mountain") && counted[n.getNeighbor("West").getMX()][n.getNeighbor("West").getMY()] != 1) {
                         score++;
-                        counted[n.getNeighbor("West").getX()][n.getNeighbor("West").getY()] = 1;
+                        counted[n.getNeighbor("West").getMX()][n.getNeighbor("West").getMY()] = 1;
                     }
-                    if(n.getNeighbor("NorthEast") != null && n.getNeighbor("NorthEast").getTerrain().equals("Mountain") && counted[n.getNeighbor("NorthEast").getX()][n.getNeighbor("NorthEast").getY()] != 1) {
+                    if(n.getNeighbor("NorthEast") != null && n.getNeighbor("NorthEast").getTerrain().equals("Mountain") && counted[n.getNeighbor("NorthEast").getMX()][n.getNeighbor("NorthEast").getMY()] != 1) {
                         score++;
-                        counted[n.getNeighbor("NorthEast").getX()][n.getNeighbor("NorthEast").getY()] = 1;
+                        counted[n.getNeighbor("NorthEast").getMX()][n.getNeighbor("NorthEast").getMY()] = 1;
                     }
-                    if(n.getNeighbor("SouthEast") != null && n.getNeighbor("SouthEast").getTerrain().equals("Mountain") && counted[n.getNeighbor("SouthEast").getX()][n.getNeighbor("SouthEast").getY()] != 1) {
+                    if(n.getNeighbor("SouthEast") != null && n.getNeighbor("SouthEast").getTerrain().equals("Mountain") && counted[n.getNeighbor("SouthEast").getMX()][n.getNeighbor("SouthEast").getMY()] != 1) {
                         score++;
-                        counted[n.getNeighbor("SouthEast").getX()][n.getNeighbor("SouthEast").getY()] = 1;
+                        counted[n.getNeighbor("SouthEast").getMX()][n.getNeighbor("SouthEast").getMY()] = 1;
                     }
-                    if(n.getNeighbor("NorthWest") != null && n.getNeighbor("NorthWest").getTerrain().equals("Mountain") && counted[n.getNeighbor("NorthWest").getX()][n.getNeighbor("NorthWest").getY()] != 1) {
+                    if(n.getNeighbor("NorthWest") != null && n.getNeighbor("NorthWest").getTerrain().equals("Mountain") && counted[n.getNeighbor("NorthWest").getMX()][n.getNeighbor("NorthWest").getMY()] != 1) {
                         score++;
-                        counted[n.getNeighbor("NorthWest").getX()][n.getNeighbor("NorthWest").getY()] = 1;
+                        counted[n.getNeighbor("NorthWest").getMX()][n.getNeighbor("NorthWest").getMY()] = 1;
 
                     }
-                    if(n.getNeighbor("SouthWest") != null && n.getNeighbor("SouthWest").getTerrain().equals("Mountain") && counted[n.getNeighbor("SouthWest").getX()][n.getNeighbor("SouthWest").getY()] != 1) {
+                    if(n.getNeighbor("SouthWest") != null && n.getNeighbor("SouthWest").getTerrain().equals("Mountain") && counted[n.getNeighbor("SouthWest").getMX()][n.getNeighbor("SouthWest").getMY()] != 1) {
                         score++;
-                        counted[n.getNeighbor("SouthWest").getX()][n.getNeighbor("SouthWest").getY()] = 1;
+                        counted[n.getNeighbor("SouthWest").getMX()][n.getNeighbor("SouthWest").getMY()] = 1;
                     }
 
                 }
@@ -559,30 +559,30 @@ public class gameState {
             for(int j = 0; j < allNodes[i].length; j++){
                 Node n = allNodes[i][j];
                 if(n.hasSettlement() == true && n.getSettlementColor().equals(color)){
-                    if(n.getNeighbor("East") != null && n.getNeighbor("East").getTerrain().equals("Water") && counted[n.getNeighbor("East").getX()][n.getNeighbor("East").getY()] != 1) {
+                    if(n.getNeighbor("East") != null && n.getNeighbor("East").getTerrain().equals("Water") && counted[n.getNeighbor("East").getMX()][n.getNeighbor("East").getMY()] != 1) {
                         score++;
-                        counted[n.getNeighbor("East").getX()][n.getNeighbor("East").getY()] = 1;
+                        counted[n.getNeighbor("East").getMX()][n.getNeighbor("East").getMY()] = 1;
                     }
-                    if(n.getNeighbor("West") != null && n.getNeighbor("West").getTerrain().equals("Water") && counted[n.getNeighbor("West").getX()][n.getNeighbor("West").getY()] != 1) {
+                    if(n.getNeighbor("West") != null && n.getNeighbor("West").getTerrain().equals("Water") && counted[n.getNeighbor("West").getMX()][n.getNeighbor("West").getMY()] != 1) {
                         score++;
-                        counted[n.getNeighbor("West").getX()][n.getNeighbor("West").getY()] = 1;
+                        counted[n.getNeighbor("West").getMX()][n.getNeighbor("West").getMY()] = 1;
                     }
-                    if(n.getNeighbor("NorthEast") != null && n.getNeighbor("NorthEast").getTerrain().equals("Water") && counted[n.getNeighbor("NorthEast").getX()][n.getNeighbor("NorthEast").getY()] != 1) {
+                    if(n.getNeighbor("NorthEast") != null && n.getNeighbor("NorthEast").getTerrain().equals("Water") && counted[n.getNeighbor("NorthEast").getX()][n.getNeighbor("NorthEast").getMY()] != 1) {
                         score++;
-                        counted[n.getNeighbor("NorthEast").getX()][n.getNeighbor("NorthEast").getY()] = 1;
+                        counted[n.getNeighbor("NorthEast").getMX()][n.getNeighbor("NorthEast").getMY()] = 1;
                     }
-                    if(n.getNeighbor("SouthEast") != null && n.getNeighbor("SouthEast").getTerrain().equals("Water") && counted[n.getNeighbor("SouthEast").getX()][n.getNeighbor("SouthEast").getY()] != 1) {
+                    if(n.getNeighbor("SouthEast") != null && n.getNeighbor("SouthEast").getTerrain().equals("Water") && counted[n.getNeighbor("SouthEast").getX()][n.getNeighbor("SouthEast").getMY()] != 1) {
                         score++;
-                        counted[n.getNeighbor("SouthEast").getX()][n.getNeighbor("SouthEast").getY()] = 1;
+                        counted[n.getNeighbor("SouthEast").getMX()][n.getNeighbor("SouthEast").getMY()] = 1;
                     }
-                    if(n.getNeighbor("NorthWest") != null && n.getNeighbor("NorthWest").getTerrain().equals("Water") && counted[n.getNeighbor("NorthWest").getX()][n.getNeighbor("NorthWest").getY()] != 1) {
+                    if(n.getNeighbor("NorthWest") != null && n.getNeighbor("NorthWest").getTerrain().equals("Water") && counted[n.getNeighbor("NorthWest").getX()][n.getNeighbor("NorthWest").getMY()] != 1) {
                         score++;
-                        counted[n.getNeighbor("NorthWest").getX()][n.getNeighbor("NorthWest").getY()] = 1;
+                        counted[n.getNeighbor("NorthWest").getMX()][n.getNeighbor("NorthWest").getMY()] = 1;
 
                     }
-                    if(n.getNeighbor("SouthWest") != null && n.getNeighbor("SouthWest").getTerrain().equals("Water") && counted[n.getNeighbor("SouthWest").getX()][n.getNeighbor("SouthWest").getY()] != 1) {
+                    if(n.getNeighbor("SouthWest") != null && n.getNeighbor("SouthWest").getTerrain().equals("Water") && counted[n.getNeighbor("SouthWest").getX()][n.getNeighbor("SouthWest").getMY()] != 1) {
                         score++;
-                        counted[n.getNeighbor("SouthWest").getX()][n.getNeighbor("SouthWest").getY()] = 1;
+                        counted[n.getNeighbor("SouthWest").getMX()][n.getNeighbor("SouthWest").getMY()] = 1;
                     }
 
                 }
@@ -723,7 +723,7 @@ public class gameState {
 
     }
 
-    public static int knights(String color) {
+    public static int knight(String color) {
         int num = 0;
         Node[][] nodes = board.returnBoard();
         int maxLength = Integer.MIN_VALUE;
@@ -737,13 +737,7 @@ public class gameState {
                         if(num > maxLength) {
                             maxLength = num;
                         }
-                        num = 0;
                     }
-                } else {
-                    if(num > maxLength) {
-                        maxLength = num;
-                    }
-                    num = 0;
                 }
             }
         }
@@ -799,7 +793,7 @@ public class gameState {
 
     public static int setArea(Node n, int[][] counted, String color){
         //returns the number of settlements in a settlement area (can be random blobs 🦑🦑)
-        if(n.hasSettlement() == true && n.getSettlementColor().equals(color) && counted[n.getX()][n.getY()] != 1){
+        if(n.hasSettlement() == true && n.getSettlementColor().equals(color) && counted[n.getMX()][n.getMY()] != 1){
             counted[n.getX()][n.getY()] = 1;
             return 1 + setArea(n.getNeighbor("East"), counted, color) + setArea(n.getNeighbor("West"), counted, color) +
                     setArea(n.getNeighbor("NorthEast"), counted, color) + setArea(n.getNeighbor("SouthEast"), counted, color) +

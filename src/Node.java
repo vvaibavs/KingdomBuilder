@@ -375,27 +375,7 @@ public class Node{
     }
 
 
-    /*public ArrayList<String> ColorNeighbor(String inputColor) {
-        if (getNeighbor("West") != null && getNeighbor("West").hasSettlement() && getNeighbor("West").getSettlementColor().equals(inputColor)) {
-            return "" ;
-        }
-        if (getNeighbor("East") != null && getNeighbor("East").hasSettlement() && getNeighbor("East").getSettlementColor().equals(inputColor)) {
-            return true;
-        }
-        if (getNeighbor("NorthWest") != null && getNeighbor("NorthWest").hasSettlement() && getNeighbor("NorthWest").getSettlementColor().equals(inputColor)) {
-            return true;
-        }
-        if (getNeighbor("NorthEast") != null && getNeighbor("NorthEast").hasSettlement() && getNeighbor("NorthEast").getSettlementColor().equals(inputColor)) {
-            return true;
-        }
-        if (getNeighbor("SouthWest") != null && getNeighbor("SouthWest").hasSettlement() && getNeighbor("SouthWest").getSettlementColor().equals(inputColor)) {
-            return true;
-        }
-        if (getNeighbor("SouthEast") != null && getNeighbor("SouthEast").hasSettlement() && getNeighbor("SouthEast").getSettlementColor().equals(inputColor)) {
-            return true;
-        }
-        return false;
-    }*/
+
     public void drawSettlement(Graphics g) {
         if (settlementColor.equals("blue")) {
             g.drawImage(blue, x, y - 30, 40, 40, null);
