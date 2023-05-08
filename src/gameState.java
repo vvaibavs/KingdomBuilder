@@ -418,8 +418,8 @@ public class gameState {
                     int x = citizens(p.getColor());
                     p.addScore(x);
                     p.scoringVariable(i, x);
-                } else if (cards.get(i).equals("knight")) {
-                    int x = knight(p.getColor());
+                } else if (cards.get(i).equals("knights")) {
+                    int x = knights(p.getColor());
                     p.addScore(x);
                     p.scoringVariable(i, x);
                 }
@@ -707,7 +707,7 @@ public class gameState {
 
     }
 
-    public static int knight(String color) {
+    public static int knights(String color) {
         int num = 0;
         Node[][] nodes = board.returnBoard();
         int maxLength = Integer.MIN_VALUE;
@@ -721,7 +721,13 @@ public class gameState {
                         if(num > maxLength) {
                             maxLength = num;
                         }
+                        num = 0;
                     }
+                } else {
+                    if(num > maxLength) {
+                        maxLength = num;
+                    }
+                    num = 0;
                 }
             }
         }

@@ -168,26 +168,35 @@ public class MainPanel extends JPanel implements MouseListener {
             gameState.state = "not Scoring Card";
         } else if(gameState.state.equals("End Screen")) {
             g.drawImage(endScreen, 0, 0, getWidth(), getHeight(), null);
-            g.drawImage(gameState.card1.pic, 375, 243, 90, 120, null);
-            g.drawImage(gameState.card2.pic, 491, 243, 90, 120, null);
-            g.drawImage(gameState.card3.pic, 610, 243, 90, 120, null);
+            g.drawImage(gameState.card1.ESpic, 375, 243, 90, 120, null);
+            g.drawImage(gameState.card2.ESpic, 491, 243, 90, 120, null);
+            g.drawImage(gameState.card3.ESpic, 610, 243, 90, 120, null);
             g.setFont(new Font("Kunstler Script", Font.BOLD, 100));
+
             g.drawString("" + gameState.p1.c1Score, 375, 410);
             g.drawString("" + gameState.p2.c1Score, 375, 500);
             g.drawString("" + gameState.p3.c1Score, 375, 590);
             g.drawString("" + gameState.p4.c1Score, 375, 680);
+
             g.drawString("" + gameState.p1.c2Score, 500, 410);
             g.drawString("" + gameState.p2.c2Score, 500, 500);
             g.drawString("" + gameState.p3.c2Score, 500, 590);
             g.drawString("" + gameState.p4.c2Score, 500, 680);
+
             g.drawString("" + gameState.p1.c3Score, 625, 410);
             g.drawString("" + gameState.p2.c3Score, 625, 500);
             g.drawString("" + gameState.p3.c3Score, 625, 590);
             g.drawString("" + gameState.p4.c3Score, 625, 680);
+
             g.drawString("" + gameState.p1.castleScore, 730, 410);
             g.drawString("" + gameState.p2.castleScore, 730, 500);
             g.drawString("" + gameState.p3.castleScore, 730, 590);
             g.drawString("" + gameState.p4.castleScore, 730, 680);
+
+            g.drawString("" + gameState.p1.getScore(), 840, 410);
+            g.drawString("" + gameState.p2.getScore(), 840, 500);
+            g.drawString("" + gameState.p3.getScore(), 840, 590);
+            g.drawString("" + gameState.p4.getScore(), 840, 680);
 
 
         }
