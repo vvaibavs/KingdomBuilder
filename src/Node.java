@@ -16,8 +16,9 @@ public class Node{
     private boolean special = false;
     private HashMap<String, Node> neighbors = new HashMap<String, Node>();
     private final int radius = 20;
+    public int mx, my;
     BufferedImage hexHighLight, red, blue, black, orange;
-    public Node(String terrain, int board, int xloc, int yloc) {
+    public Node(String terrain, int board, int xloc, int yloc, int mx, int my) {
         this.terrain = terrain;
         if (terrain.equals("tower") || terrain.equals("oracle") || terrain.equals("paddock") || terrain.equals("farm") || terrain.equals("tavern") || terrain.equals("barn") || terrain.equals("boat") || terrain.equals("oasis")) {
             special = true;
@@ -35,6 +36,15 @@ public class Node{
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+        this.mx = mx;
+        this.my = my;
+    }
+
+    public int getMX() {
+        return mx;
+    }
+    public int getMY() {
+        return my;
     }
     public boolean isSpecial() {
         return special && specialTokensLeft > 0;

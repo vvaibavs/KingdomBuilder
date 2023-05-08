@@ -304,29 +304,25 @@ public class gameState {
             if (currentPlayer == 1) {
                 XVal = 154 + 20;
                 YVal = 254 + 20;
-            }
-            else if (currentPlayer == 2) {
+            } else if (currentPlayer == 2) {
                 XVal = 1362 + 20;
                 YVal = 254 + 20;
-            }
-            else if (currentPlayer == 3) {
+            } else if (currentPlayer == 3) {
                 XVal = 154 + 20;
                 YVal = 649 + 20;
-            }
-            else {
+            } else {
                 XVal = 1362 + 20;
                 YVal = 649 + 20;
 
             }
 
-            for (int i = 0; i < current.getSpecialTokens().size(); i ++) {
+            for (int i = 0; i < current.getSpecialTokens().size(); i++) {
                 if (i <= 3) {
                     if (Math.pow(mouseX - XVal, 2) + Math.pow(mouseY - YVal - i % 4 * 40, 2) < 400) {
                         pickedTile = current.getSpecialTokens().get(i);
                     }
-                }
-                else {
-                    if (  Math.pow(mouseX - XVal - 40, 2) + Math.pow(mouseY - YVal - i%4 * 40, 2) < 400) {
+                } else {
+                    if (Math.pow(mouseX - XVal - 40, 2) + Math.pow(mouseY - YVal - i % 4 * 40, 2) < 400) {
                         pickedTile = current.getSpecialTokens().get(i);
                     }
 
@@ -340,8 +336,7 @@ public class gameState {
                     selectedTile = null;
 
 
-                }
-                else {
+                } else {
                     specialToken = pickedTile.getType();
                     selectedTile = pickedTile;
                 }
@@ -356,6 +351,7 @@ public class gameState {
                 p3.combineScores();
                 p4.combineScores();
                 scoringCards();
+                System.out.println("end");
             }
             if (mouseX > 326 && mouseY > 759 && mouseY < 824 && mouseX < 764 && !temp) {
                 hasEnded = true;
