@@ -1,5 +1,6 @@
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
+import java.util.ArrayList;
 import java.util.Collections;
 
 public class TerrainCard {
@@ -12,6 +13,12 @@ public class TerrainCard {
     }
 
     public void randomize() {
+        if(gameState.terrains.size() == 0) {
+            gameState.terrains = new ArrayList<>();
+            for(int i = 1; i <= 30; i++) {
+                gameState.terrains.add(i);
+            }
+        }
         Collections.shuffle(gameState.terrains);
         if(gameState.terrains.get(0) <= 6) {
             type = "Canyon";

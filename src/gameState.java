@@ -822,6 +822,16 @@ public class gameState {
         card3 = new ScoringCard(randScoring.get(2));
         mouseX = 0;
         mouseY = 0;
+        Panel.restart();
+        terrains = new ArrayList<>();
+        for(int i = 1; i <= 30; i++) {
+            terrains.add(i);
+        }
+        p1 = new Player("red");
+        p2 = new Player("blue");
+        p3 = new Player("orange");
+        p4 = new Player("black");
+        currentPlayer = 1;
 
 
     }
