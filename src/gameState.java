@@ -19,6 +19,7 @@ public class gameState {
     public static String substate = "placeSettlement";
     public static boolean nextToSettlementRequired = false;
     public static int settlementsLeft = 3;
+    public static boolean hasEnded = false;
     public static SpecialTile selectedTile = null;
     //Hi Vaibav, I left this special token variable in here for you to use tomorrow, in the Node class there is an isValid method that will have this as an input.
     //When using the method, simply add if statements with the name of the special token and add those parameters!
@@ -68,6 +69,9 @@ public class gameState {
         state = "End Screen";
     }
     public static void runClick() {
+        if (hasEnded && state.equals("Game Screen")) {
+            state = "End Screen";
+        }
         if (mouseX > 278 && mouseX < 705 && mouseY < 631 && mouseY > 544 && state.equals("Start Screen")) {
             state = "Game Screen";
             int rand = ((int)(Math.random() * 4) + 1);
@@ -215,7 +219,7 @@ public class gameState {
                     }
                 }
 
-        } else if(mouseX > 1342 && mouseY > 878 && mouseX < 1524 && mouseY < 926 && (settlementsLeft == 0 || current.getSettlements() == 0)) {
+        } else if(mouseX > 1342 && mouseY > 878 && mouseX < 1524 && mouseY < 926 && (settlementsLeft == 0 || current.getSettlements() == 0) && state.equals("Game Screen")) {
             stage2 = false;
             settlementsLeft = 3;
             if(p1.turn) { // Player 2's turn
@@ -288,7 +292,7 @@ public class gameState {
                 }
             }
         }
-        else if (mouseX > 56 && mouseY > 127 && mouseX < 1529 && mouseY < 831 && (settlementsLeft == 0 || settlementsLeft == 3 || current.getSettlements() == 0)) {
+        else if (mouseX > 56 && mouseY > 127 && mouseX < 1529 && mouseY < 831 && (settlementsLeft == 0 || settlementsLeft == 3 || current.getSettlements() == 0) && state.equals("Game Screen")) {
             System.out.println("OK");
 
             SpecialTile pickedTile = null;
@@ -344,6 +348,12 @@ public class gameState {
 
         } else if(state.equals("End Screen")) {
             scoringCards();
+            if (mouseX > 326 && mouseY > 759 && mouseY < 824 && mouseX < 764) {
+                hasEnded = true;
+                state = "Game Screen";
+            }
+            System.out.println(state);
+
         }
 
     }
