@@ -16,7 +16,6 @@ public class gameState {
     static Node selected;
     static int startPlayer;
     public static ArrayList<Integer> terrains;
-    public static String substate = "placeSettlement";
     public static boolean nextToSettlementRequired = false;
     public static int settlementsLeft = 3;
     public static boolean hasEnded = false;
@@ -66,7 +65,7 @@ public class gameState {
             terrains.add(i);
         }
 
-        state = "End Screen";
+        state = "Start Screen";
     }
     public static void runClick() {
         boolean temp = false;
