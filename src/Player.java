@@ -15,7 +15,7 @@ public class Player {
     public TerrainCard card;
     public Player(String c){
         color = c;
-        numSettlements = 2;
+        numSettlements = 40;
         score = 0;
         tile = new ArrayList<LocTile>();
         turn = false;
