@@ -346,17 +346,19 @@ public class gameState {
 
         } else if(state.equals("End Screen")) {
             if (! hasEnded) {
+
+                scoringCards();
                 p1.combineScores();
                 p2.combineScores();
                 p3.combineScores();
                 p4.combineScores();
-                scoringCards();
                 System.out.println("end");
             }
             if (mouseX > 326 && mouseY > 759 && mouseY < 824 && mouseX < 764 && !temp) {
                 hasEnded = true;
                 state = "Game Screen";
             }
+
             temp = false;
             System.out.println(state);
 
@@ -794,7 +796,7 @@ public class gameState {
     public static int setArea(Node n, int[][] counted, String color){
         //returns the number of settlements in a settlement area (can be random blobs 🦑🦑)
         if(n.hasSettlement() == true && n.getSettlementColor().equals(color) && counted[n.getMX()][n.getMY()] != 1){
-            counted[n.getX()][n.getY()] = 1;
+            counted[n.getMX()][n.getMY()] = 1;
             return 1 + setArea(n.getNeighbor("East"), counted, color) + setArea(n.getNeighbor("West"), counted, color) +
                     setArea(n.getNeighbor("NorthEast"), counted, color) + setArea(n.getNeighbor("SouthEast"), counted, color) +
                     setArea(n.getNeighbor("NorthWest"), counted, color) + setArea(n.getNeighbor("SouthWest"), counted, color);
