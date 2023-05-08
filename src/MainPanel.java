@@ -61,6 +61,7 @@ public class MainPanel extends JPanel implements MouseListener {
         addMouseListener(this);
     }
     public void restart() {
+        hasEnded = false;
         randInt1 = (int)(Math.random() * 7 + 1);
         randInt2 = (int)(Math.random() * 7 + 1);
         while (randInt2 == randInt1) {

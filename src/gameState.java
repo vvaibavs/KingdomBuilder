@@ -11,7 +11,7 @@ public class gameState {
     private static ArrayList<String> locTile;
     private static MainPanel Panel;
     public static int currentPlayer = 1;
-    private ArrayList<Integer> randScoring;
+    private static ArrayList<Integer> randScoring;
     public static Board board;
     static Node selected;
     static int startPlayer;
@@ -345,13 +345,13 @@ public class gameState {
             Panel.redraw();
 
         } else if(state.equals("End Screen")) {
-            if (! hasEnded) {
 
-
-            }
             if (mouseX > 326 && mouseY > 759 && mouseY < 824 && mouseX < 764 && !temp) {
 
                 state = "Game Screen";
+            }
+            if (mouseX > 1340 && mouseY > 548 && mouseX < 1340 && mouseY < 608) {
+                restartState();
             }
             hasEnded = true;
             temp = false;
@@ -805,7 +805,7 @@ public class gameState {
         return state;
     }
 
-    public void restartState() {
+    public static void restartState() {
         state = "Start Screen";
         stage2 = false;
         Collections.shuffle(randScoring);
