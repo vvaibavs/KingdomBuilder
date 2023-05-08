@@ -82,7 +82,7 @@ public class Player {
         } else if(i == 2) {
             c3Score += score;
         } else if(i == 3) {
-
+            castleScore = score;
         }
     }
 }
