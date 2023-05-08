@@ -810,4 +810,17 @@ public class gameState {
         return state;
     }
 
+    public void restartState() {
+        state = "Start Screen";
+        stage2 = false;
+        Collections.shuffle(randScoring);
+        card1 = new ScoringCard(randScoring.get(0));
+        card2 = new ScoringCard(randScoring.get(1));
+        card3 = new ScoringCard(randScoring.get(2));
+        mouseX = 0;
+        mouseY = 0;
+
+
+    }
+
 }
