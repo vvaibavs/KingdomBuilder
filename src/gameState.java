@@ -519,7 +519,7 @@ public class gameState {
 
 
         for(Player p : players){ //adds castle points separately after all the scoring card points have been added
-            p.addScore(castle(p.getColor()));
+            p.castleScore = (castle(p.getColor()));
         }
 
 

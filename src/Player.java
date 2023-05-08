@@ -10,7 +10,7 @@ public class Player {
     private int score;
     boolean turn;
 
-    public int c1Score, c2Score, c3Score;
+    public int c1Score, c2Score, c3Score, castleScore;
     private ArrayList<SpecialTile> specialTokens;
     public TerrainCard card;
     public Player(String c){
