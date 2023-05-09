@@ -210,6 +210,9 @@ public class MainPanel extends JPanel implements MouseListener {
 
                 for (int i = 0; i < theBoard.getLength() && gameState.current.getSettlements() > 0; i++) {
                     for (int j = 0; j < theBoard.returnBoard()[i].length; j++) {
+                        if (theBoard.returnBoard()[i][j].isSpecial(false)) {
+                            theBoard.returnBoard()[i][j].drawTokensLeft(g);
+                        }
                         if (theBoard.returnBoard()[i][j].isValid(gameState.current.getColor(), gameState.current.card.type, gameState.nextToSettlementRequired, gameState.specialToken)) {
                             theBoard.returnBoard()[i][j].drawHighlight(g);
                         }

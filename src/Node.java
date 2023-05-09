@@ -155,6 +155,13 @@ public class Node{
     }
     public void drawHighlight(Graphics g) {
         g.drawImage(hexHighLight, x - 1, y - 31, 41, 41, null );
+
+    }
+    public void drawTokensLeft(Graphics g) {
+        if (isSpecial(false)) {
+            g.setFont(new Font("Kunstler Script",1, 50));
+            g.drawString(specialTokensLeft + "", x, y);
+        }
     }
     public String getLoc() {
         return board + "";
