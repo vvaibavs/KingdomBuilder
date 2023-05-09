@@ -35,10 +35,10 @@ public class gameState {
         for(int i = 1; i <= 7; i++) {
             randScoring.add(i);
         }
-        p1 = new Player("red");
-        p2 = new Player("blue");
-        p3 = new Player("orange");
-        p4 = new Player("black");
+        p1 = new Player("orange");
+        p2 = new Player("black");
+        p3 = new Player("blue");
+        p4 = new Player("red");
         current = p1;
         Collections.shuffle(randScoring);
 
@@ -822,10 +822,10 @@ public class gameState {
         for(int i = 1; i <= 30; i++) {
             terrains.add(i);
         }
-        p1 = new Player("red");
-        p2 = new Player("blue");
-        p3 = new Player("orange");
-        p4 = new Player("black");
+        p1 = new Player("orange");
+        p2 = new Player("black");
+        p3 = new Player("blue");
+        p4 = new Player("red");
         currentPlayer = 1;
 
 
