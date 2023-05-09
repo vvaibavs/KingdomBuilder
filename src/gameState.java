@@ -731,12 +731,11 @@ public class gameState {
                 if(nodes[i][j].hasSettlement() && nodes[i][j].getSettlementColor().equals(color)) {
                     num++;
                 }
-                if(j < nodes[i].length - 1) {
-                    if((!nodes[i][j+1].hasSettlement()) || (!nodes[i][j+1].getSettlementColor().equals(color))) {
+                if(j == nodes[i].length - 1) {
+
                         if(num > maxLength) {
                             maxLength = num;
                         }
-                    }
                 }
             }
         }
