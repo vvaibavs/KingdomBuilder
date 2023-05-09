@@ -727,6 +727,7 @@ public class gameState {
         Node[][] nodes = board.returnBoard();
         int maxLength = Integer.MIN_VALUE;
         for(int i = 0; i < nodes.length; i++) {
+            num = 0;
             for(int j = 0; j < nodes[i].length; j++) {
                 if(nodes[i][j].hasSettlement() && nodes[i][j].getSettlementColor().equals(color)) {
                     num++;
